@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kertu Moorits – stilist | MOORITS.</title>
+  <meta name="description" content="Kertu Moorits on stilist, kes pakub isikustilistikat meestele ja naistele ning stilistikat brändidele, fotodele ja produktsioonidele.">
+
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Kertu Moorits – stilist | MOORITS.">
+  <meta property="og:description" content="Isikustilistika meestele ja naistele ning stilistika brändidele, fotodele ja produktsioonidele.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --bg: #f3efe7;
+      --text: #111111;
+      --muted: #6f6b64;
+      --line: #cfc8bc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1400px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(243, 239, 231, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .brand {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.55;
+    }
+
+    .menu-button {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: calc(100vh - 84px);
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: stretch;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-copy {
+      padding: 90px 8vw 90px max(24px, calc((100vw - 1400px) / 2));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(54px, 7vw, 112px);
+      font-weight: 400;
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      max-width: 900px;
+    }
+
+    .hero-description {
+      margin-top: 36px;
+      max-width: 560px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 28px;
+      margin-top: 42px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 5px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-image {
+      min-height: 650px;
+      background:
+        linear-gradient(rgba(0,0,0,0.06), rgba(0,0,0,0.06)),
+        url('images/kertu-moorits.jpg') center center / cover no-repeat;
+    }
+
+    section {
+      padding: 120px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+
+    .section-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(42px, 5vw, 82px);
+      font-weight: 400;
+      line-height: 1;
+      max-width: 900px;
+      letter-spacing: -0.035em;
+    }
+
+    .services-grid {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .service {
+      padding: 38px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service:nth-child(odd) {
+      padding-right: 40px;
+      border-right: 1px solid var(--line);
+    }
+
+    .service:nth-child(even) {
+      padding-left: 40px;
+    }
+
+    .service-number {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .service h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 34px;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    .service p {
+      max-width: 520px;
+      color: var(--muted);
+    }
+
+    .taskustilist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .taskustilist-card {
+      aspect-ratio: 9 / 16;
+      max-width: 420px;
+      background: #111;
+      color: #fff;
+      padding: 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .taskustilist-card strong {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 42px;
+      font-weight: 400;
+    }
+
+    .taskustilist-copy p {
+      max-width: 540px;
+      font-size: 18px;
+      color: var(--muted);
+      margin: 28px 0 36px;
+    }
+
+    .quote {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(38px, 5vw, 76px);
+      line-height: 1.05;
+      max-width: 1100px;
+      letter-spacing: -0.035em;
+    }
+
+    footer {
+      padding: 60px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      align-items: end;
+    }
+
+    .footer-brand {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .footer-meta {
+      text-align: right;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        width: min(100% - 32px, 1400px);
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 84px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        padding: 30px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 70px 24px;
+      }
+
+      .hero-image {
+        min-height: 70vh;
+        order: -1;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service:nth-child(odd),
+      .service:nth-child(even) {
+        border-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .taskustilist {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      section {
+        padding: 85px 0;
+      }
+
+      .footer-meta {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="brand">MOORITS.</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#stilistika">Isikustilistika</a>
+      <a href="#brandidele">Brändidele</a>
+      <a href="#taskustilist">Taskustilist</a>
+      <a href="#portfoolio">Portfoolio</a>
+      <a href="#minust">Minust</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <button class="menu-button" onclick="toggleMenu()" aria-label="Ava menüü">
+      ☰
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">Kertu Moorits · Stilist</div>
+
+      <h1>Stiil, mis töötab päriselus.</h1>
+
+      <p class="hero-description">
+        Isikustilistika meestele ja naistele ning stilistika brändidele,
+        fotodele ja produktsioonidele.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#stilistika" class="button">Vaata teenuseid</a>
+        <a href="#portfoolio" class="button">Portfoolio</a>
+      </div>
+    </div>
+
+    <div class="hero-image" role="img" aria-label="Stilist Kertu Moorits"></div>
+  </section>
+
+  <section id="stilistika">
+    <div class="container">
+      <div class="section-kicker">Teenused</div>
+
+      <h2 class="section-title">Stilistika vastavalt inimesele, olukorrale ja eesmärgile.</h2>
+
+      <div class="services-grid">
+
+        <article class="service">
+          <div class="service-number">01</div>
+          <h3>Meestele</h3>
+          <p>
+            Praktiline isikustilistika, mis aitab ehitada toimiva garderoobi
+            ja teha paremaid valikuid ilma liigse üle mõtlemiseta.
+          </p>
+        </article>
+
+        <article class="service">
+          <div class="service-number">02</div>
+          <h3>Naistele</h3>
+          <p>
+            Personaalne lähenemine värvidele, lõigetele, garderoobile ja
+            riietusele vastavalt sinu päris elule.
+          </p>
+        </article>
+
+        <article class="service" id="brandidele">
+          <div class="service-number">03</div>
+          <h3>Brändidele</h3>
+          <p>
+            Stilistika kampaaniatele, reklaamidele, sisuloomele ja
+            kommertsprojektidele.
+          </p>
+        </article>
+
+        <article class="service">
+          <div class="service-number">04</div>
+          <h3>Foto & produktsioon</h3>
+          <p>
+            Stilistika fotosessioonidele ja produktsioonidele koostöös
+            fotograafide, agentuuride ja loovmeeskondadega.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="taskustilist">
+    <div class="container taskustilist">
+
+      <div class="taskustilist-card">
+        <span>MOORITS.</span>
+
+        <strong>
+          TASKUSTILIST<br>
+          MEESTELE
+        </strong>
+
+        <span>Sinu stilist. Alati taskus.</span>
+      </div>
+
+      <div class="taskustilist-copy">
+        <div class="section-kicker">Taskustilist</div>
+
+        <h2 class="section-title">Sinu stilist. Alati taskus.</h2>
+
+        <p>
+          Visuaalne digijuhend, mis aitab vastata päris riietumisküsimustele:
+          mis mulle sobib, kuidas miski peaks istuma ja mida erinevates
+          olukordades selga panna.
+        </p>
+
+        <a href="#" class="button">Tutvu Taskustilistiga</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="portfoolio">
+    <div class="container">
+      <div class="section-kicker">Portfoolio</div>
+
+      <h2 class="section-title">
+        Valik stilistikast, fotoprojektidest ja koostöödest.
+      </h2>
+    </div>
+  </section>
+
+  <section id="minust">
+    <div class="container">
+      <div class="section-kicker">Kertu Moorits</div>
+
+      <p class="quote">
+        „Öeldakse, et raamatut ei hinnata kaane järgi.
+        Ometi kujuneb esmamulje enne, kui jõuad endast rääkida.“
+      </p>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="container">
+      <div class="section-kicker">Kontakt</div>
+
+      <h2 class="section-title">Räägime sinu projektist.</h2>
+
+      <div style="margin-top: 40px;">
+        <a class="button" href="mailto:kertu@moorits.com">
+          kertu@moorits.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div class="footer-brand">MOORITS.</div>
+
+    <div class="footer-meta">
+      Kertu Moorits · Stilist<br>
+      © 2026 MOORITS.
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
