@@ -4530,3 +4530,76 @@ footer > span:last-child {
     font-size: clamp(48px, 14vw, 80px);
   }
 }
+/* =========================================================
+   MOBILE MENU — FINAL FIX
+========================================================= */
+
+/* Vaikimisi mobile menu täiesti peidus */
+.mobile-nav {
+  display: none;
+}
+
+/* Telefonis */
+@media (max-width: 900px) {
+
+  .mobile-nav {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    flex-direction: column;
+    justify-content: flex-start;
+
+    padding: 24px;
+
+    background: #f7f2eb;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-12px);
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  .mobile-nav.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobile-close {
+    align-self: flex-end;
+
+    border: 0;
+    background: transparent;
+    padding: 0;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+
+    color: #211b19;
+    cursor: pointer;
+  }
+
+  .mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin-top: 60px;
+  }
+
+  .mobile-links a,
+  .mobile-nav-label {
+    color: #211b19;
+  }
+}
