@@ -2297,3 +2297,66 @@ footer > span:last-child {
   }
 
 }
+/* MOBILE MENU — desktopis alati peidus */
+.mobile-nav {
+  display: none;
+}
+
+/* MOBILE MENU — avaneb ainult telefonis */
+@media (max-width: 760px) {
+
+  .mobile-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    padding: 28px var(--page) 45px;
+    background: var(--wine-dark);
+    color: var(--white);
+  }
+
+  .mobile-nav.open {
+    display: block;
+  }
+
+  .mobile-close {
+    display: block;
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    cursor: pointer;
+  }
+
+  .mobile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 60px;
+  }
+
+  .mobile-links a {
+    display: block;
+    padding: 8px 0;
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+  }
+
+  .mobile-nav-label {
+    display: block;
+    margin-top: 28px;
+    margin-bottom: 7px;
+    color: rgba(255,255,255,0.45);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+  }
+}
