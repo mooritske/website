@@ -1239,3 +1239,1061 @@ footer > span:last-child {
   }
 
 }
+/* =========================================================
+   PERSONAALSTILISTIKA — NAISTELE
+   ========================================================= */
+
+
+/* NAV DROPDOWN */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  padding: 25px 0;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--ink);
+
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.11em;
+
+  cursor: pointer;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+
+  top: calc(100% - 10px);
+  left: 50%;
+
+  width: 185px;
+
+  padding: 10px;
+
+  background: var(--white);
+
+  border: 1px solid var(--line);
+
+  transform:
+    translateX(-50%)
+    translateY(8px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+.nav-dropdown-menu a {
+  display: block;
+
+  padding: 12px 14px;
+
+  color: var(--ink);
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.11em;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a.active {
+  background: var(--beige-light);
+  color: var(--wine);
+}
+
+.mobile-nav-label {
+  margin-top: 20px;
+  margin-bottom: 3px;
+
+  color: rgba(255,255,255,0.45);
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+
+/* HEADER */
+
+.women-header {
+  color: var(--ink);
+}
+
+
+/* HERO */
+
+.women-hero {
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: 58% 42%;
+
+  padding-top: 86px;
+
+  background: var(--beige-light);
+}
+
+.women-hero-copy {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding:
+    80px
+    7vw
+    90px
+    var(--page);
+}
+
+.women-hero-copy .label {
+  margin-bottom: 30px;
+
+  color: var(--wine);
+}
+
+.women-hero-copy h1 {
+  max-width: 800px;
+
+  font-size: clamp(58px, 7vw, 108px);
+  font-weight: 700;
+
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+}
+
+.women-hero-lead {
+  max-width: 570px;
+
+  margin-top: 40px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.women-hero-copy .text-link {
+  margin-top: 38px;
+}
+
+.women-hero-visual {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  padding:
+    50px
+    45px;
+
+  background: var(--wine);
+
+  color: var(--white);
+
+  overflow: hidden;
+}
+
+.women-hero-number {
+  align-self: flex-end;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+.women-hero-word {
+  margin-left: -7px;
+
+  font-size: clamp(70px, 8vw, 135px);
+  font-weight: 700;
+
+  line-height: 0.76;
+  letter-spacing: -0.08em;
+
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+
+  white-space: nowrap;
+
+  opacity: 0.12;
+}
+
+
+/* INTRO */
+
+.women-intro {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 10vw;
+
+  padding:
+    130px
+    var(--page)
+    140px;
+}
+
+.women-intro-heading h2 {
+  max-width: 900px;
+
+  margin-top: 30px;
+
+  font-size: clamp(48px, 6vw, 90px);
+  font-weight: 700;
+
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+}
+
+.women-intro-heading h2 span {
+  color: var(--wine);
+}
+
+.women-intro-copy {
+  align-self: end;
+}
+
+.women-intro-copy p {
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.women-intro-copy .women-intro-lead {
+  margin-bottom: 25px;
+
+  color: var(--ink);
+
+  font-size: 18px;
+  font-weight: 500;
+
+  line-height: 1.5;
+}
+
+
+/* IDENTITY */
+
+.women-identity {
+  padding:
+    100px
+    var(--page)
+    105px;
+
+  background: var(--wine-dark);
+
+  color: var(--white);
+}
+
+.women-identity-main {
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 10vw;
+
+  margin-top: 85px;
+}
+
+.women-identity-main h2 {
+  max-width: 760px;
+
+  font-size: clamp(47px, 5.7vw, 86px);
+  font-weight: 600;
+
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.women-identity-text p {
+  margin-bottom: 23px;
+
+  color: rgba(255,255,255,0.72);
+
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.women-identity-statement {
+  max-width: 1050px;
+
+  margin-top: 110px;
+  margin-left: auto;
+
+  padding-top: 30px;
+
+  border-top: 1px solid var(--line-light);
+
+  font-size: clamp(27px, 3.2vw, 48px);
+  font-weight: 500;
+
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+}
+
+.women-identity-statement strong {
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--beige);
+
+  font-weight: 600;
+}
+
+
+/* SERVICES */
+
+.women-services {
+  padding:
+    110px
+    var(--page)
+    120px;
+
+  background: var(--cream);
+}
+
+.women-services-heading {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 10vw;
+
+  align-items: end;
+
+  margin:
+    75px
+    0
+    70px;
+}
+
+.women-services-heading h2 {
+  font-size: clamp(52px, 6.5vw, 96px);
+  font-weight: 700;
+
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+}
+
+.women-services-heading p {
+  max-width: 390px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+
+/* COMPARISON */
+
+.service-comparison {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.comparison-card {
+  min-height: 690px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding:
+    35px
+    32px;
+
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  background: var(--cream);
+}
+
+.comparison-featured {
+  background: var(--beige);
+}
+
+.comparison-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  color: var(--muted);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+}
+
+.comparison-card h3 {
+  min-height: 110px;
+
+  margin-top: 50px;
+
+  font-size: clamp(30px, 3vw, 47px);
+  font-weight: 600;
+
+  line-height: 1.03;
+  letter-spacing: -0.045em;
+}
+
+.comparison-price {
+  margin-top: 22px;
+
+  color: var(--wine);
+
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.comparison-fit {
+  min-height: 120px;
+
+  margin-top: 35px;
+
+  color: var(--ink);
+
+  font-size: 12px;
+  font-weight: 500;
+
+  line-height: 1.65;
+}
+
+.comparison-card ul {
+  margin:
+    25px
+    0
+    40px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.comparison-card li {
+  position: relative;
+
+  padding:
+    11px
+    0
+    11px
+    18px;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--muted);
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.comparison-card li::before {
+  content: "";
+
+  position: absolute;
+
+  top: 17px;
+  left: 0;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--wine);
+}
+
+.comparison-link {
+  width: fit-content;
+
+  margin-top: auto;
+
+  padding-bottom: 5px;
+
+  border-bottom: 1px solid currentColor;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+}
+
+.services-note {
+  margin-top: 22px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+
+/* DETAIL SECTIONS */
+
+.women-service-detail {
+  display: grid;
+
+  grid-template-columns: 23% 77%;
+
+  padding:
+    110px
+    var(--page)
+    120px;
+
+  background: var(--beige-light);
+
+  border-top: 1px solid var(--line);
+}
+
+.women-service-detail:nth-of-type(even) {
+  background: var(--cream);
+}
+
+.detail-side {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  min-height: 200px;
+}
+
+.detail-number {
+  color: var(--wine);
+
+  font-size: 76px;
+  font-weight: 600;
+
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+
+.detail-main {
+  max-width: 1050px;
+}
+
+.detail-heading {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: start;
+
+  gap: 50px;
+}
+
+.detail-heading h2 {
+  max-width: 760px;
+
+  font-size: clamp(52px, 6vw, 92px);
+  font-weight: 600;
+
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+}
+
+.detail-price {
+  padding-top: 9px;
+
+  color: var(--wine);
+
+  font-size: 25px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.detail-lead {
+  max-width: 720px;
+
+  margin-top: 55px;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  line-height: 1.55;
+}
+
+.detail-columns {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 55px;
+
+  margin-top: 45px;
+}
+
+.detail-columns p {
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.detail-includes {
+  display: grid;
+
+  grid-template-columns: 0.45fr 1fr;
+
+  gap: 50px;
+
+  margin-top: 70px;
+  padding-top: 25px;
+
+  border-top: 1px solid var(--line);
+}
+
+.detail-includes > span {
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+}
+
+.detail-includes ul {
+  padding: 0;
+
+  list-style: none;
+}
+
+.detail-includes li {
+  padding: 10px 0;
+
+  border-bottom: 1px solid var(--line);
+
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+
+/* WINE SERVICE DETAIL */
+
+.wine-detail {
+  background: var(--wine) !important;
+
+  color: var(--white);
+
+  border-color: var(--line-light);
+}
+
+.wine-detail .detail-number,
+.wine-detail .detail-price {
+  color: var(--beige);
+}
+
+.wine-detail .detail-lead {
+  color: var(--white);
+}
+
+.wine-detail .detail-columns p,
+.wine-detail .detail-includes li {
+  color: rgba(255,255,255,0.7);
+}
+
+.wine-detail .detail-includes,
+.wine-detail .detail-includes li {
+  border-color: var(--line-light);
+}
+
+
+/* STYLE SOS */
+
+.style-sos {
+  padding:
+    105px
+    var(--page)
+    115px;
+
+  background: var(--wine-dark);
+
+  color: var(--white);
+}
+
+.style-sos-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid var(--line-light);
+}
+
+.style-sos-top > span {
+  color: var(--beige);
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.style-sos-grid {
+  display: grid;
+
+  grid-template-columns: 1.15fr 0.85fr;
+
+  gap: 10vw;
+
+  margin-top: 80px;
+}
+
+.style-sos h2 {
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 600;
+
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.style-sos-copy p {
+  margin-bottom: 22px;
+
+  color: rgba(255,255,255,0.7);
+
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.style-sos-copy .style-sos-lead {
+  color: var(--white);
+
+  font-size: 18px;
+  font-weight: 500;
+
+  line-height: 1.55;
+}
+
+.style-sos-copy .text-link {
+  margin-top: 15px;
+}
+
+
+/* FINAL STATEMENT */
+
+.women-final {
+  padding:
+    130px
+    var(--page)
+    140px;
+
+  background: var(--cream);
+}
+
+.women-final h2 {
+  max-width: 1200px;
+
+  margin-top: 45px;
+
+  font-size: clamp(50px, 6.6vw, 100px);
+  font-weight: 700;
+
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.women-final h2 span {
+  color: var(--wine);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+  .women-hero {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: auto;
+
+    padding-top: 70px;
+  }
+
+  .women-hero-copy {
+    padding:
+      65px
+      var(--page)
+      75px;
+  }
+
+  .women-hero-copy h1 {
+    font-size: clamp(51px, 15vw, 76px);
+  }
+
+  .women-hero-lead {
+    margin-top: 30px;
+
+    font-size: 13px;
+  }
+
+  .women-hero-visual {
+    min-height: 300px;
+
+    padding:
+      25px
+      var(--page);
+  }
+
+  .women-hero-word {
+    font-size: 67px;
+
+    transform: none;
+
+    line-height: 0.78;
+
+    align-self: flex-start;
+  }
+
+
+  .women-intro {
+    display: block;
+
+    padding:
+      85px
+      var(--page)
+      90px;
+  }
+
+  .women-intro-heading h2 {
+    font-size: clamp(43px, 12vw, 60px);
+  }
+
+  .women-intro-copy {
+    margin-top: 55px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--line);
+  }
+
+
+  .women-identity {
+    padding:
+      80px
+      var(--page)
+      85px;
+  }
+
+  .women-identity-main {
+    display: block;
+
+    margin-top: 65px;
+  }
+
+  .women-identity-main h2 {
+    font-size: clamp(42px, 12vw, 59px);
+  }
+
+  .women-identity-text {
+    margin-top: 55px;
+  }
+
+  .women-identity-statement {
+    margin-top: 70px;
+
+    font-size: 27px;
+  }
+
+
+  .women-services {
+    padding:
+      80px
+      var(--page)
+      85px;
+  }
+
+  .women-services .section-head span {
+    display: none;
+  }
+
+  .women-services-heading {
+    display: block;
+
+    margin:
+      55px
+      0
+      45px;
+  }
+
+  .women-services-heading h2 {
+    font-size: clamp(47px, 13vw, 65px);
+  }
+
+  .women-services-heading p {
+    margin-top: 30px;
+  }
+
+
+  .service-comparison {
+    display: block;
+
+    border-left: 1px solid var(--line);
+  }
+
+  .comparison-card {
+    min-height: auto;
+
+    padding:
+      30px
+      23px
+      35px;
+  }
+
+  .comparison-card h3 {
+    min-height: auto;
+
+    margin-top: 40px;
+
+    font-size: 36px;
+  }
+
+  .comparison-fit {
+    min-height: auto;
+
+    margin-top: 30px;
+  }
+
+  .comparison-card ul {
+    margin-bottom: 35px;
+  }
+
+  .comparison-link {
+    margin-top: 15px;
+  }
+
+
+  .women-service-detail {
+    display: block;
+
+    padding:
+      80px
+      var(--page)
+      90px;
+  }
+
+  .detail-side {
+    min-height: auto;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    margin-bottom: 60px;
+  }
+
+  .detail-number {
+    font-size: 55px;
+  }
+
+  .detail-heading {
+    display: block;
+  }
+
+  .detail-heading h2 {
+    font-size: clamp(48px, 13vw, 65px);
+  }
+
+  .detail-price {
+    margin-top: 25px;
+  }
+
+  .detail-lead {
+    margin-top: 40px;
+
+    font-size: 17px;
+  }
+
+  .detail-columns {
+    display: block;
+
+    margin-top: 40px;
+  }
+
+  .detail-columns > div + div {
+    margin-top: 25px;
+  }
+
+  .detail-includes {
+    display: block;
+
+    margin-top: 55px;
+  }
+
+  .detail-includes ul {
+    margin-top: 25px;
+  }
+
+
+  .style-sos {
+    padding:
+      80px
+      var(--page)
+      90px;
+  }
+
+  .style-sos-grid {
+    display: block;
+
+    margin-top: 60px;
+  }
+
+  .style-sos h2 {
+    font-size: clamp(44px, 12vw, 60px);
+  }
+
+  .style-sos-copy {
+    margin-top: 55px;
+  }
+
+
+  .women-final {
+    padding:
+      90px
+      var(--page)
+      100px;
+  }
+
+  .women-final h2 {
+    font-size: clamp(45px, 12vw, 62px);
+  }
+
+}
