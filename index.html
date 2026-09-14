@@ -1,996 +1,155 @@
 <!DOCTYPE html>
 <html lang="et">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Kertu Moorits — Stilist</title>
 
   <meta
     name="description"
-    content="Kertu Moorits — personaalstilistika, foto- ja produktsioonistilistika ning kommertsstilistika."
+    content="Kertu Moorits — personaalstilistika, foto- ja produktsioonistilistika ning stilistika brändidele."
   >
 
-  <style>
-    :root {
-      --paper: #f1eee7;
-      --ink: #171512;
-      --wine: #5b1827;
-      --blue: #b9c9dd;
-      --acid: #d8ef72;
-      --line: rgba(23,21,18,.24);
-    }
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      line-height: .9;
-      letter-spacing: -.055em;
-    }
-
-    .eyebrow {
-      font-size: 10px;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-
-    .arrow-link {
-      display: inline-block;
-      margin-top: 28px;
-      padding-bottom: 4px;
-      border-bottom: 1px solid currentColor;
-      font-size: 11px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-
-    /* HEADER */
-
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      padding: 22px 30px;
-      mix-blend-mode: difference;
-      color: white;
-    }
-
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 18px;
-    }
-
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-
-      font-size: 10px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .nav-dropdown {
-      position: relative;
-    }
-
-    .nav-dropdown button {
-      border: 0;
-      background: none;
-      color: inherit;
-      cursor: pointer;
-
-      font-size: 10px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .dropdown-menu {
-      position: absolute;
-      top: 28px;
-      left: -20px;
-
-      width: 330px;
-      padding: 24px;
-
-      background: var(--paper);
-      color: var(--ink);
-
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(8px);
-
-      transition: .25s ease;
-    }
-
-    .nav-dropdown:hover .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .dropdown-title {
-      margin-top: 15px;
-      margin-bottom: 7px;
-
-      font-size: 9px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      opacity: .5;
-    }
-
-    .dropdown-title:first-child {
-      margin-top: 0;
-    }
-
-    .dropdown-menu a {
-      display: block;
-      padding: 4px 0;
-
-      font-family: Georgia, serif;
-      font-size: 17px;
-    }
-
-
-    /* HERO */
-
-    .hero {
-      min-height: 100svh;
-      position: relative;
-      overflow: hidden;
-
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      align-items: stretch;
-
-      background: var(--paper);
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 3;
-
-      padding: 145px 30px 45px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hero-title {
-      max-width: 950px;
-
-      font-size: clamp(62px, 8.5vw, 148px);
-    }
-
-    .hero-title span {
-      display: block;
-    }
-
-    .hero-title .offset {
-      margin-left: 12vw;
-    }
-
-    .hero-bottom {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-
-      max-width: 700px;
-
-      font-size: 10px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .hero-art {
-      position: relative;
-      background: var(--wine);
-      overflow: hidden;
-    }
-
-    .hero-placeholder {
-      position: absolute;
-      top: 12%;
-      left: 12%;
-      width: 76%;
-      height: 72%;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255,255,255,.05),
-          rgba(255,255,255,.17)
-        );
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      color: rgba(255,255,255,.5);
-
-      font-size: 10px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .hero-circle {
-      position: absolute;
-      width: 180px;
-      height: 180px;
-
-      border-radius: 50%;
-
-      background: var(--blue);
-
-      left: -70px;
-      bottom: 10%;
-    }
-
-    .hero-word {
-      position: absolute;
-      right: -30px;
-      bottom: -20px;
-
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(255,255,255,.35);
-
-      font-family: Georgia, serif;
-      font-size: clamp(110px, 17vw, 270px);
-      line-height: .7;
-
-      transform: rotate(-90deg);
-      transform-origin: bottom right;
-    }
-
-
-    /* INTRO */
-
-    .intro {
-      min-height: 105vh;
-      padding: 130px 30px;
-
-      display: grid;
-      grid-template-columns: .7fr 1.3fr;
-      gap: 8vw;
-
-      align-items: center;
-    }
-
-    .intro-number {
-      align-self: start;
-
-      font-family: Georgia, serif;
-      font-size: 90px;
-      line-height: 1;
-      opacity: .17;
-    }
-
-    .intro-content h2 {
-      font-size: clamp(55px, 7.5vw, 120px);
-      max-width: 1000px;
-    }
-
-    .intro-text {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-
-      max-width: 850px;
-      margin-top: 65px;
-      margin-left: 10vw;
-    }
-
-    .intro-text p {
-      font-size: 18px;
-      line-height: 1.45;
-    }
-
-
-    /* SERVICES */
-
-    .services {
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .service-row {
-      min-height: 95vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      border-top: 1px solid rgba(255,255,255,.2);
-    }
-
-    .service-row:nth-child(even) .service-visual {
-      order: 2;
-    }
-
-    .service-row:nth-child(even) .service-copy {
-      order: 1;
-    }
-
-    .service-visual {
-      position: relative;
-      overflow: hidden;
-
-      min-height: 600px;
-    }
-
-    .visual-personal {
-      background: var(--blue);
-    }
-
-    .visual-photo {
-      background: var(--wine);
-    }
-
-    .visual-brand {
-      background: var(--acid);
-      color: var(--ink);
-    }
-
-    .visual-placeholder {
-      position: absolute;
-      inset: 8%;
-
-      border: 1px solid currentColor;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      opacity: .45;
-
-      font-size: 10px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .service-copy {
-      padding: 60px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .service-number {
-      font-family: Georgia, serif;
-      font-size: 18px;
-      opacity: .45;
-    }
-
-    .service-copy h2 {
-      font-size: clamp(52px, 6vw, 100px);
-      max-width: 700px;
-    }
-
-    .service-description {
-      max-width: 500px;
-      font-size: 17px;
-      line-height: 1.5;
-    }
-
-
-    /* TASKUSTILIST */
-
-    .taskustilist {
-      min-height: 100vh;
-
-      background: var(--blue);
-
-      padding: 110px 30px 45px;
-
-      position: relative;
-      overflow: hidden;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .taskustilist h2 {
-      font-size: clamp(75px, 12vw, 210px);
-      max-width: 1300px;
-    }
-
-    .taskustilist h2 span {
-      display: block;
-    }
-
-    .taskustilist h2 span:nth-child(2) {
-      margin-left: 15vw;
-    }
-
-    .taskustilist-bottom {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-
-      margin-top: 100px;
-    }
-
-    .taskustilist-text {
-      max-width: 550px;
-      font-size: 21px;
-      line-height: 1.4;
-    }
-
-    .task-option {
-      display: flex;
-      justify-content: space-between;
-
-      padding: 17px 0;
-
-      border-top: 1px solid rgba(0,0,0,.35);
-
-      font-size: 10px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .task-option:last-child {
-      border-bottom: 1px solid rgba(0,0,0,.35);
-    }
-
-    .floating-word {
-      position: absolute;
-      right: -4vw;
-      top: 40%;
-
-      font-family: Georgia, serif;
-      font-size: 20vw;
-
-      color: rgba(255,255,255,.14);
-
-      transform: rotate(8deg);
-      pointer-events: none;
-    }
-
-
-    /* PORTFOLIO */
-
-    .portfolio {
-      padding: 130px 30px;
-      background: var(--paper);
-    }
-
-    .portfolio-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-
-      margin-bottom: 90px;
-    }
-
-    .portfolio-head h2 {
-      font-size: clamp(65px, 10vw, 160px);
-    }
-
-    .editorial-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .75fr .6fr;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .work:nth-child(2) {
-      margin-top: 170px;
-    }
-
-    .work:nth-child(3) {
-      margin-top: 50px;
-    }
-
-    .work-image {
-      background: #d2ccc3;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .work:nth-child(1) .work-image {
-      height: 780px;
-    }
-
-    .work:nth-child(2) .work-image {
-      height: 500px;
-      background: var(--wine);
-    }
-
-    .work:nth-child(3) .work-image {
-      height: 620px;
-      background: var(--blue);
-    }
-
-    .work-placeholder {
-      position: absolute;
-      inset: 0;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 10px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-
-      opacity: .55;
-    }
-
-    .work-meta {
-      display: flex;
-      justify-content: space-between;
-
-      margin-top: 10px;
-
-      font-size: 10px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-
-    /* ABOUT */
-
-    .about {
-      min-height: 110vh;
-
-      background: var(--wine);
-      color: white;
-
-      padding: 120px 30px;
-
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about h2 {
-      font-size: clamp(65px, 9.5vw, 155px);
-      max-width: 1300px;
-    }
-
-    .about-copy {
-      margin-top: 80px;
-      margin-left: 45%;
-
-      max-width: 540px;
-
-      font-size: 20px;
-      line-height: 1.45;
-    }
-
-    .about-accent {
-      position: absolute;
-
-      width: 260px;
-      height: 360px;
-
-      background: var(--acid);
-
-      left: 8%;
-      bottom: 8%;
-
-      transform: rotate(-7deg);
-    }
-
-
-    /* FOOTER */
-
-    footer {
-      background: var(--ink);
-      color: var(--paper);
-
-      padding: 100px 30px 30px;
-    }
-
-    footer h2 {
-      font-size: clamp(70px, 11vw, 180px);
-    }
-
-    .footer-grid {
-      margin-top: 90px;
-
-      padding-top: 25px;
-      border-top: 1px solid rgba(255,255,255,.25);
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-    }
-
-    .footer-grid a {
-      display: block;
-      margin-top: 8px;
-    }
-
-    .footer-bottom {
-      margin-top: 100px;
-
-      display: flex;
-      justify-content: space-between;
-
-      font-size: 9px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-
-      opacity: .55;
-    }
-
-
-    /* REVEAL */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition:
-        opacity .9s ease,
-        transform .9s cubic-bezier(.16,1,.3,1);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-
-    /* MOBILE */
-
-    .menu-button,
-    .mobile-menu {
-      display: none;
-    }
-
-    @media (max-width: 850px) {
-
-      .site-header {
-        padding: 18px 20px;
-      }
-
-      .desktop-nav {
-        display: none;
-      }
-
-      .menu-button {
-        display: block;
-
-        border: 0;
-        background: none;
-        color: inherit;
-
-        font-size: 10px;
-        letter-spacing: .15em;
-        text-transform: uppercase;
-
-        z-index: 1002;
-      }
-
-      .mobile-menu {
-        display: block;
-
-        position: fixed;
-        inset: 0;
-        z-index: 999;
-
-        background: var(--wine);
-        color: white;
-
-        padding: 100px 20px 40px;
-
-        transform: translateY(-100%);
-        transition: transform .55s cubic-bezier(.76,0,.24,1);
-      }
-
-      .mobile-menu.open {
-        transform: translateY(0);
-      }
-
-      .mobile-menu > a {
-        display: block;
-
-        font-family: Georgia, serif;
-        font-size: 12vw;
-        line-height: 1.04;
-
-        margin-bottom: 10px;
-      }
-
-
-      .hero {
-        min-height: 100svh;
-        display: block;
-      }
-
-      .hero-copy {
-        min-height: 68svh;
-
-        padding: 120px 20px 30px;
-      }
-
-      .hero-title {
-        font-size: 15.5vw;
-      }
-
-      .hero-title .offset {
-        margin-left: 9vw;
-      }
-
-      .hero-bottom {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .hero-art {
-        height: 46svh;
-      }
-
-      .hero-placeholder {
-        top: 10%;
-        left: 18%;
-        width: 65%;
-        height: 75%;
-      }
-
-      .hero-circle {
-        width: 110px;
-        height: 110px;
-      }
-
-      .hero-word {
-        font-size: 45vw;
-      }
-
-
-      .intro {
-        display: block;
-        min-height: auto;
-
-        padding: 100px 20px;
-      }
-
-      .intro-number {
-        font-size: 60px;
-        margin-bottom: 65px;
-      }
-
-      .intro-content h2 {
-        font-size: 15vw;
-      }
-
-      .intro-text {
-        grid-template-columns: 1fr;
-        margin: 60px 0 0;
-        gap: 25px;
-      }
-
-
-      .service-row {
-        display: block;
-        min-height: auto;
-      }
-
-      .service-row:nth-child(even) .service-visual,
-      .service-row:nth-child(even) .service-copy {
-        order: initial;
-      }
-
-      .service-visual {
-        min-height: 68svh;
-      }
-
-      .service-copy {
-        min-height: 72svh;
-        padding: 35px 20px;
-
-        justify-content: space-between;
-      }
-
-      .service-copy h2 {
-        font-size: 15vw;
-      }
-
-
-      .taskustilist {
-        padding: 90px 20px 35px;
-        min-height: 100svh;
-      }
-
-      .taskustilist h2 {
-        font-size: 18vw;
-      }
-
-      .taskustilist h2 span:nth-child(2) {
-        margin-left: 8vw;
-      }
-
-      .taskustilist-bottom {
-        grid-template-columns: 1fr;
-        gap: 60px;
-
-        margin-top: 130px;
-      }
-
-
-      .portfolio {
-        padding: 100px 20px;
-      }
-
-      .portfolio-head {
-        display: block;
-        margin-bottom: 60px;
-      }
-
-      .portfolio-head h2 {
-        font-size: 18vw;
-      }
-
-      .editorial-grid {
-        display: flex;
-        gap: 14px;
-
-        overflow-x: auto;
-
-        margin-left: -20px;
-        margin-right: -20px;
-        padding: 0 20px 20px;
-
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-      }
-
-      .editorial-grid::-webkit-scrollbar {
-        display: none;
-      }
-
-      .work {
-        flex: 0 0 82vw;
-        margin-top: 0 !important;
-
-        scroll-snap-align: center;
-      }
-
-      .work:nth-child(1) .work-image,
-      .work:nth-child(2) .work-image,
-      .work:nth-child(3) .work-image {
-        height: 67svh;
-      }
-
-
-      .about {
-        min-height: 100svh;
-        padding: 100px 20px;
-      }
-
-      .about h2 {
-        font-size: 16vw;
-      }
-
-      .about-copy {
-        margin: 100px 0 0 20vw;
-        font-size: 18px;
-      }
-
-      .about-accent {
-        width: 130px;
-        height: 180px;
-        left: -25px;
-        bottom: 8%;
-      }
-
-
-      footer {
-        padding: 90px 20px 25px;
-      }
-
-      footer h2 {
-        font-size: 18vw;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 8px;
-      }
-    }
-  </style>
 </head>
 
 
 <body>
 
-<header class="site-header">
 
-  <a href="#avaleht" class="logo">
-    Kertu Moorits
-  </a>
+  <!-- HEADER -->
 
-  <nav class="desktop-nav">
+  <header class="site-header">
 
-    <a href="#avaleht">Avaleht</a>
-
-    <div class="nav-dropdown">
-
-      <button>
-        Personaalstilistika
-      </button>
-
-      <div class="dropdown-menu">
-
-        <div class="dropdown-title">Meestele</div>
-
-        <a href="#">
-          Riidekapi restart
-        </a>
-
-        <a href="#">
-          Virtuaalne stiilimuutmine
-        </a>
-
-        <a href="#">
-          Kiire stiliseerimine
-        </a>
+    <a
+      href="index.html"
+      class="logo"
+    >
+      KERTU MOORITS
+    </a>
 
 
-        <div class="dropdown-title">Naistele</div>
+    <nav class="main-nav">
 
-        <a href="#">
-          Riidekapi restart
-        </a>
+      <a href="index.html">
+        Avaleht
+      </a>
 
-        <a href="#">
-          Virtuaalne stiilimuutmine
-        </a>
 
-        <a href="#">
-          Kiire stiliseerimine
-        </a>
+      <div class="dropdown">
+
+        <button
+          type="button"
+          class="dropdown-button"
+        >
+          Personaalstilistika
+        </button>
+
+
+        <div class="dropdown-menu">
+
+          <div class="dropdown-group">
+
+            <span class="dropdown-label">
+              Meestele
+            </span>
+
+            <a href="#">
+              Riidekapi restart
+            </a>
+
+            <a href="#">
+              Virtuaalne stiilimuutmine
+            </a>
+
+            <a href="#">
+              Kiire stiliseerimine
+            </a>
+
+          </div>
+
+
+          <div class="dropdown-group">
+
+            <span class="dropdown-label">
+              Naistele
+            </span>
+
+            <a href="#">
+              Riidekapi restart
+            </a>
+
+            <a href="#">
+              Virtuaalne stiilimuutmine
+            </a>
+
+            <a href="#">
+              Kiire stiliseerimine
+            </a>
+
+          </div>
+
+        </div>
 
       </div>
 
+
+      <a href="#brandidele">
+        Brändidele
+      </a>
+
+      <a href="#portfolio">
+        Portfoolio
+      </a>
+
+    </nav>
+
+
+    <div class="header-side">
+
+      <a href="#kontakt">
+        Kontakt
+      </a>
+
     </div>
+
+
+    <button
+      class="menu-button"
+      id="menuButton"
+    >
+      Menüü
+    </button>
+
+  </header>
+
+
+
+  <!-- MOBILE MENU -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <a href="index.html">
+      Avaleht
+    </a>
+
+    <a href="#teenused">
+      Personaalstilistika
+    </a>
 
     <a href="#brandidele">
       Brändidele
@@ -1000,54 +159,65 @@
       Portfoolio
     </a>
 
-  </nav>
-
-  <button class="menu-button" id="menuButton">
-    Menüü
-  </button>
-
-</header>
+    <a href="#kontakt">
+      Kontakt
+    </a>
 
 
-<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-meta">
+      Kertu Moorits — Stilist
+    </div>
 
-  <a href="#avaleht">Avaleht</a>
-  <a href="#personaalstilistika">Personaalstilistika</a>
-  <a href="#brandidele">Brändidele</a>
-  <a href="#portfolio">Portfoolio</a>
-
-</div>
+  </div>
 
 
 
-<main id="avaleht">
+  <main>
 
 
-  <!-- HERO -->
+    <!-- HERO -->
 
-  <section class="hero">
-
-    <div class="hero-copy">
+    <section class="hero">
 
       <div>
 
-        <p class="eyebrow">
-          Kertu Moorits — Stilist
-        </p>
+        <div class="hero-top reveal">
 
-        <h1 class="hero-title">
-          <span>Enne kui jõuad</span>
-          <span class="offset">endast rääkida,</span>
-          <span>on esmamulje</span>
-          <span class="offset">juba tekkinud.</span>
+          <p class="kicker">
+            Kertu Moorits — Stilist
+          </p>
+
+          <p class="hero-intro">
+            Personaalstilistika, produktsioon ja
+            visuaalne stilistika inimestele ning brändidele.
+          </p>
+
+        </div>
+
+
+        <h1 class="hero-title display reveal">
+
+          <span>
+            Enne kui jõuad
+          </span>
+
+          <span class="line-two">
+            endast rääkida,
+          </span>
+
+          <span>
+            on esmamulje juba tekkinud.
+          </span>
+
         </h1>
 
       </div>
 
-      <div class="hero-bottom">
+
+      <div class="hero-bottom reveal">
 
         <span>
-          Personaalstilistika · Produktsioon · Kommerts
+          Tallinn · Estonia
         </span>
 
         <span>
@@ -1056,481 +226,525 @@
 
       </div>
 
-    </div>
+    </section>
 
 
-    <div class="hero-art">
 
-      <div class="hero-placeholder">
-        Hero foto lisamisel
+    <!-- EDITORIAL IMAGE -->
+
+    <section class="image-statement">
+
+      <div class="image-statement-main reveal">
+
+        <div class="image-placeholder">
+          Foto lisamisel
+        </div>
+
       </div>
 
-      <div class="hero-circle"></div>
 
-      <div class="hero-word">
-        FORM
-      </div>
+      <div class="image-statement-copy">
 
-    </div>
+        <div>
 
-  </section>
+          <p class="kicker reveal">
+            Lähenemine
+          </p>
 
+          <h2 class="display reveal">
+            Stiil, mis ei mängi kedagi teist.
+          </h2>
 
-
-  <!-- INTRO -->
-
-  <section class="intro">
-
-    <div class="intro-number reveal">
-      01
-    </div>
-
-    <div class="intro-content">
-
-      <p class="eyebrow reveal">
-        Kertu Moorits — Stilist
-      </p>
-
-      <h2 class="reveal">
-        Stiil ei ole ainult see, mida sa kannad.
-      </h2>
+        </div>
 
 
-      <div class="intro-text">
-
-        <p class="reveal">
-          See on osa sellest, kuidas sa ennast esitled,
-          kuidas ennast tunned ja millise mulje jätad.
-        </p>
-
-        <div class="reveal">
+        <div class="small-copy reveal">
 
           <p>
-            Minu töö on aidata leida visuaalne tervik,
-            mis tundub loomulik, teadlik ja päriselt sinu oma.
+            Minu jaoks ei ole hea stiil trendide järgimine.
+            See on oskus teha valikuid, mis sobivad päriselt
+            sinu elu, iseloomu ja eesmärkidega.
           </p>
 
-          <a class="arrow-link" href="#minust">
-            Minust →
+          <a
+            href="#minust"
+            class="text-link"
+          >
+            Minust
           </a>
 
         </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
 
-  <!-- SERVICES -->
+    <!-- SERVICES -->
 
-  <section class="services" id="personaalstilistika">
+    <section
+      class="services"
+      id="teenused"
+    >
 
+      <div class="services-header">
 
-    <article class="service-row">
+        <p class="kicker reveal">
+          Millega saan aidata
+        </p>
 
-      <div class="service-visual visual-personal">
-
-        <div class="visual-placeholder">
-          Personaalstilistika foto
-        </div>
-
-      </div>
-
-
-      <div class="service-copy">
-
-        <span class="service-number">
-          01 / 03
-        </span>
-
-        <h2>
-          Personaalstilistika
+        <h2 class="display reveal">
+          Stilistika,<br>
+          mis algab inimesest.
         </h2>
 
-        <div>
+      </div>
 
-          <p class="service-description">
-            Personaalne stilistika meestele ja naistele,
-            mis lähtub sinu elust, vajadustest ja eesmärkidest.
+
+      <div class="services-list">
+
+
+        <a
+          href="#"
+          class="service reveal"
+        >
+
+          <span class="service-number">
+            01
+          </span>
+
+          <h3>
+            Personaalstilistika
+          </h3>
+
+          <p>
+            Läbimõeldud garderoob ja stiililahendused
+            meestele ning naistele.
           </p>
 
-          <a class="arrow-link" href="#">
-            Vaata teenuseid →
-          </a>
+          <span class="service-arrow">
+            ↗
+          </span>
 
-        </div>
-
-      </div>
-
-    </article>
+        </a>
 
 
 
-    <article class="service-row">
+        <a
+          href="#"
+          class="service reveal"
+        >
 
-      <div class="service-visual visual-photo">
+          <span class="service-number">
+            02
+          </span>
 
-        <div class="visual-placeholder">
-          Foto & produktsioon
-        </div>
+          <h3>
+            Foto & produktsioon
+          </h3>
 
-      </div>
-
-
-      <div class="service-copy">
-
-        <span class="service-number">
-          02 / 03
-        </span>
-
-        <h2>
-          Foto & produktsioon
-        </h2>
-
-        <div>
-
-          <p class="service-description">
-            Stilistika fotosessioonidele, kampaaniatele
-            ja produktsioonidele, kus detailid moodustavad terviku.
+          <p>
+            Stilistika fotosessioonidele, sisuloomele,
+            kampaaniatele ja produktsioonidele.
           </p>
 
-          <a class="arrow-link" href="#">
-            Vaata lähemalt →
-          </a>
+          <span class="service-arrow">
+            ↗
+          </span>
 
-        </div>
-
-      </div>
-
-    </article>
+        </a>
 
 
 
-    <article class="service-row" id="brandidele">
+        <a
+          href="#"
+          class="service reveal"
+          id="brandidele"
+        >
 
-      <div class="service-visual visual-brand">
+          <span class="service-number">
+            03
+          </span>
 
-        <div class="visual-placeholder">
-          Brändid & kommerts
-        </div>
+          <h3>
+            Brändid & kommerts
+          </h3>
 
-      </div>
-
-
-      <div class="service-copy">
-
-        <span class="service-number">
-          03 / 03
-        </span>
-
-        <h2>
-          Brändid & kommerts
-        </h2>
-
-        <div>
-
-          <p class="service-description">
-            Visuaalsed tervikud brändidele ja ettevõtetele —
-            kampaaniatest produktsiooni ja sisuloomesuunani.
+          <p>
+            Visuaalsed tervikud ettevõtetele ja brändidele,
+            kus iga detail toetab suuremat pilti.
           </p>
 
-          <a class="arrow-link" href="#">
-            Koostöö →
-          </a>
+          <span class="service-arrow">
+            ↗
+          </span>
 
-        </div>
+        </a>
+
 
       </div>
 
-    </article>
-
-  </section>
+    </section>
 
 
 
-  <!-- TASKUSTILIST -->
+    <!-- TASKUSTILIST -->
 
-  <section class="taskustilist">
-
-    <div>
-
-      <p class="eyebrow reveal">
-        Taskustilist
-      </p>
-
-      <h2 class="reveal">
-        <span>Sinu stilist.</span>
-        <span>Alati taskus.</span>
-      </h2>
-
-    </div>
-
-
-    <div class="floating-word">
-      T
-    </div>
-
-
-    <div class="taskustilist-bottom">
-
-      <p class="taskustilist-text reveal">
-        Digitaalne stiililahendus, mis aitab teha
-        teadlikumaid valikuid iseseisvalt ja omas tempos.
-      </p>
-
-
-      <div class="reveal">
-
-        <div class="task-option">
-          <span>Meestele</span>
-          <span>Tulekul</span>
-        </div>
-
-        <div class="task-option">
-          <span>Naistele</span>
-          <span>Tulekul</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- PORTFOLIO -->
-
-  <section class="portfolio" id="portfolio">
-
-    <div class="portfolio-head">
+    <section class="taskustilist">
 
       <div>
 
-        <p class="eyebrow reveal">
-          Selected work
-        </p>
+        <div class="taskustilist-head reveal">
 
-        <h2 class="reveal">
-          Valik töid.
+          <p class="kicker">
+            Taskustilist
+          </p>
+
+          <p class="kicker">
+            Digitaalne stiililahendus
+          </p>
+
+        </div>
+
+
+        <h2 class="display reveal">
+
+          <span>
+            Sinu stilist.
+          </span>
+
+          <span class="second-line">
+            Alati taskus.
+          </span>
+
         </h2>
 
       </div>
 
-      <a class="arrow-link" href="#">
-        Kogu portfolio →
-      </a>
 
-    </div>
+      <div class="taskustilist-footer">
+
+        <p class="taskustilist-text reveal">
+          Praktiline digitaalne juhend, mis aitab teha
+          teadlikumaid stiilivalikuid ka siis,
+          kui stilisti sinu kõrval ei ole.
+        </p>
 
 
-    <div class="editorial-grid">
+        <div class="task-links reveal">
 
-      <article class="work reveal">
+          <div class="task-row">
 
-        <div class="work-image">
+            <span>
+              Meestele
+            </span>
 
-          <div class="work-placeholder">
-            Portfolio 01
+            <span>
+              Tulekul
+            </span>
+
+          </div>
+
+
+          <div class="task-row">
+
+            <span>
+              Naistele
+            </span>
+
+            <span>
+              Tulekul
+            </span>
+
           </div>
 
         </div>
 
-        <div class="work-meta">
-          <span>Editorial</span>
-          <span>01</span>
-        </div>
+      </div>
 
-      </article>
+    </section>
 
 
-      <article class="work reveal">
 
-        <div class="work-image">
+    <!-- PORTFOLIO -->
 
-          <div class="work-placeholder">
-            Portfolio 02
-          </div>
+    <section
+      class="portfolio"
+      id="portfolio"
+    >
 
-        </div>
+      <div class="portfolio-header">
 
-        <div class="work-meta">
-          <span>Commercial</span>
-          <span>02</span>
-        </div>
+        <div>
 
-      </article>
+          <p class="kicker reveal">
+            Selected work
+          </p>
 
-
-      <article class="work reveal">
-
-        <div class="work-image">
-
-          <div class="work-placeholder">
-            Portfolio 03
-          </div>
+          <h2 class="display reveal">
+            Tööd.
+          </h2>
 
         </div>
 
-        <div class="work-meta">
-          <span>Production</span>
-          <span>03</span>
+
+        <a
+          href="#"
+          class="text-link reveal"
+        >
+          Vaata portfooliot
+        </a>
+
+      </div>
+
+
+
+      <div class="work-grid">
+
+
+        <div class="work-column">
+
+
+          <article class="work work-large reveal">
+
+            <div class="work-image">
+
+              <div class="image-placeholder">
+                Portfolio foto 01
+              </div>
+
+            </div>
+
+            <div class="work-caption">
+
+              <span>
+                Editorial
+              </span>
+
+              <span>
+                01
+              </span>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="work work-wide reveal">
+
+            <div class="work-image">
+
+              <div class="image-placeholder">
+                Portfolio foto 03
+              </div>
+
+            </div>
+
+            <div class="work-caption">
+
+              <span>
+                Production
+              </span>
+
+              <span>
+                03
+              </span>
+
+            </div>
+
+          </article>
+
+
         </div>
 
-      </article>
-
-    </div>
-
-  </section>
 
 
-
-  <!-- ABOUT -->
-
-  <section class="about" id="minust">
-
-    <p class="eyebrow reveal">
-      Minust
-    </p>
-
-    <h2 class="reveal">
-      Stiil on olnud minu elu osa nii kaua, kui mäletan.
-    </h2>
+        <div class="work-column right">
 
 
-    <div class="about-copy reveal">
+          <article class="work work-small reveal">
 
-      <p>
-        Mind on alati huvitanud see, kuidas riietus võib muuta
-        inimese enesetunnet, kohalolu ja seda, kuidas teised teda tajuvad.
-      </p>
+            <div class="work-image">
 
-      <p style="margin-top:20px;">
-        Tänaseks on sellest saanud minu töö — aidata inimestel,
-        brändidel ja projektidel leida visuaalne keel, mis tundub õige.
-      </p>
+              <div class="image-placeholder">
+                Portfolio foto 02
+              </div>
 
-      <a class="arrow-link" href="#">
-        Loe minust →
-      </a>
+            </div>
 
-    </div>
+            <div class="work-caption">
+
+              <span>
+                Commercial
+              </span>
+
+              <span>
+                02
+              </span>
+
+            </div>
+
+          </article>
 
 
-    <div class="about-accent"></div>
+        </div>
 
-  </section>
 
-</main>
+      </div>
+
+    </section>
 
 
 
-<footer>
+    <!-- ABOUT -->
 
-  <p class="eyebrow">
-    Kontakt
-  </p>
+    <section
+      class="about"
+      id="minust"
+    >
 
-  <h2>
-    Teeme midagi koos.
-  </h2>
+      <div class="about-left reveal">
+
+        <span class="about-number">
+          04 / MINUST
+        </span>
+
+        <p>
+          Hea stiil ei pea tähendama rohkem riideid.
+          Pigem vähem juhuslikke valikuid.
+        </p>
+
+      </div>
 
 
-  <div class="footer-grid">
+      <div class="about-right">
+
+        <h2 class="display reveal">
+          Stiil on olnud minu elu osa nii kaua, kui mäletan.
+        </h2>
+
+
+        <div class="body-large reveal">
+
+          <p>
+            Mind huvitab see, kuidas riietus mõjutab inimese
+            enesetunnet, kohalolu ja seda, kuidas teda tajutakse.
+          </p>
+
+          <a
+            href="#"
+            class="text-link"
+          >
+            Loe minust
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <footer
+    class="footer"
+    id="kontakt"
+  >
 
     <div>
-      <p class="eyebrow">Kirjuta</p>
 
-      <a href="mailto:hello@sinudomeen.ee">
-        hello@sinudomeen.ee
-      </a>
+      <p class="kicker reveal">
+        Võta ühendust
+      </p>
+
+
+      <h2 class="footer-title display reveal">
+
+        <span>
+          Teeme midagi
+        </span>
+
+        <span>
+          koos.
+        </span>
+
+      </h2>
+
     </div>
 
 
     <div>
-      <p class="eyebrow">Jälgi</p>
 
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
+
+      <div class="footer-info">
+
+        <div>
+
+          <p class="kicker">
+            Kirjuta
+          </p>
+
+          <div class="footer-links">
+
+            <a href="mailto:hello@sinudomeen.ee">
+              hello@sinudomeen.ee
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <p class="kicker">
+            Jälgi
+          </p>
+
+          <div class="footer-links">
+
+            <a href="#">
+              Instagram
+            </a>
+
+            <a href="#">
+              TikTok
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Kertu Moorits
+        </span>
+
+        <span>
+          Stilistika · Estonia
+        </span>
+
+      </div>
+
     </div>
 
-  </div>
-
-
-  <div class="footer-bottom">
-
-    <span>
-      © 2026 Kertu Moorits
-    </span>
-
-    <span>
-      Stilistika · Estonia
-    </span>
-
-  </div>
-
-</footer>
+  </footer>
 
 
 
-<script>
-
-  const menuButton = document.getElementById("menuButton");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  menuButton.addEventListener("click", () => {
-
-    mobileMenu.classList.toggle("open");
-
-    menuButton.textContent =
-      mobileMenu.classList.contains("open")
-        ? "Sulge"
-        : "Menüü";
-
-  });
-
-
-  mobileMenu.querySelectorAll("a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-      mobileMenu.classList.remove("open");
-      menuButton.textContent = "Menüü";
-
-    });
-
-  });
-
-
-
-  const reveals = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver(
-
-    entries => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-
-      });
-
-    },
-
-    {
-      threshold: .12
-    }
-
-  );
-
-  reveals.forEach(item => observer.observe(item));
-
-</script>
+  <script src="js/main.js"></script>
 
 </body>
+
 </html>
