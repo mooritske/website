@@ -24,11 +24,26 @@
     </a>
 
     <nav class="desktop-nav">
-      <a href="#avaleht">AVALEHT</a>
-      <a href="#teenused">PERSONAALSTILISTIKA</a>
-      <a href="#brandidele">BRÄNDIDELE</a>
-      <a href="#portfolio">PORTFOOLIO</a>
-    </nav>
+
+  <a href="/">AVALEHT</a>
+
+  <div class="nav-dropdown">
+
+    <button class="nav-dropdown-trigger" type="button">
+      PERSONAALSTILISTIKA
+    </button>
+
+    <div class="nav-dropdown-menu">
+      <a href="/meestele/">MEESTELE</a>
+      <a href="/naistele/">NAISTELE</a>
+    </div>
+
+  </div>
+
+  <a href="/brandidele/">BRÄNDIDELE</a>
+  <a href="/portfoolio/">PORTFOOLIO</a>
+
+</nav>
 
     <button class="menu-button" id="menuButton" type="button">
       MENÜÜ
@@ -38,6 +53,30 @@
 
 
   <nav class="mobile-nav" id="mobileNav">
+
+  <button class="mobile-close" id="mobileClose" type="button">
+    SULGE
+  </button>
+
+  <div class="mobile-links">
+
+    <a href="/">Avaleht</a>
+
+    <span class="mobile-nav-label">
+      PERSONAALSTILISTIKA
+    </span>
+
+    <a href="/meestele/">Meestele</a>
+    <a href="/naistele/">Naistele</a>
+
+    <a href="/brandidele/">Brändidele</a>
+    <a href="/portfoolio/">Portfoolio</a>
+
+    <a href="#kontakt">Kontakt</a>
+
+  </div>
+
+</nav>
 
     <button class="mobile-close" id="mobileClose" type="button">
       SULGE
