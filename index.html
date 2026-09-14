@@ -2,29 +2,26 @@
 <html lang="et">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Kertu Moorits – stilist | MOORITS.</title>
-  <meta name="description" content="Kertu Moorits on stilist, kes pakub isikustilistikat meestele ja naistele ning stilistikat brändidele, fotodele ja produktsioonidele.">
+  <title>Kertu Moorits — Stilist</title>
 
-  <meta name="robots" content="index, follow">
-
-  <meta property="og:title" content="Kertu Moorits – stilist | MOORITS.">
-  <meta property="og:description" content="Isikustilistika meestele ja naistele ning stilistika brändidele, fotodele ja produktsioonidele.">
-  <meta property="og:type" content="website">
+  <meta
+    name="description"
+    content="Kertu Moorits — personaalstilistika, foto- ja produktsioonistilistika ning stilistika brändidele ja ettevõtetele."
+  >
 
   <style>
-    :root {
-      --bg: #f3efe7;
-      --text: #111111;
-      --muted: #6f6b64;
-      --line: #cfc8bc;
-    }
+
+    /* =========================
+       PÕHISEADED
+    ========================== */
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -32,10 +29,16 @@
     }
 
     body {
-      background: var(--bg);
-      color: var(--text);
+      background: #f4f1eb;
+      color: #171717;
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
     }
 
     a {
@@ -43,263 +46,679 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    button {
+      font: inherit;
     }
 
-    .container {
-      width: min(1400px, calc(100% - 48px));
-      margin: 0 auto;
-    }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(243, 239, 231, 0.96);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(10px);
-    }
-
-    .nav {
-      min-height: 84px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-    }
-
-    .brand {
-      font-size: 30px;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .nav-links a:hover {
-      opacity: 0.55;
-    }
-
-    .menu-button {
-      display: none;
-      border: 0;
-      background: transparent;
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    .hero {
-      min-height: calc(100vh - 84px);
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      align-items: stretch;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero-copy {
-      padding: 90px 8vw 90px max(24px, calc((100vw - 1400px) / 2));
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+    /* =========================
+       TÜPOGRAAFIA
+    ========================== */
 
     .eyebrow {
-      font-size: 12px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      line-height: 0.97;
     }
 
     h1 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(54px, 7vw, 112px);
-      font-weight: 400;
-      line-height: 0.92;
+      font-size: clamp(54px, 8vw, 132px);
+      letter-spacing: -0.055em;
+    }
+
+    h2 {
+      font-size: clamp(45px, 6vw, 95px);
       letter-spacing: -0.045em;
-      max-width: 900px;
     }
 
-    .hero-description {
-      margin-top: 36px;
-      max-width: 560px;
-      font-size: 18px;
-      color: var(--muted);
+    h3 {
+      font-size: clamp(32px, 4vw, 58px);
+      letter-spacing: -0.035em;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 28px;
-      margin-top: 42px;
-      flex-wrap: wrap;
+    p {
+      font-size: 16px;
     }
 
-    .button {
-      border-bottom: 1px solid var(--text);
-      padding-bottom: 5px;
-      font-size: 13px;
+    .text-large {
+      font-size: clamp(20px, 2vw, 29px);
+      line-height: 1.35;
+    }
+
+    .link-arrow {
+      display: inline-block;
+      margin-top: 30px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid currentColor;
+      font-size: 12px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+    }
+
+
+    /* =========================
+       HEADER / MENÜÜ
+    ========================== */
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 24px 38px;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        padding 0.3s ease;
+    }
+
+    .site-header.scrolled {
+      background: rgba(244, 241, 235, 0.92);
+      backdrop-filter: blur(14px);
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    .logo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      letter-spacing: 0.02em;
+      z-index: 1002;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .desktop-nav > a,
+    .nav-dropdown > button {
+      position: relative;
+    }
+
+    .desktop-nav > a::after,
+    .nav-dropdown > button::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.25s ease;
+    }
+
+    .desktop-nav > a:hover::after,
+    .nav-dropdown:hover > button::after {
+      width: 100%;
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown > button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 26px;
+      left: -25px;
+
+      width: 320px;
+      padding: 25px;
+
+      background: #f4f1eb;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+
+      transition: all 0.25s ease;
+    }
+
+    .nav-dropdown:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-title {
+      font-size: 9px;
+      letter-spacing: 0.17em;
+      color: #777;
+      margin: 15px 0 8px;
+    }
+
+    .dropdown-title:first-child {
+      margin-top: 0;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 5px 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+
+    /* =========================
+       MOBIILIMENÜÜ
+    ========================== */
+
+    .menu-button {
+      display: none;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      z-index: 1002;
+
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 1001;
+
+      background: #171717;
+      color: #f4f1eb;
+
+      padding: 110px 26px 40px;
+
+      transform: translateY(-100%);
+      transition: transform 0.5s cubic-bezier(.76,0,.24,1);
+    }
+
+    .mobile-menu.open {
+      transform: translateY(0);
+    }
+
+    .mobile-menu a {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 11vw, 60px);
+      line-height: 1.08;
+      margin-bottom: 12px;
+    }
+
+    .mobile-small {
+      margin-top: 40px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .mobile-small a {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      margin: 8px 0;
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+
+      padding: 130px 38px 50px;
+
+      overflow: hidden;
     }
 
     .hero-image {
-      min-height: 650px;
-      background:
-        linear-gradient(rgba(0,0,0,0.06), rgba(0,0,0,0.06)),
-        url('images/kertu-moorits.jpg') center center / cover no-repeat;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
     }
+
+    .hero-image img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+
+      transform: scale(1.05);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,0.12) 0%,
+          rgba(0,0,0,0.05) 35%,
+          rgba(0,0,0,0.60) 100%
+        );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      color: #fff;
+      max-width: 1250px;
+    }
+
+    .hero-content h1 {
+      max-width: 1150px;
+    }
+
+    .hero-bottom {
+      margin-top: 30px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 30px;
+
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       ÜLDSEKTSIOONID
+    ========================== */
 
     section {
-      padding: 120px 0;
-      border-bottom: 1px solid var(--line);
+      position: relative;
     }
 
-    .section-kicker {
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 36px;
+    .section-padding {
+      padding: 130px 38px;
     }
 
-    .section-title {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(42px, 5vw, 82px);
-      font-weight: 400;
-      line-height: 1;
-      max-width: 900px;
-      letter-spacing: -0.035em;
-    }
-
-    .services-grid {
-      margin-top: 70px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border-top: 1px solid var(--line);
-    }
-
-    .service {
-      padding: 38px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .service:nth-child(odd) {
-      padding-right: 40px;
-      border-right: 1px solid var(--line);
-    }
-
-    .service:nth-child(even) {
-      padding-left: 40px;
-    }
-
-    .service-number {
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 25px;
-    }
-
-    .service h3 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 34px;
-      font-weight: 400;
-      margin-bottom: 14px;
-    }
-
-    .service p {
-      max-width: 520px;
-      color: var(--muted);
-    }
-
-    .taskustilist {
+    .split {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 90px;
+      gap: 7vw;
       align-items: center;
     }
 
-    .taskustilist-card {
-      aspect-ratio: 9 / 16;
-      max-width: 420px;
-      background: #111;
-      color: #fff;
-      padding: 42px;
+
+    /* =========================
+       INTRO / KERTU
+    ========================== */
+
+    .intro {
+      min-height: 95vh;
+    }
+
+    .intro-image {
+      height: 680px;
+      overflow: hidden;
+    }
+
+    .intro-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .intro-copy {
+      max-width: 620px;
+    }
+
+    .intro-copy p {
+      max-width: 520px;
+      margin-top: 35px;
+    }
+
+
+    /* =========================
+       TEENUSTE KATEGOORIAD
+    ========================== */
+
+    .services {
+      background: #171717;
+      color: #f4f1eb;
+      padding: 120px 38px;
+    }
+
+    .services-heading {
+      margin-bottom: 80px;
+      max-width: 800px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .service-card {
+      position: relative;
+      height: 72vh;
+      min-height: 550px;
+      overflow: hidden;
+      background: #292929;
+    }
+
+    .service-image {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.8s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .service-image.placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: #2d2d2d;
+      color: rgba(255,255,255,0.38);
+
+      font-size: 10px;
+      letter-spacing: 0.18em;
+    }
+
+    .service-card:hover .service-image {
+      transform: scale(1.035);
+    }
+
+    .service-shade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.02) 65%
+      );
+    }
+
+    .service-content {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 30px;
+      z-index: 2;
+    }
+
+    .service-number {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      margin-bottom: 12px;
+    }
+
+    .service-content h3 {
+      margin-bottom: 14px;
+    }
+
+    .service-content p {
+      max-width: 340px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+    }
+
+
+    /* =========================
+       TASKUSTILIST
+    ========================== */
+
+    .taskustilist {
+      min-height: 100vh;
+
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      padding: 130px 38px 55px;
+
+      background: #ddd6cb;
     }
 
-    .taskustilist-card strong {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 42px;
-      font-weight: 400;
+    .taskustilist-title {
+      max-width: 1050px;
     }
 
-    .taskustilist-copy p {
-      max-width: 540px;
-      font-size: 18px;
-      color: var(--muted);
-      margin: 28px 0 36px;
+    .taskustilist-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+
+      margin-top: 100px;
     }
 
-    .quote {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(38px, 5vw, 76px);
-      line-height: 1.05;
-      max-width: 1100px;
-      letter-spacing: -0.035em;
+    .coming-options {
+      display: grid;
+      gap: 10px;
     }
 
-    footer {
-      padding: 60px 0;
-    }
-
-    .footer-row {
+    .coming-item {
       display: flex;
       justify-content: space-between;
-      gap: 30px;
-      flex-wrap: wrap;
+
+      padding: 18px 0;
+
+      border-top: 1px solid rgba(0,0,0,0.35);
+
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .coming-item:last-child {
+      border-bottom: 1px solid rgba(0,0,0,0.35);
+    }
+
+
+    /* =========================
+       PORTFOOLIO
+    ========================== */
+
+    .portfolio {
+      padding: 130px 38px;
+    }
+
+    .portfolio-head {
+      display: flex;
+      justify-content: space-between;
       align-items: end;
+      gap: 30px;
+      margin-bottom: 70px;
     }
 
-    .footer-brand {
-      font-size: 48px;
-      font-weight: 800;
-      letter-spacing: -2px;
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+      align-items: start;
     }
 
-    .footer-meta {
-      text-align: right;
-      color: var(--muted);
-      font-size: 14px;
+    .portfolio-column {
+      display: grid;
+      gap: 18px;
     }
 
-    @media (max-width: 900px) {
-      .container {
-        width: min(100% - 32px, 1400px);
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      background: #d9d5cf;
+    }
+
+    .portfolio-item.large {
+      height: 780px;
+    }
+
+    .portfolio-item.medium {
+      height: 420px;
+    }
+
+    .portfolio-item.small {
+      height: 520px;
+    }
+
+    .placeholder-box {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: #777;
+      text-transform: uppercase;
+    }
+
+    .portfolio-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      padding-top: 11px;
+
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about {
+      background: #ece7df;
+    }
+
+    .about-copy {
+      max-width: 650px;
+    }
+
+    .about-copy p {
+      margin-top: 35px;
+      max-width: 520px;
+    }
+
+    .about-image {
+      min-height: 700px;
+      background: #d4cfc7;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #171717;
+      color: #f4f1eb;
+
+      padding: 100px 38px 30px;
+    }
+
+    .footer-title {
+      max-width: 1050px;
+    }
+
+    .footer-links {
+      margin-top: 90px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+
+      border-top: 1px solid rgba(255,255,255,0.3);
+      padding-top: 25px;
+    }
+
+    .footer-links a {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+      margin-top: 100px;
+
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      color: rgba(255,255,255,0.55);
+    }
+
+
+    /* =========================
+       SCROLL ANIMATSIOONID
+    ========================== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+
+      transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================
+       MOBIIL
+    ========================== */
+
+    @media (max-width: 850px) {
+
+      .site-header {
+        padding: 20px;
       }
 
-      .nav-links {
+      .site-header.scrolled {
+        padding: 15px 20px;
+      }
+
+      .desktop-nav {
         display: none;
-        position: absolute;
-        top: 84px;
-        left: 0;
-        right: 0;
-        background: var(--bg);
-        padding: 30px 24px;
-        flex-direction: column;
-        align-items: flex-start;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .nav-links.open {
-        display: flex;
       }
 
       .menu-button {
@@ -307,220 +726,879 @@
       }
 
       .hero {
-        grid-template-columns: 1fr;
+        padding: 110px 20px 26px;
+        min-height: 100svh;
       }
 
-      .hero-copy {
-        padding: 70px 24px;
+      .hero-image img {
+        object-position: 55% 20%;
       }
 
-      .hero-image {
-        min-height: 70vh;
-        order: -1;
+      .hero-content h1 {
+        font-size: clamp(49px, 14vw, 76px);
       }
 
-      .services-grid {
-        grid-template-columns: 1fr;
+      .hero-bottom {
+        align-items: start;
+        flex-direction: column;
+        gap: 12px;
       }
 
-      .service:nth-child(odd),
-      .service:nth-child(even) {
-        border-right: 0;
-        padding-left: 0;
-        padding-right: 0;
+      .section-padding {
+        padding: 95px 20px;
       }
 
-      .taskustilist {
+      .split {
         grid-template-columns: 1fr;
         gap: 55px;
       }
 
-      section {
-        padding: 85px 0;
+      .intro-image {
+        height: 72vh;
       }
 
-      .footer-meta {
-        text-align: left;
+      .services {
+        padding: 90px 0;
+      }
+
+      .services-heading {
+        padding: 0 20px;
+        margin-bottom: 50px;
+      }
+
+      .service-grid {
+        display: block;
+      }
+
+      .service-card {
+        height: 88svh;
+        min-height: 600px;
+        border-bottom: 1px solid #444;
+      }
+
+      .service-content {
+        left: 20px;
+        right: 20px;
+        bottom: 24px;
+      }
+
+      .taskustilist {
+        min-height: auto;
+        padding: 95px 20px 45px;
+      }
+
+      .taskustilist-bottom {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        margin-top: 120px;
+      }
+
+      .portfolio {
+        padding: 95px 20px;
+      }
+
+      .portfolio-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .portfolio-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 12px;
+
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+
+      .portfolio-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .portfolio-column {
+        display: contents;
+      }
+
+      .portfolio-entry {
+        flex: 0 0 82vw;
+        scroll-snap-align: center;
+      }
+
+      .portfolio-item.large,
+      .portfolio-item.medium,
+      .portfolio-item.small {
+        height: 65vh;
+      }
+
+      .about-image {
+        min-height: 65vh;
+      }
+
+      footer {
+        padding: 85px 20px 25px;
+      }
+
+      .footer-links {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
       }
     }
+
   </style>
 </head>
 
+
 <body>
 
-<header>
-  <div class="container nav">
-    <a href="#" class="brand">MOORITS.</a>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#stilistika">Isikustilistika</a>
-      <a href="#brandidele">Brändidele</a>
-      <a href="#taskustilist">Taskustilist</a>
-      <a href="#portfoolio">Portfoolio</a>
-      <a href="#minust">Minust</a>
-      <a href="#kontakt">Kontakt</a>
+  <!-- =========================
+       MENÜÜ
+  ========================== -->
+
+  <header class="site-header" id="header">
+
+    <a class="logo" href="#avaleht">
+      Kertu Moorits
+    </a>
+
+    <nav class="desktop-nav">
+
+      <a href="#avaleht">
+        Avaleht
+      </a>
+
+      <div class="nav-dropdown">
+
+        <button type="button">
+          Personaalstilistika
+        </button>
+
+        <div class="dropdown">
+
+          <div class="dropdown-title">
+            Meestele
+          </div>
+
+          <a href="#personaalstilistika">
+            Riidekapi restart
+          </a>
+
+          <a href="#personaalstilistika">
+            Virtuaalne stiilimuutmine
+          </a>
+
+          <a href="#personaalstilistika">
+            Kiire stiliseerimine
+          </a>
+
+
+          <div class="dropdown-title">
+            Naistele
+          </div>
+
+          <a href="#personaalstilistika">
+            Riidekapi restart
+          </a>
+
+          <a href="#personaalstilistika">
+            Virtuaalne stiilimuutmine
+          </a>
+
+          <a href="#personaalstilistika">
+            Kiire stiliseerimine
+          </a>
+
+        </div>
+
+      </div>
+
+      <a href="#brandidele">
+        Brändidele
+      </a>
+
+      <a href="#portfolio">
+        Portfoolio
+      </a>
+
     </nav>
 
-    <button class="menu-button" onclick="toggleMenu()" aria-label="Ava menüü">
-      ☰
+
+    <button class="menu-button" id="menuButton">
+      Menüü
     </button>
+
+  </header>
+
+
+  <!-- MOBIILIMENÜÜ -->
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <a href="#avaleht">
+      Avaleht
+    </a>
+
+    <a href="#personaalstilistika">
+      Personaalstilistika
+    </a>
+
+    <a href="#brandidele">
+      Brändidele
+    </a>
+
+    <a href="#portfolio">
+      Portfoolio
+    </a>
+
+    <div class="mobile-small">
+      <a href="#kontakt">Kontakt</a>
+    </div>
+
   </div>
-</header>
 
-<main>
 
-  <section class="hero">
-    <div class="hero-copy">
-      <div class="eyebrow">Kertu Moorits · Stilist</div>
 
-      <h1>Stiil, mis töötab päriselus.</h1>
+  <!-- =========================
+       HERO
+  ========================== -->
 
-      <p class="hero-description">
-        Isikustilistika meestele ja naistele ning stilistika brändidele,
-        fotodele ja produktsioonidele.
-      </p>
+  <main id="avaleht">
 
-      <div class="hero-actions">
-        <a href="#stilistika" class="button">Vaata teenuseid</a>
-        <a href="#portfoolio" class="button">Portfoolio</a>
-      </div>
-    </div>
+    <section class="hero">
 
-    <div class="hero-image" role="img" aria-label="Stilist Kertu Moorits"></div>
-  </section>
-
-  <section id="stilistika">
-    <div class="container">
-      <div class="section-kicker">Teenused</div>
-
-      <h2 class="section-title">Stilistika vastavalt inimesele, olukorrale ja eesmärgile.</h2>
-
-      <div class="services-grid">
-
-        <article class="service">
-          <div class="service-number">01</div>
-          <h3>Meestele</h3>
-          <p>
-            Praktiline isikustilistika, mis aitab ehitada toimiva garderoobi
-            ja teha paremaid valikuid ilma liigse üle mõtlemiseta.
-          </p>
-        </article>
-
-        <article class="service">
-          <div class="service-number">02</div>
-          <h3>Naistele</h3>
-          <p>
-            Personaalne lähenemine värvidele, lõigetele, garderoobile ja
-            riietusele vastavalt sinu päris elule.
-          </p>
-        </article>
-
-        <article class="service" id="brandidele">
-          <div class="service-number">03</div>
-          <h3>Brändidele</h3>
-          <p>
-            Stilistika kampaaniatele, reklaamidele, sisuloomele ja
-            kommertsprojektidele.
-          </p>
-        </article>
-
-        <article class="service">
-          <div class="service-number">04</div>
-          <h3>Foto & produktsioon</h3>
-          <p>
-            Stilistika fotosessioonidele ja produktsioonidele koostöös
-            fotograafide, agentuuride ja loovmeeskondadega.
-          </p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="taskustilist">
-    <div class="container taskustilist">
-
-      <div class="taskustilist-card">
-        <span>MOORITS.</span>
-
-        <strong>
-          TASKUSTILIST<br>
-          MEESTELE
-        </strong>
-
-        <span>Sinu stilist. Alati taskus.</span>
+      <div class="hero-image">
+        <img
+          src="images/avaleht/kertu-moorits-stilist.jpg"
+          alt="Kertu Moorits stilist"
+          id="heroImage"
+        >
       </div>
 
-      <div class="taskustilist-copy">
-        <div class="section-kicker">Taskustilist</div>
+      <div class="hero-overlay"></div>
 
-        <h2 class="section-title">Sinu stilist. Alati taskus.</h2>
+      <div class="hero-content">
 
-        <p>
-          Visuaalne digijuhend, mis aitab vastata päris riietumisküsimustele:
-          mis mulle sobib, kuidas miski peaks istuma ja mida erinevates
-          olukordades selga panna.
+        <p class="eyebrow">
+          Kertu Moorits — Stilist
         </p>
 
-        <a href="#" class="button">Tutvu Taskustilistiga</a>
+        <h1>
+          Enne kui jõuad endast rääkida, on esmamulje juba tekkinud.
+        </h1>
+
+        <div class="hero-bottom">
+
+          <span>
+            Personaalstilistika · Produktsioon · Kommerts
+          </span>
+
+          <span>
+            Keri alla ↓
+          </span>
+
+        </div>
+
       </div>
 
-    </div>
-  </section>
+    </section>
 
-  <section id="portfoolio">
-    <div class="container">
-      <div class="section-kicker">Portfoolio</div>
 
-      <h2 class="section-title">
-        Valik stilistikast, fotoprojektidest ja koostöödest.
-      </h2>
-    </div>
-  </section>
 
-  <section id="minust">
-    <div class="container">
-      <div class="section-kicker">Kertu Moorits</div>
+    <!-- =========================
+         KERTU INTRO
+    ========================== -->
 
-      <p class="quote">
-        „Öeldakse, et raamatut ei hinnata kaane järgi.
-        Ometi kujuneb esmamulje enne, kui jõuad endast rääkida.“
-      </p>
-    </div>
-  </section>
+    <section class="intro section-padding">
 
-  <section id="kontakt">
-    <div class="container">
-      <div class="section-kicker">Kontakt</div>
+      <div class="split">
 
-      <h2 class="section-title">Räägime sinu projektist.</h2>
+        <div class="intro-image reveal">
 
-      <div style="margin-top: 40px;">
-        <a class="button" href="mailto:kertu@moorits.com">
-          kertu@moorits.com
+          <img
+            src="images/avaleht/kertu-moorits-stilist.jpg"
+            alt="Stilist Kertu Moorits"
+          >
+
+        </div>
+
+
+        <div class="intro-copy reveal">
+
+          <p class="eyebrow">
+            Kertu Moorits — Stilist
+          </p>
+
+          <h2>
+            Stiil, mis lähtub inimesest.
+          </h2>
+
+          <p class="text-large">
+            Minu jaoks ei tähenda hea stiil lihtsalt hästi valitud riideid.
+            See on läbimõeldud tervik, mis sobib inimese, eesmärgi ja olukorraga.
+          </p>
+
+          <a class="link-arrow" href="#minust">
+            Minust →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TEENUSED
+    ========================== -->
+
+    <section class="services" id="personaalstilistika">
+
+      <div class="services-heading reveal">
+
+        <p class="eyebrow">
+          Teenused
+        </p>
+
+        <h2>
+          Stilistika eri vaatenurkadest.
+        </h2>
+
+      </div>
+
+
+      <div class="service-grid">
+
+
+        <!-- 01 -->
+
+        <article class="service-card">
+
+          <div class="service-image placeholder">
+            FOTO LISAMISEL
+          </div>
+
+          <div class="service-shade"></div>
+
+          <div class="service-content">
+
+            <p class="service-number">
+              01
+            </p>
+
+            <h3>
+              Personaalstilistika
+            </h3>
+
+            <p>
+              Praktiline ja personaalne stilistika meestele ja naistele,
+              lähtudes sinu päris elust, vajadustest ja eesmärkidest.
+            </p>
+
+            <a class="link-arrow" href="#">
+              Vaata lähemalt →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- 02 -->
+
+        <article class="service-card">
+
+          <div class="service-image placeholder">
+            FOTO LISAMISEL
+          </div>
+
+          <div class="service-shade"></div>
+
+          <div class="service-content">
+
+            <p class="service-number">
+              02
+            </p>
+
+            <h3>
+              Foto & produktsioon
+            </h3>
+
+            <p>
+              Stilistika fotosessioonidele, kampaaniatele ja produktsioonidele,
+              kus iga detail töötab ühe visuaalse terviku nimel.
+            </p>
+
+            <a class="link-arrow" href="#">
+              Vaata lähemalt →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- 03 -->
+
+        <article class="service-card" id="brandidele">
+
+          <div class="service-image placeholder">
+            FOTO LISAMISEL
+          </div>
+
+          <div class="service-shade"></div>
+
+          <div class="service-content">
+
+            <p class="service-number">
+              03
+            </p>
+
+            <h3>
+              Brändid & kommerts
+            </h3>
+
+            <p>
+              Visuaalne stilistika brändidele ja ettevõtetele —
+              kampaaniatest sisuloomeni.
+            </p>
+
+            <a class="link-arrow" href="#">
+              Vaata lähemalt →
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TASKUSTILIST
+    ========================== -->
+
+    <section class="taskustilist">
+
+      <div class="taskustilist-title reveal">
+
+        <p class="eyebrow">
+          Taskustilist
+        </p>
+
+        <h2>
+          Sinu stilist.<br>
+          Alati taskus.
+        </h2>
+
+      </div>
+
+
+      <div class="taskustilist-bottom">
+
+        <div class="reveal">
+
+          <p class="text-large">
+            Digitaalne stiililahendus, mis aitab teha teadlikumaid valikuid
+            ka siis, kui stilisti parasjagu sinu kõrval ei ole.
+          </p>
+
+        </div>
+
+
+        <div class="coming-options reveal">
+
+          <div class="coming-item">
+
+            <span>
+              Meestele
+            </span>
+
+            <span>
+              Tulekul
+            </span>
+
+          </div>
+
+          <div class="coming-item">
+
+            <span>
+              Naistele
+            </span>
+
+            <span>
+              Tulekul
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PORTFOOLIO
+    ========================== -->
+
+    <section class="portfolio" id="portfolio">
+
+      <div class="portfolio-head reveal">
+
+        <div>
+
+          <p class="eyebrow">
+            Selected work
+          </p>
+
+          <h2>
+            Valik töid.
+          </h2>
+
+        </div>
+
+        <a class="link-arrow" href="#">
+          Vaata portfooliot →
         </a>
+
       </div>
+
+
+      <div class="portfolio-grid">
+
+
+        <div class="portfolio-column">
+
+          <div class="portfolio-entry reveal">
+
+            <div class="portfolio-item large">
+
+              <div class="placeholder-box">
+                Portfolio foto 01
+              </div>
+
+            </div>
+
+            <div class="portfolio-caption">
+
+              <span>
+                Editorial
+              </span>
+
+              <span>
+                01
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="portfolio-column">
+
+          <div class="portfolio-entry reveal">
+
+            <div class="portfolio-item medium">
+
+              <div class="placeholder-box">
+                Portfolio foto 02
+              </div>
+
+            </div>
+
+            <div class="portfolio-caption">
+
+              <span>
+                Commercial
+              </span>
+
+              <span>
+                02
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="portfolio-entry reveal">
+
+            <div class="portfolio-item small">
+
+              <div class="placeholder-box">
+                Portfolio foto 03
+              </div>
+
+            </div>
+
+            <div class="portfolio-caption">
+
+              <span>
+                Production
+              </span>
+
+              <span>
+                03
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MINUST
+    ========================== -->
+
+    <section class="about section-padding" id="minust">
+
+      <div class="split">
+
+        <div class="about-copy reveal">
+
+          <p class="eyebrow">
+            Minust
+          </p>
+
+          <h2>
+            Stiil on olnud minu elu osa nii kaua, kui mäletan.
+          </h2>
+
+          <p class="text-large">
+            Mind on alati huvitanud, kuidas riietus muudab seda,
+            kuidas inimene ennast tunneb ja kuidas teised teda tajuvad.
+            Tänaseks on sellest saanud minu töö — aidata inimestel,
+            brändidel ja projektidel leida visuaalne keel, mis tundub õige.
+          </p>
+
+          <a class="link-arrow" href="#">
+            Loe minust →
+          </a>
+
+        </div>
+
+
+        <div class="about-image reveal">
+
+          <div class="placeholder-box">
+            Foto lisamisel
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER / KONTAKT
+  ========================== -->
+
+  <footer id="kontakt">
+
+    <div class="footer-title reveal">
+
+      <p class="eyebrow">
+        Kontakt
+      </p>
+
+      <h2>
+        Teeme midagi koos.
+      </h2>
+
     </div>
-  </section>
 
-</main>
 
-<footer>
-  <div class="container footer-row">
-    <div class="footer-brand">MOORITS.</div>
+    <div class="footer-links">
 
-    <div class="footer-meta">
-      Kertu Moorits · Stilist<br>
-      © 2026 MOORITS.
+      <div>
+
+        <p class="eyebrow">
+          Võta ühendust
+        </p>
+
+        <a href="mailto:hello@sinudomeen.ee">
+          hello@sinudomeen.ee
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <p class="eyebrow">
+          Jälgi
+        </p>
+
+        <a href="#">
+          Instagram
+        </a>
+
+        <a href="#">
+          TikTok
+        </a>
+
+      </div>
+
     </div>
-  </div>
-</footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('open');
-  }
-</script>
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Kertu Moorits
+      </span>
+
+      <span>
+        Stilistika · Estonia
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /*
+      HEADERI TAUST SCROLLIDES
+    */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 40) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+
+    });
+
+
+
+    /*
+      MOBIILIMENÜÜ
+    */
+
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuButton.addEventListener("click", () => {
+
+      mobileMenu.classList.toggle("open");
+
+      if (mobileMenu.classList.contains("open")) {
+        menuButton.textContent = "Sulge";
+      } else {
+        menuButton.textContent = "Menüü";
+      }
+
+    });
+
+
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+
+    mobileLinks.forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("open");
+        menuButton.textContent = "Menüü";
+
+      });
+
+    });
+
+
+
+    /*
+      SEKTSIOONIDE ILMUMINE SCROLLIDES
+    */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.12
+      }
+
+    );
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+
+
+    /*
+      HERO PILDI ÕRN LIIKUMINE
+    */
+
+    const heroImage = document.getElementById("heroImage");
+
+    window.addEventListener("scroll", () => {
+
+      const scroll = window.scrollY;
+
+      if (scroll < window.innerHeight) {
+
+        heroImage.style.transform =
+          `scale(1.05) translateY(${scroll * 0.08}px)`;
+
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
