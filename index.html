@@ -14,7 +14,7 @@
 
   <meta
     name="description"
-    content="Kertu Moorits — personaalstilistika, foto- ja produktsioonistilistika ning stilistika brändidele."
+    content="Kertu Moorits — personaalstilistika, produktsioon ja visuaalne stilistika inimestele ning brändidele."
   >
 
   <link
@@ -28,30 +28,44 @@
 <body>
 
 
-  <!-- HEADER -->
+  <!-- ====================================
+       HEADER
+  ===================================== -->
 
   <header class="site-header">
 
     <a
       href="index.html"
-      class="logo"
+      class="brand"
     >
-      KERTU MOORITS
+
+      <span class="brand-name">
+        Kertu Moorits
+      </span>
+
+      <span class="brand-role">
+        Stilist
+      </span>
+
     </a>
 
 
-    <nav class="main-nav">
+    <nav class="desktop-nav">
 
       <a href="index.html">
         Avaleht
+      </a>
+
+      <a href="#minust">
+        Minust
       </a>
 
 
       <div class="dropdown">
 
         <button
-          type="button"
           class="dropdown-button"
+          type="button"
         >
           Personaalstilistika
         </button>
@@ -105,21 +119,24 @@
       </div>
 
 
-      <a href="#brandidele">
-        Brändidele
-      </a>
-
       <a href="#portfolio">
         Portfoolio
+      </a>
+
+      <a href="#brandidele">
+        Brändidele
       </a>
 
     </nav>
 
 
-    <div class="header-side">
+    <div class="header-right">
 
-      <a href="#kontakt">
-        Kontakt
+      <a
+        href="#kontakt"
+        class="header-cta"
+      >
+        Teeme midagi koos
       </a>
 
     </div>
@@ -136,7 +153,9 @@
 
 
 
-  <!-- MOBILE MENU -->
+  <!-- ====================================
+       MOBILE MENU
+  ===================================== -->
 
   <div
     class="mobile-menu"
@@ -147,24 +166,27 @@
       Avaleht
     </a>
 
-    <a href="#teenused">
-      Personaalstilistika
+    <a href="#minust">
+      Minust
     </a>
 
-    <a href="#brandidele">
-      Brändidele
+    <a href="#teenused">
+      Teenused
     </a>
 
     <a href="#portfolio">
       Portfoolio
     </a>
 
+    <a href="#brandidele">
+      Brändidele
+    </a>
+
     <a href="#kontakt">
       Kontakt
     </a>
 
-
-    <div class="mobile-menu-meta">
+    <div class="mobile-meta">
       Kertu Moorits — Stilist
     </div>
 
@@ -175,131 +197,250 @@
   <main>
 
 
-    <!-- HERO -->
+    <!-- ====================================
+         HERO
+    ===================================== -->
 
     <section class="hero">
 
-      <div>
+      <div class="hero-image">
 
-        <div class="hero-top reveal">
-
-          <p class="kicker">
-            Kertu Moorits — Stilist
-          </p>
-
-          <p class="hero-intro">
-            Personaalstilistika, produktsioon ja
-            visuaalne stilistika inimestele ning brändidele.
-          </p>
-
-        </div>
-
-
-        <h1 class="hero-title display reveal">
-
-          <span>
-            Enne kui jõuad
-          </span>
-
-          <span class="line-two">
-            endast rääkida,
-          </span>
-
-          <span>
-            on esmamulje juba tekkinud.
-          </span>
-
-        </h1>
+        <img
+          src="images/avaleht/naistestilist.png"
+          alt="Kertu Moorits stilist"
+        >
 
       </div>
 
 
-      <div class="hero-bottom reveal">
-
-        <span>
-          Tallinn · Estonia
-        </span>
-
-        <span>
-          Scroll ↓
-        </span>
-
-      </div>
-
-    </section>
+      <div class="hero-overlay"></div>
 
 
-
-    <!-- EDITORIAL IMAGE -->
-
-    <section class="image-statement">
-
-      <div class="image-statement-main reveal">
-
-        <div class="image-placeholder">
-          Foto lisamisel
-        </div>
-
-      </div>
-
-
-      <div class="image-statement-copy">
+      <div class="hero-content">
 
         <div>
 
           <p class="kicker reveal">
-            Lähenemine
+            Kertu Moorits — Stilist
           </p>
 
-          <h2 class="display reveal">
-            Stiil, mis ei mängi kedagi teist.
-          </h2>
 
-        </div>
+          <h1 class="hero-title display reveal">
+
+            <span>
+              Enne kui jõuad
+            </span>
+
+            <span>
+              endast rääkida,
+            </span>
+
+            <span class="hero-indent italic">
+              on esmamulje
+            </span>
+
+            <span>
+              juba tekkinud.
+            </span>
+
+          </h1>
 
 
-        <div class="small-copy reveal">
-
-          <p>
-            Minu jaoks ei ole hea stiil trendide järgimine.
-            See on oskus teha valikuid, mis sobivad päriselt
-            sinu elu, iseloomu ja eesmärkidega.
+          <p class="hero-sub reveal">
+            Stilistika, mis lähtub inimesest ja loob terviku,
+            mis päriselt töötab.
           </p>
+
 
           <a
-            href="#minust"
-            class="text-link"
+            href="#teenused"
+            class="hero-button reveal"
           >
-            Minust
+            Vaata teenuseid
           </a>
 
         </div>
 
       </div>
 
+
+      <span class="hero-meta">
+        Tallinn · Estonia
+      </span>
+
+      <span class="hero-scroll">
+        Scroll ↓
+      </span>
+
     </section>
 
 
 
-    <!-- SERVICES -->
+    <!-- ====================================
+         STATEMENT
+    ===================================== -->
+
+    <section class="statement">
+
+      <span class="statement-decoration left">
+        ✦
+      </span>
+
+
+      <div class="statement-inner">
+
+        <p class="kicker reveal">
+          Minu lähenemine
+        </p>
+
+
+        <h2 class="reveal">
+          Hea stiil ei tähenda rohkem.
+          <span class="italic">
+            See tähendab õigemaid valikuid.
+          </span>
+        </h2>
+
+
+        <p class="reveal">
+          Lähtun alati inimesest, tema elust ja eesmärkidest.
+          Minu jaoks ei ole stiil valmis valem, vaid teadlikult loodud
+          tervik, mis tundub loomulik ja päriselt sinu oma.
+        </p>
+
+
+        <a
+          href="#minust"
+          class="text-link reveal"
+        >
+          Minust
+        </a>
+
+      </div>
+
+
+      <span class="statement-decoration right">
+        ○
+      </span>
+
+    </section>
+
+
+
+    <!-- ====================================
+         ABOUT
+    ===================================== -->
+
+    <section
+      class="about"
+      id="minust"
+    >
+
+      <div class="about-grid">
+
+
+        <div class="about-collage reveal">
+
+
+          <div class="polaroid large">
+
+            <div class="tape"></div>
+
+            <div class="photo-placeholder">
+              Foto lisamisel
+            </div>
+
+          </div>
+
+
+          <div class="polaroid small">
+
+            <div class="photo-placeholder">
+              Foto lisamisel
+            </div>
+
+          </div>
+
+
+          <div class="polaroid film">
+
+            <div class="photo-placeholder">
+              Foto
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="about-copy">
+
+          <p class="kicker reveal">
+            Minust
+          </p>
+
+
+          <h2 class="display reveal">
+            Stiil on olnud minu elu osa nii kaua,
+            <span class="italic">
+              kui mäletan.
+            </span>
+          </h2>
+
+
+          <p class="reveal">
+            Mind on alati huvitanud, kuidas riietus mõjutab inimese
+            enesetunnet, kohalolu ja seda, kuidas teised teda tajuvad.
+            Tänaseks on sellest saanud minu töö — aidata inimestel,
+            brändidel ja projektidel leida visuaalne keel,
+            mis tundub õige.
+          </p>
+
+
+          <a
+            href="#"
+            class="text-link reveal"
+          >
+            Loe minust
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ====================================
+         SERVICES
+    ===================================== -->
 
     <section
       class="services"
       id="teenused"
     >
 
-      <div class="services-header">
+
+      <div class="services-top">
 
         <p class="kicker reveal">
-          Millega saan aidata
+          Teenused
         </p>
 
+
         <h2 class="display reveal">
-          Stilistika,<br>
-          mis algab inimesest.
+          Stilistika, mis algab
+          <span class="italic">
+            inimesest.
+          </span>
         </h2>
 
       </div>
+
 
 
       <div class="services-list">
@@ -307,10 +448,10 @@
 
         <a
           href="#"
-          class="service reveal"
+          class="service-row reveal"
         >
 
-          <span class="service-number">
+          <span class="service-index">
             01
           </span>
 
@@ -319,8 +460,8 @@
           </h3>
 
           <p>
-            Läbimõeldud garderoob ja stiililahendused
-            meestele ning naistele.
+            Praktiline ja personaalne stilistika meestele ja naistele,
+            lähtudes sinu päris elust, vajadustest ja eesmärkidest.
           </p>
 
           <span class="service-arrow">
@@ -333,10 +474,10 @@
 
         <a
           href="#"
-          class="service reveal"
+          class="service-row reveal"
         >
 
-          <span class="service-number">
+          <span class="service-index">
             02
           </span>
 
@@ -345,8 +486,8 @@
           </h3>
 
           <p>
-            Stilistika fotosessioonidele, sisuloomele,
-            kampaaniatele ja produktsioonidele.
+            Stilistika fotosessioonidele, kampaaniatele ja
+            produktsioonidele, kus iga detail toetab tervikut.
           </p>
 
           <span class="service-arrow">
@@ -359,11 +500,11 @@
 
         <a
           href="#"
-          class="service reveal"
+          class="service-row reveal"
           id="brandidele"
         >
 
-          <span class="service-number">
+          <span class="service-index">
             03
           </span>
 
@@ -372,8 +513,8 @@
           </h3>
 
           <p>
-            Visuaalsed tervikud ettevõtetele ja brändidele,
-            kus iga detail toetab suuremat pilti.
+            Visuaalsed tervikud ettevõtetele ja brändidele —
+            kampaaniatest sisuloome ja produktsioonini.
           </p>
 
           <span class="service-arrow">
@@ -389,13 +530,16 @@
 
 
 
-    <!-- TASKUSTILIST -->
+    <!-- ====================================
+         TASKUSTILIST
+    ===================================== -->
 
     <section class="taskustilist">
 
+
       <div>
 
-        <div class="taskustilist-head reveal">
+        <div class="task-head reveal">
 
           <p class="kicker">
             Taskustilist
@@ -408,13 +552,13 @@
         </div>
 
 
-        <h2 class="display reveal">
+        <h2 class="task-title display reveal">
 
           <span>
             Sinu stilist.
           </span>
 
-          <span class="second-line">
+          <span class="offset italic">
             Alati taskus.
           </span>
 
@@ -423,16 +567,17 @@
       </div>
 
 
-      <div class="taskustilist-footer">
 
-        <p class="taskustilist-text reveal">
+      <div class="task-bottom">
+
+        <p class="task-description reveal">
           Praktiline digitaalne juhend, mis aitab teha
-          teadlikumaid stiilivalikuid ka siis,
-          kui stilisti sinu kõrval ei ole.
+          läbimõeldumaid stiilivalikuid iseseisvalt
+          ja omas tempos.
         </p>
 
 
-        <div class="task-links reveal">
+        <div class="task-options reveal">
 
           <div class="task-row">
 
@@ -463,18 +608,23 @@
 
       </div>
 
+
     </section>
 
 
 
-    <!-- PORTFOLIO -->
+    <!-- ====================================
+         PORTFOLIO
+    ===================================== -->
 
     <section
       class="portfolio"
       id="portfolio"
     >
 
-      <div class="portfolio-header">
+
+      <div class="portfolio-heading">
+
 
         <div>
 
@@ -483,7 +633,7 @@
           </p>
 
           <h2 class="display reveal">
-            Tööd.
+            Valik töid.
           </h2>
 
         </div>
@@ -496,153 +646,113 @@
           Vaata portfooliot
         </a>
 
+
       </div>
 
 
 
-      <div class="work-grid">
+      <div class="portfolio-grid">
 
 
-        <div class="work-column">
+        <article class="project reveal">
 
+          <div class="project-image">
 
-          <article class="work work-large reveal">
-
-            <div class="work-image">
-
-              <div class="image-placeholder">
-                Portfolio foto 01
-              </div>
-
+            <div class="photo-placeholder">
+              Portfolio foto 01
             </div>
 
-            <div class="work-caption">
+          </div>
 
-              <span>
-                Editorial
-              </span>
 
-              <span>
-                01
-              </span>
+          <div class="project-caption">
 
+            <span>
+              Editorial
+            </span>
+
+            <span>
+              01
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="project reveal">
+
+          <div class="project-image">
+
+            <div class="photo-placeholder">
+              Portfolio foto 02
             </div>
 
-          </article>
+          </div>
+
+
+          <div class="project-caption">
+
+            <span>
+              Commercial
+            </span>
+
+            <span>
+              02
+            </span>
+
+          </div>
+
+        </article>
 
 
 
-          <article class="work work-wide reveal">
+        <article class="project reveal">
 
-            <div class="work-image">
+          <div class="project-image">
 
-              <div class="image-placeholder">
-                Portfolio foto 03
-              </div>
-
+            <div class="photo-placeholder">
+              Portfolio foto 03
             </div>
 
-            <div class="work-caption">
-
-              <span>
-                Production
-              </span>
-
-              <span>
-                03
-              </span>
-
-            </div>
-
-          </article>
+          </div>
 
 
-        </div>
+          <div class="project-caption">
 
+            <span>
+              Production
+            </span>
 
+            <span>
+              03
+            </span>
 
-        <div class="work-column right">
+          </div>
 
-
-          <article class="work work-small reveal">
-
-            <div class="work-image">
-
-              <div class="image-placeholder">
-                Portfolio foto 02
-              </div>
-
-            </div>
-
-            <div class="work-caption">
-
-              <span>
-                Commercial
-              </span>
-
-              <span>
-                02
-              </span>
-
-            </div>
-
-          </article>
-
-
-        </div>
+        </article>
 
 
       </div>
+
 
     </section>
 
 
 
-    <!-- ABOUT -->
+    <!-- ====================================
+         QUOTE
+    ===================================== -->
 
-    <section
-      class="about"
-      id="minust"
-    >
+    <section class="quote">
 
-      <div class="about-left reveal">
-
-        <span class="about-number">
-          04 / MINUST
-        </span>
-
-        <p>
-          Hea stiil ei pea tähendama rohkem riideid.
-          Pigem vähem juhuslikke valikuid.
-        </p>
-
-      </div>
-
-
-      <div class="about-right">
-
-        <h2 class="display reveal">
-          Stiil on olnud minu elu osa nii kaua, kui mäletan.
-        </h2>
-
-
-        <div class="body-large reveal">
-
-          <p>
-            Mind huvitab see, kuidas riietus mõjutab inimese
-            enesetunnet, kohalolu ja seda, kuidas teda tajutakse.
-          </p>
-
-          <a
-            href="#"
-            class="text-link"
-          >
-            Loe minust
-          </a>
-
-        </div>
-
-      </div>
+      <blockquote class="reveal">
+        “Stiil ei pea karjuma.
+        <em>
+          See peab tunduma õige.
+        </em>”
+      </blockquote>
 
     </section>
 
@@ -651,17 +761,20 @@
 
 
 
-  <!-- FOOTER -->
+  <!-- ====================================
+       FOOTER
+  ===================================== -->
 
   <footer
     class="footer"
     id="kontakt"
   >
 
+
     <div>
 
       <p class="kicker reveal">
-        Võta ühendust
+        Kontakt
       </p>
 
 
@@ -671,13 +784,14 @@
           Teeme midagi
         </span>
 
-        <span>
+        <span class="italic">
           koos.
         </span>
 
       </h2>
 
     </div>
+
 
 
     <div>
@@ -691,13 +805,9 @@
             Kirjuta
           </p>
 
-          <div class="footer-links">
-
-            <a href="mailto:hello@sinudomeen.ee">
-              hello@sinudomeen.ee
-            </a>
-
-          </div>
+          <a href="mailto:hello@sinudomeen.ee">
+            hello@sinudomeen.ee
+          </a>
 
         </div>
 
@@ -708,21 +818,18 @@
             Jälgi
           </p>
 
-          <div class="footer-links">
+          <a href="#">
+            Instagram
+          </a>
 
-            <a href="#">
-              Instagram
-            </a>
-
-            <a href="#">
-              TikTok
-            </a>
-
-          </div>
+          <a href="#">
+            TikTok
+          </a>
 
         </div>
 
       </div>
+
 
 
       <div class="footer-bottom">
@@ -732,12 +839,14 @@
         </span>
 
         <span>
-          Stilistika · Estonia
+          Stilist · Estonia
         </span>
 
       </div>
 
+
     </div>
+
 
   </footer>
 
