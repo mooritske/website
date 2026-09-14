@@ -3,241 +3,467 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Kertu Moorits — Stilist</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>MOORITS. — Kertu Moorits, stilist</title>
 
   <meta
     name="description"
-    content="Kertu Moorits — personaalstilistika, foto- ja produktsioonistilistika ning visuaalne stilistika brändidele."
+    content="Kertu Moorits — personaalstilistika meestele ja naistele, stilistika fotosessioonidele, produktsioonidele ning brändidele."
   >
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 
 <body>
 
-  <!-- =========================
+  <!-- =========================================
        HEADER
-  ========================== -->
+  ========================================== -->
 
-  <header class="site-header">
+  <header class="site-header" id="site-header">
 
-    <a href="index.html" class="logo" aria-label="MOORITS avaleht">
-      <img src="./images/logo/moortis-logo.png" alt="MOORITS.">
+    <a
+      class="site-logo"
+      href="#avaleht"
+      aria-label="MOORITS avaleht"
+    >
+      <img
+        src="./images/logo/moortis-logo.png"
+        alt="MOORITS."
+      >
     </a>
 
-    <nav class="desktop-nav">
 
-      <a href="index.html">AVALEHT</a>
+    <nav class="desktop-nav" aria-label="Peamenüü">
 
-      <div class="dropdown">
-        <button class="dropdown-button" type="button">
+      <a href="#avaleht">AVALEHT</a>
+
+      <div class="nav-dropdown">
+
+        <button
+          class="nav-dropdown-button"
+          type="button"
+        >
           PERSONAALSTILISTIKA
-          <span>↓</span>
+          <span aria-hidden="true">↓</span>
         </button>
 
-        <div class="dropdown-menu">
 
-          <div class="dropdown-group">
-            <span class="dropdown-label">MEESTELE</span>
+        <div class="nav-dropdown-panel">
 
-            <a href="#">Riidekapi restart</a>
-            <a href="#">Virtuaalne stiilimuutmine</a>
-            <a href="#">Kiire stiliseerimine</a>
+          <div class="dropdown-column">
+
+            <span class="dropdown-title">
+              MEESTELE
+            </span>
+
+            <a href="#">
+              Riidekapi restart
+            </a>
+
+            <a href="#">
+              Virtuaalne stiilimuutmine
+            </a>
+
+            <a href="#">
+              Kiire stiliseerimine
+            </a>
+
           </div>
 
-          <div class="dropdown-group">
-            <span class="dropdown-label">NAISTELE</span>
 
-            <a href="#">Riidekapi restart</a>
-            <a href="#">Virtuaalne stiilimuutmine</a>
-            <a href="#">Kiire stiliseerimine</a>
+          <div class="dropdown-column">
+
+            <span class="dropdown-title">
+              NAISTELE
+            </span>
+
+            <a href="#">
+              Riidekapi restart
+            </a>
+
+            <a href="#">
+              Virtuaalne stiilimuutmine
+            </a>
+
+            <a href="#">
+              Kiire stiliseerimine
+            </a>
+
           </div>
 
         </div>
+
       </div>
 
-      <a href="#brandidele">BRÄNDIDELE</a>
-      <a href="#portfolio">PORTFOOLIO</a>
+
+      <a href="#brandidele">
+        BRÄNDIDELE
+      </a>
+
+      <a href="#portfolio">
+        PORTFOOLIO
+      </a>
 
     </nav>
 
-    <button class="menu-button" type="button" aria-label="Ava menüü">
-      MENÜÜ
+
+    <button
+      class="mobile-menu-button"
+      id="mobile-menu-button"
+      type="button"
+      aria-label="Ava menüü"
+      aria-expanded="false"
+    >
+      <span>MENÜÜ</span>
     </button>
 
   </header>
 
 
-  <!-- =========================
-       MOBILE MENU
-  ========================== -->
 
-  <div class="mobile-menu">
+  <!-- =========================================
+       MOBILE NAV
+  ========================================== -->
 
-    <a href="index.html">Avaleht</a>
-    <a href="#teenused">Personaalstilistika</a>
-    <a href="#brandidele">Brändidele</a>
-    <a href="#portfolio">Portfoolio</a>
-    <a href="#kontakt">Kontakt</a>
+  <div
+    class="mobile-nav"
+    id="mobile-nav"
+    aria-hidden="true"
+  >
+
+    <div class="mobile-nav-inner">
+
+      <a href="#avaleht">
+        Avaleht
+      </a>
+
+      <a href="#teenused">
+        Personaalstilistika
+      </a>
+
+      <a href="#brandidele">
+        Brändidele
+      </a>
+
+      <a href="#portfolio">
+        Portfoolio
+      </a>
+
+      <a href="#kontakt">
+        Kontakt
+      </a>
+
+    </div>
+
+
+    <div class="mobile-nav-bottom">
+      <span>KERTU MOORITS</span>
+      <span>STILIST</span>
+    </div>
 
   </div>
 
 
+
   <main>
 
-    <!-- =========================
+
+    <!-- =========================================
          HERO
-    ========================== -->
+    ========================================== -->
 
-    <section class="hero">
+    <section
+      class="hero"
+      id="avaleht"
+    >
 
-      <div class="hero-image">
-        <img
-          src="./images/avaleht/naiste-stilist.png"
-          alt="Kertu Moorits stilist"
-        >
-      </div>
+      <div class="hero-copy">
 
-      <div class="hero-overlay"></div>
+        <p class="hero-kicker">
+          KERTU MOORITS · STILIST
+        </p>
 
-      <div class="hero-content">
-
-        <p class="eyebrow">KERTU MOORITS · STILIST</p>
-
-        <h1 class="hero-title">
-          <span>ENNE KUI JÕUAD</span>
-          <span>ENDAST RÄÄKIDA,</span>
-          <span>ON ESMAMULJE</span>
-          <span>JUBA TEKKINUD.</span>
+        <h1>
+          Enne kui jõuad<br>
+          endast rääkida,<br>
+          on esmamulje juba<br>
+          tekkinud.
         </h1>
 
-        <a href="#teenused" class="hero-link">
-          VAATA, MILLEGA SAAN AIDATA
-          <span>↓</span>
+        <p class="hero-intro">
+          Personaalne stilistika inimestele,
+          produktsioonidele ja brändidele.
+        </p>
+
+        <a
+          class="arrow-link"
+          href="#teenused"
+        >
+          VAATA TEENUSEID
+          <span>↘</span>
         </a>
 
       </div>
 
-      <div class="hero-bottom">
-        <span>PERSONAALNE · EDITORIAL · COMMERCIAL</span>
-        <span>ESTONIA</span>
+
+      <div class="hero-photo">
+
+        <img
+          src="./images/avaleht/naiste-stilist.png"
+          alt="Kertu Moorits, stilist"
+        >
+
+      </div>
+
+
+      <div class="hero-side-note">
+        <span>
+          PERSONAALNE
+        </span>
+
+        <span>
+          PRODUKTSIOON
+        </span>
+
+        <span>
+          BRÄNDID
+        </span>
       </div>
 
     </section>
 
 
-    <!-- =========================
+
+    <!-- =========================================
          INTRO
-    ========================== -->
+    ========================================== -->
 
-    <section class="intro">
+    <section class="intro-section">
 
-      <div class="section-number">01</div>
+      <div class="intro-heading">
 
-      <div class="intro-content">
-
-        <p class="section-label">STILISTIKA</p>
+        <p class="eyebrow">
+          STILISTIKA
+        </p>
 
         <h2>
-          STILISTIKA, MIS
-          <span>ALGAB INIMESEST.</span>
+          Stiil, mis toetab<br>
+          <span>sind ja sinu sõnumit.</span>
         </h2>
 
-        <div class="intro-bottom">
+      </div>
 
-          <p>
-            Personaalsest stiilist visuaalsete produktsioonide ja
-            brändideni. Läbimõeldud stilistika, kus iga valik toetab
-            inimest, ideed või sõnumit.
-          </p>
 
-          <p class="intro-note">
-            MEESTELE · NAISTELE · BRÄNDIDELE
-          </p>
+      <div class="intro-copy">
 
-        </div>
+        <p class="intro-large">
+          Personaalsest garderoobist visuaalsete
+          produktsioonide ja brändideni.
+        </p>
+
+        <p>
+          Minu töö ei ole panna sind kindlasse stiilikasti.
+          Eesmärk on leida visuaalne tervik, mis tundub õige,
+          töötab päriselus ja kannab edasi seda, mida soovid väljendada.
+        </p>
 
       </div>
 
     </section>
 
 
-    <!-- =========================
+
+    <!-- =========================================
          SERVICES
-    ========================== -->
+    ========================================== -->
 
-    <section class="services" id="teenused">
+    <section
+      class="services-section"
+      id="teenused"
+    >
 
-      <div class="services-heading">
+      <div class="section-topline">
 
-        <p class="section-label">MIDA MA TEEN</p>
+        <p class="eyebrow">
+          TEENUSED
+        </p>
 
-        <h2>
-          KOLM SUUNDA.<br>
-          <span>ÜKS TERVIK.</span>
-        </h2>
+        <p class="section-count">
+          03 SUUNDA
+        </p>
 
       </div>
 
 
       <div class="services-list">
 
-        <a href="#" class="service-row">
 
-          <span class="service-number">01</span>
+        <!-- PERSONAALSTILISTIKA -->
 
-          <div class="service-main">
-            <h3>PERSONAALSTILISTIKA</h3>
-            <span>MEESTELE JA NAISTELE</span>
+        <a
+          href="#"
+          class="service-item"
+        >
+
+          <div class="service-index">
+            01
           </div>
 
-          <p>
-            Personaalne stilistika, mis lähtub sinust,
-            sinu elust ja sellest, kuidas soovid ennast väljendada.
+
+          <div class="service-title">
+
+            <h3>
+              Personaalstilistika
+            </h3>
+
+            <span>
+              MEESTELE JA NAISTELE
+            </span>
+
+          </div>
+
+
+          <p class="service-description">
+            Läbimõeldud garderoob, personaalsed outfit'id
+            ja valikud, mis sobivad sinu elu, keha ja isikupäraga.
           </p>
 
-          <span class="service-arrow">↗</span>
+
+          <span class="service-arrow">
+            ↗
+          </span>
 
         </a>
 
 
-        <a href="#" class="service-row">
 
-          <span class="service-number">02</span>
+        <!-- FOTO -->
 
-          <div class="service-main">
-            <h3>FOTO &amp; PRODUKTSIOON</h3>
-            <span>KAADRILE JA KAMPAANIALE</span>
+        <a
+          href="#"
+          class="service-item"
+        >
+
+          <div class="service-index">
+            02
           </div>
 
-          <p>
-            Stilistika fotosessioonidele, kampaaniatele,
-            sisuloomele ja teistele visuaalsetele produktsioonidele.
+
+          <div class="service-title">
+
+            <h3>
+              Foto &amp; produktsioon
+            </h3>
+
+            <span>
+              FOTOD · SISULOOME · KAMPAANIAD
+            </span>
+
+          </div>
+
+
+          <p class="service-description">
+            Stilistika fotosessioonidele ja produktsioonidele,
+            kus iga detail toetab visuaali ning soovitud tunnetust.
           </p>
 
-          <span class="service-arrow">↗</span>
+
+          <span class="service-arrow">
+            ↗
+          </span>
 
         </a>
 
 
-        <a href="#" class="service-row" id="brandidele">
 
-          <span class="service-number">03</span>
+        <!-- BRAND -->
 
-          <div class="service-main">
-            <h3>BRÄNDID &amp; KOMMERTS</h3>
-            <span>ETTEVÕTETELE JA BRÄNDIDELE</span>
+        <a
+          href="#"
+          class="service-item"
+          id="brandidele"
+        >
+
+          <div class="service-index">
+            03
           </div>
 
-          <p>
-            Visuaalsed tervikud ja stilistika, mis toetavad
-            brändi identiteeti, kampaaniat ja soovitud sõnumit.
+
+          <div class="service-title">
+
+            <h3>
+              Brändid &amp; kommerts
+            </h3>
+
+            <span>
+              BRÄNDIDELE JA ETTEVÕTETELE
+            </span>
+
+          </div>
+
+
+          <p class="service-description">
+            Stilistika, mis töötab koos brändi identiteedi,
+            kampaania, toote ja visuaalse kommunikatsiooniga.
           </p>
 
-          <span class="service-arrow">↗</span>
 
+          <span class="service-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PHILOSOPHY
+    ========================================== -->
+
+    <section class="philosophy-section">
+
+      <div class="philosophy-small">
+
+        <p class="eyebrow light">
+          PERSONAALNE STIIL
+        </p>
+
+      </div>
+
+
+      <div class="philosophy-main">
+
+        <h2>
+          Populaarne ei ole<br>
+          sama mis <em>sinu.</em>
+        </h2>
+
+
+        <p>
+          Me näeme samu kampaaniaid, samu trende ja samu
+          „kõige armastatumaid“ mudeleid. Aga hea garderoob
+          ei pea välja nägema nagu kõigi teiste oma.
+        </p>
+
+
+        <a
+          href="#"
+          class="arrow-link light-link"
+        >
+          PERSONAALSTILISTIKA
+          <span>↗</span>
         </a>
 
       </div>
@@ -245,26 +471,34 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =========================================
          PORTFOLIO
-    ========================== -->
+    ========================================== -->
 
-    <section class="portfolio" id="portfolio">
+    <section
+      class="portfolio-section"
+      id="portfolio"
+    >
 
-      <div class="portfolio-top">
+      <div class="portfolio-header">
 
         <div>
-          <p class="section-label">VALITUD TÖÖD</p>
+
+          <p class="eyebrow">
+            VALITUD TÖÖD
+          </p>
 
           <h2>
-            PORT<br>
-            <span>FOOLIO.</span>
+            Portfoolio.
           </h2>
+
         </div>
 
-        <p class="portfolio-intro">
-          Valik personaalsest stilistikast, fotosessioonidest
-          ja kommertsprojektidest.
+
+        <p>
+          Valik personaalsest stilistikast,
+          produktsioonidest ja kommertstöödest.
         </p>
 
       </div>
@@ -272,212 +506,308 @@
 
       <div class="portfolio-grid">
 
-        <article class="project project-large">
-          <div class="project-placeholder">
+
+        <article class="portfolio-card portfolio-card-a">
+
+          <div class="portfolio-placeholder">
             <span>01</span>
           </div>
 
-          <div class="project-caption">
-            <span>PERSONAALSTILISTIKA</span>
-            <span>2026</span>
+          <div class="portfolio-meta">
+
+            <span>
+              PERSONAALSTILISTIKA
+            </span>
+
+            <span>
+              2026
+            </span>
+
           </div>
+
         </article>
 
 
-        <article class="project project-small">
-          <div class="project-placeholder wine">
+
+        <article class="portfolio-card portfolio-card-b">
+
+          <div class="portfolio-placeholder wine-block">
             <span>02</span>
           </div>
 
-          <div class="project-caption">
-            <span>EDITORIAL</span>
-            <span>2026</span>
+          <div class="portfolio-meta">
+
+            <span>
+              EDITORIAL
+            </span>
+
+            <span>
+              2026
+            </span>
+
           </div>
+
         </article>
 
 
-        <article class="project project-medium">
-          <div class="project-placeholder dark">
+
+        <article class="portfolio-card portfolio-card-c">
+
+          <div class="portfolio-placeholder dark-block">
             <span>03</span>
           </div>
 
-          <div class="project-caption">
-            <span>COMMERCIAL</span>
-            <span>2026</span>
+          <div class="portfolio-meta">
+
+            <span>
+              COMMERCIAL
+            </span>
+
+            <span>
+              2026
+            </span>
+
           </div>
+
         </article>
 
-      </div>
-
-      <a href="#" class="text-link">VAATA PORTFOOLIOT ↗</a>
-
-    </section>
-
-
-    <!-- =========================
-         ABOUT
-    ========================== -->
-
-    <section class="about">
-
-      <div class="about-heading">
-        <span class="section-label light">STILISTI TAGA</span>
-        <span class="about-index">02</span>
-      </div>
-
-
-      <div class="about-grid">
-
-        <div class="about-image">
-
-          <img
-            src="./images/avaleht/kertu-moorits-stilist.jpg"
-            alt="Kertu Moorits"
-          >
-
-        </div>
-
-
-        <div class="about-copy">
-
-          <p class="about-name">KERTU MOORITS</p>
-
-          <h2>
-            STIIL EI ALGA
-            <span>RIIETEST.</span>
-          </h2>
-
-          <p class="about-lead">
-            See algab inimesest.
-          </p>
-
-          <p class="about-text">
-            Minu jaoks ei tähenda hea stilistika lihtsalt hästi
-            valitud riideid, vaid läbimõeldud tervikut, mis sobib
-            inimese, eesmärgi ja olukorraga.
-          </p>
-
-          <p class="about-text">
-            Töötan nii eraklientide kui ka loominguliste ja
-            kommertsprojektidega — personaalsest garderoobist
-            fotosessioonide ja brändide visuaalse stilistikani.
-          </p>
-
-          <a href="#" class="light-link">MINUST ↗</a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         TASKUSTILIST
-    ========================== -->
-
-    <section class="taskustilist">
-
-      <div class="task-top">
-
-        <p class="section-label">DIGITAALNE STILIST</p>
-
-        <span>PEAGI</span>
 
       </div>
 
 
-      <div class="task-title">
+      <div class="portfolio-footer">
 
-        <span>TASKU</span>
-        <span>STILIST.</span>
-
-      </div>
-
-
-      <div class="task-bottom">
-
-        <div>
-          <p class="task-tagline">
-            SINU STILIST.<br>
-            ALATI TASKUS.
-          </p>
-        </div>
-
-        <div class="task-options">
-
-          <div class="task-row">
-            <span>MEESTELE</span>
-            <span>TULEKUL</span>
-          </div>
-
-          <div class="task-row">
-            <span>NAISTELE</span>
-            <span>TULEKUL</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         FINAL CTA
-    ========================== -->
-
-    <section class="contact" id="kontakt">
-
-      <p class="section-label light">VÕTA ÜHENDUST</p>
-
-      <h2>
-        TEEME MIDAGI
-        <span>KOOS.</span>
-      </h2>
-
-      <div class="contact-bottom">
-
-        <p>
-          Sul on mõte, projekt või vajad lihtsalt värsket pilku?
-          Räägime.
-        </p>
-
-        <a href="mailto:moorits.kertu@gmail.com" class="contact-mail">
-          KIRJUTA MULLE ↗
+        <a
+          href="#"
+          class="arrow-link dark-link"
+        >
+          VAATA KÕIKI TÖID
+          <span>↗</span>
         </a>
 
       </div>
 
     </section>
 
+
+
+    <!-- =========================================
+         ABOUT
+    ========================================== -->
+
+    <section class="about-section">
+
+      <div class="about-photo">
+
+        <img
+          src="./images/avaleht/kertu-moorits-stilist.jpg"
+          alt="Kertu Moorits"
+        >
+
+      </div>
+
+
+      <div class="about-content">
+
+        <p class="eyebrow light">
+          MINUST
+        </p>
+
+
+        <p class="about-name">
+          KERTU MOORITS
+        </p>
+
+
+        <h2>
+          Stiil ei alga<br>
+          riietest.
+        </h2>
+
+
+        <p class="about-highlight">
+          See algab inimesest.
+        </p>
+
+
+        <p class="about-body">
+          Minu jaoks ei tähenda hea stilistika lihtsalt
+          hästi valitud riideid, vaid läbimõeldud tervikut,
+          mis sobib inimese, eesmärgi ja olukorraga.
+        </p>
+
+
+        <p class="about-body">
+          Töötan nii eraklientide kui loominguliste
+          ja kommertsprojektidega.
+        </p>
+
+
+        <a
+          href="#"
+          class="arrow-link light-link"
+        >
+          MINUST LÄHEMALT
+          <span>↗</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         TASKUSTILIST
+    ========================================== -->
+
+    <section class="taskustilist-section">
+
+      <div class="taskustilist-top">
+
+        <p class="eyebrow">
+          DIGITAALNE TOODE
+        </p>
+
+        <span>
+          TULEKUL
+        </span>
+
+      </div>
+
+
+      <div class="taskustilist-grid">
+
+        <div class="taskustilist-title">
+
+          <span>
+            TASKU
+          </span>
+
+          <span>
+            STILIST.
+          </span>
+
+        </div>
+
+
+        <div class="taskustilist-copy">
+
+          <h3>
+            Sinu stilist.<br>
+            Alati taskus.
+          </h3>
+
+          <p>
+            Praktiline stiilijuhend, mis aitab teha
+            igapäevaseid riietumisotsuseid lihtsamalt
+            ja läbimõeldumalt.
+          </p>
+
+
+          <div class="task-options">
+
+            <div>
+              <span>MEESTELE</span>
+              <span>TULEKUL</span>
+            </div>
+
+            <div>
+              <span>NAISTELE</span>
+              <span>TULEKUL</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CONTACT
+    ========================================== -->
+
+    <section
+      class="contact-section"
+      id="kontakt"
+    >
+
+      <p class="eyebrow light">
+        KONTAKT
+      </p>
+
+
+      <div class="contact-grid">
+
+        <h2>
+          Teeme midagi<br>
+          koos.
+        </h2>
+
+
+        <div class="contact-copy">
+
+          <p>
+            Kui sul on idee, projekt või vajad lihtsalt
+            professionaalset pilku, räägime.
+          </p>
+
+
+          <a
+            class="contact-link"
+            href="mailto:"
+          >
+            KIRJUTA MULLE
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
   </main>
 
 
-  <!-- =========================
+
+  <!-- =========================================
        FOOTER
-  ========================== -->
+  ========================================== -->
 
-  <footer class="footer">
+  <footer class="site-footer">
 
-    <div>
-      <span>KERTU MOORITS</span>
-      <span>STILIST · ESTONIA</span>
+    <div class="footer-name">
+      KERTU MOORITS
     </div>
+
 
     <div class="footer-links">
-      <a href="#">INSTAGRAM ↗</a>
-      <a href="mailto:moorits.kertu@gmail.com">E-MAIL ↗</a>
+
+      <a href="#">
+        INSTAGRAM ↗
+      </a>
+
+      <a href="#kontakt">
+        KONTAKT
+      </a>
+
     </div>
 
-    <div>
-      <span>© 2026 KERTU MOORITS</span>
+
+    <div class="footer-copy">
+      © 2026
     </div>
 
   </footer>
 
 
-  <script src="js/main.js"></script>
+  <script src="./js/main.js"></script>
 
 </body>
 </html>
