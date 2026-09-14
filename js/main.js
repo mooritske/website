@@ -1,61 +1,58 @@
-const menuButton = document.getElementById("menuButton");
-const mobileMenu = document.getElementById("mobileMenu");
+const menuButton = document.getElementById("mobile-menu-button");
+const mobileNav = document.getElementById("mobile-nav");
 
+if (menuButton && mobileNav) {
 
-menuButton.addEventListener("click", () => {
+  const menuText = menuButton.querySelector("span");
 
-  mobileMenu.classList.toggle("open");
+  function openMenu() {
+    mobileNav.classList.add("open");
+    document.body.classList.add("menu-open");
 
-  menuButton.textContent =
-    mobileMenu.classList.contains("open")
-      ? "Sulge"
-      : "Menüü";
+    menuButton.setAttribute("aria-expanded", "true");
+    mobileNav.setAttribute("aria-hidden", "false");
 
-});
+    menuText.textContent = "SULGE";
+  }
 
+  function closeMenu() {
+    mobileNav.classList.remove("open");
+    document.body.classList.remove("menu-open");
 
-mobileMenu.querySelectorAll("a").forEach(link => {
+    menuButton.setAttribute("aria-expanded", "false");
+    mobileNav.setAttribute("aria-hidden", "true");
 
-  link.addEventListener("click", () => {
+    menuText.textContent = "MENÜÜ";
+  }
 
-    mobileMenu.classList.remove("open");
+  menuButton.addEventListener("click", () => {
 
-    menuButton.textContent = "Menüü";
+    const isOpen = mobileNav.classList.contains("open");
+
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
 
   });
 
-});
 
+  mobileNav.querySelectorAll("a").forEach((link) => {
 
-const revealElements =
-  document.querySelectorAll(".reveal");
-
-
-const observer = new IntersectionObserver(
-
-  entries => {
-
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-
-        entry.target.classList.add("visible");
-
-      }
-
+    link.addEventListener("click", () => {
+      closeMenu();
     });
 
-  },
-
-  {
-    threshold: 0.1
-  }
-
-);
+  });
 
 
-revealElements.forEach(element => {
+  window.addEventListener("keydown", (event) => {
 
-  observer.observe(element);
+    if (event.key === "Escape") {
+      closeMenu();
+    }
 
-});
+  });
+
+}
