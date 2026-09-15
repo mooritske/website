@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="Kertu Moorits — personaalstilistika, foto- ja produktsioonistilistika ning stilistika brändidele."
+    content="MOORITS. — personaalstilistika naistele ja meestele, stilistika fotosessioonidele, produktsioonidele ning brändidele."
   >
 
   <link rel="stylesheet" href="./css/style.css">
@@ -17,33 +17,35 @@
 
 <body>
 
+  <!-- HEADER -->
+
   <header class="header">
 
-    <a href="#avaleht" class="logo">
-      <img src="./images/avaleht/moortis-logo.png" alt="MOORITS.">
+    <a href="/" class="logo">
+      MOORITS.
     </a>
 
     <nav class="desktop-nav">
 
-  <a href="/">AVALEHT</a>
+      <a href="/" class="active">AVALEHT</a>
 
-  <div class="nav-dropdown">
+      <div class="nav-dropdown">
 
-    <button class="nav-dropdown-trigger" type="button">
-      PERSONAALSTILISTIKA
-    </button>
+        <button class="nav-dropdown-trigger" type="button">
+          PERSONAALSTILISTIKA
+        </button>
 
-    <div class="nav-dropdown-menu">
-      <a href="/meestele/">MEESTELE</a>
-      <a href="/naistele/">NAISTELE</a>
-    </div>
+        <div class="nav-dropdown-menu">
+          <a href="/meestele/">MEESTELE</a>
+          <a href="/naistele/">NAISTELE</a>
+        </div>
 
-  </div>
+      </div>
 
-  <a href="/brandidele/">BRÄNDIDELE</a>
-  <a href="/portfoolio/">PORTFOOLIO</a>
+      <a href="/brandidele/">BRÄNDIDELE</a>
+      <a href="/portfoolio/">PORTFOOLIO</a>
 
-</nav>
+    </nav>
 
     <button class="menu-button" id="menuButton" type="button">
       MENÜÜ
@@ -52,42 +54,28 @@
   </header>
 
 
+  <!-- MOBILE MENU -->
+
   <nav class="mobile-nav" id="mobileNav">
-
-  <button class="mobile-close" id="mobileClose" type="button">
-    SULGE
-  </button>
-
-  <div class="mobile-links">
-
-    <a href="/">Avaleht</a>
-
-    <span class="mobile-nav-label">
-      PERSONAALSTILISTIKA
-    </span>
-
-    <a href="/meestele/">Meestele</a>
-    <a href="/naistele/">Naistele</a>
-
-    <a href="/brandidele/">Brändidele</a>
-    <a href="/portfoolio/">Portfoolio</a>
-
-    <a href="#kontakt">Kontakt</a>
-
-  </div>
-
-</nav>
 
     <button class="mobile-close" id="mobileClose" type="button">
       SULGE
     </button>
 
     <div class="mobile-links">
-      <a href="#avaleht">Avaleht</a>
-      <a href="#teenused">Personaalstilistika</a>
-      <a href="#brandidele">Brändidele</a>
-      <a href="#portfolio">Portfoolio</a>
+
+      <a href="/">Avaleht</a>
+
+      <span class="mobile-nav-label">
+        PERSONAALSTILISTIKA
+      </span>
+
+      <a href="/meestele/">Meestele</a>
+      <a href="/naistele/">Naistele</a>
+      <a href="/brandidele/">Brändidele</a>
+      <a href="/portfoolio/">Portfoolio</a>
       <a href="#kontakt">Kontakt</a>
+
     </div>
 
   </nav>
@@ -118,17 +106,16 @@
         </p>
 
         <a href="#teenused" class="text-link">
-          VAATA TEENUSEID ↘
+          VAATA TEENUSEID
         </a>
 
       </div>
-
 
       <div class="hero-image">
 
         <img
           src="./images/avaleht/naiste-stilist.png"
-          alt="Kertu Moorits stilist"
+          alt="Stilist Kertu Moorits"
         >
 
       </div>
@@ -147,23 +134,24 @@
         </p>
 
         <h2>
-          Stiil, mis toetab<br>
-          <span>sind ja sinu sõnumit.</span>
+          Hea stiil ei ole<br>
+          <span>lihtsalt ilus.</span>
         </h2>
 
       </div>
 
-
       <div class="intro-copy">
 
         <p class="lead">
-          Personaalsest garderoobist visuaalsete
-          produktsioonide ja brändideni.
+          See peab sobima inimese, olukorra,
+          idee või brändiga.
         </p>
 
         <p>
-          Läbimõeldud stilistika, kus iga valik toetab
-          inimest, ideed või sõnumit.
+          Stilistika on teadlik valikute tegemine.
+          Alates sellest, mida inimene selga paneb,
+          kuni selleni, millise terviku loob üks foto,
+          kampaania või bränd.
         </p>
 
       </div>
@@ -188,7 +176,7 @@
       </div>
 
 
-      <a href="#" class="service">
+      <div class="service">
 
         <span class="number">
           01
@@ -205,18 +193,20 @@
         </div>
 
         <p>
-          Personaalsed outfit'id, läbimõeldud garderoob
-          ja valikud, mis sobivad sinu elu ning isikupäraga.
+          Stiil, garderoob ja teadlikumad valikud,
+          mis lähtuvad sinust, sinu elust ja sellest,
+          kuidas soovid ennast tunda ning mõjuda.
         </p>
 
-        <span class="arrow">
-          ↗
-        </span>
+        <div class="service-actions">
+          <a href="/naistele/" class="service-link">NAISTELE</a>
+          <a href="/meestele/" class="service-link">MEESTELE</a>
+        </div>
 
-      </a>
+      </div>
 
 
-      <a href="#" class="service">
+      <a href="/brandidele/" class="service">
 
         <span class="number">
           02
@@ -233,18 +223,19 @@
         </div>
 
         <p>
-          Stilistika fotosessioonidele ja produktsioonidele,
-          kus iga detail toetab visuaali.
+          Läbimõeldud stilistika fotosessioonidele ja
+          produktsioonidele, kus rõivad, detailid ja visuaalne
+          tervik töötavad ühe idee nimel.
         </p>
 
-        <span class="arrow">
-          ↗
+        <span class="service-more">
+          VAATA LÄHEMALT
         </span>
 
       </a>
 
 
-      <a href="#" class="service" id="brandidele">
+      <a href="/brandidele/" class="service">
 
         <span class="number">
           03
@@ -261,12 +252,12 @@
         </div>
 
         <p>
-          Stilistika, mis töötab koos brändi identiteedi,
-          kampaania ja visuaalse kommunikatsiooniga.
+          Stilistika kampaaniatele ja brändisisule,
+          mis toetab identiteeti, sõnumit ja soovitud visuaalset maailma.
         </p>
 
-        <span class="arrow">
-          ↗
+        <span class="service-more">
+          VAATA LÄHEMALT
         </span>
 
       </a>
@@ -290,12 +281,13 @@
         </h2>
 
         <p>
-          Hea garderoob ei pea välja nägema nagu kõigi teiste oma.
-          Riietus saab olla üks lihtsamaid viise enda väljendamiseks.
+          Riietus on üks lihtsamaid viise enda väljendamiseks.
+          Hea garderoob ei pea välja nägema nagu kõigi teiste oma —
+          see peab töötama sinu jaoks.
         </p>
 
-        <a href="#" class="text-link light-link">
-          PERSONAALSTILISTIKA ↗
+        <a href="/naistele/" class="text-link light-link">
+          PERSONAALSTILISTIKA
         </a>
 
       </div>
@@ -310,6 +302,7 @@
       <div class="portfolio-head">
 
         <div>
+
           <p class="label">
             VALITUD TÖÖD
           </p>
@@ -317,58 +310,92 @@
           <h2>
             Portfoolio.
           </h2>
+
         </div>
 
-        <p>
-          Valik personaalsest stilistikast,
-          produktsioonidest ja kommertstöödest.
-        </p>
+        <div>
+
+          <p>
+            Valik stilistikast, fotolavastustest
+            ja loomingulistest projektidest.
+          </p>
+
+          <a href="/portfoolio/" class="text-link">
+            VAATA KOGU PORTFOOLIOT
+          </a>
+
+        </div>
 
       </div>
 
 
       <div class="portfolio-grid">
 
-        <article class="work work-1">
 
-          <div class="work-image neutral">
-            01
+        <!-- SÕBRALT SÕBRALE -->
+
+        <a href="/portfoolio/" class="work work-1">
+
+          <div class="work-image">
+
+            <img
+              src="./images/portfoolio/fotolavastused/sõbraltsõbrale/Facetune_05-06-2025-17-43-07.jpeg"
+              alt="Sõbralt Sõbrale stilistika"
+              loading="lazy"
+            >
+
           </div>
 
           <div class="work-meta">
-            <span>PERSONAALSTILISTIKA</span>
-            <span>2026</span>
+            <span>SÕBRALT SÕBRALE</span>
+            <span>STILISTIKA</span>
           </div>
 
-        </article>
+        </a>
 
 
-        <article class="work work-2">
+        <!-- N-20 -->
 
-          <div class="work-image wine">
-            02
+        <a href="/portfoolio/" class="work work-2">
+
+          <div class="work-image">
+
+            <img
+              src="./images/portfoolio/fotolavastused/n-20/DSC07305.jpg"
+              alt="N-20 fotolavastus"
+              loading="lazy"
+            >
+
           </div>
 
           <div class="work-meta">
+            <span>N-20</span>
+            <span>FOTOLAVASTUS</span>
+          </div>
+
+        </a>
+
+
+        <!-- AJAKIRJAPROJEKT -->
+
+        <a href="/portfoolio/" class="work work-3">
+
+          <div class="work-image">
+
+            <img
+              src="./images/portfoolio/fotolavastused/ajakirjaprojekt/Ekvilibrist-0135.jpg"
+              alt="Ekvilibrist ajakirjaprojekt"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="work-meta">
+            <span>EKVILIBRIST</span>
             <span>EDITORIAL</span>
-            <span>2026</span>
           </div>
 
-        </article>
-
-
-        <article class="work work-3">
-
-          <div class="work-image dark">
-            03
-          </div>
-
-          <div class="work-meta">
-            <span>COMMERCIAL</span>
-            <span>2026</span>
-          </div>
-
-        </article>
+        </a>
 
       </div>
 
@@ -383,7 +410,8 @@
 
         <img
           src="./images/avaleht/kertu-moorits-stilist.jpg"
-          alt="Kertu Moorits"
+          alt="Stilist Kertu Moorits"
+          loading="lazy"
         >
 
       </div>
@@ -410,18 +438,14 @@
 
         <p>
           Minu jaoks ei tähenda hea stilistika lihtsalt
-          hästi valitud riideid, vaid läbimõeldud tervikut,
-          mis sobib inimese, eesmärgi ja olukorraga.
+          hästi valitud riideid. Oluline on mõista, kellele,
+          milleks ja millisesse konteksti tervikut loome.
         </p>
 
         <p>
-          Töötan nii eraklientide kui ka loominguliste
+          Töötan eraklientide, brändide ning loominguliste
           ja kommertsprojektidega.
         </p>
-
-        <a href="#" class="text-link light-link">
-          MINUST LÄHEMALT ↗
-        </a>
 
       </div>
 
@@ -461,8 +485,9 @@
           </h2>
 
           <p>
-            Praktiline digitaalne stiilijuhend igapäevaste
-            riietumisotsuste lihtsustamiseks.
+            Praktiline digitaalne stiilijuhend,
+            mis aitab teha igapäevaseid riietumisotsuseid
+            teadlikumalt ja lihtsamalt.
           </p>
 
           <div class="task-row">
@@ -500,12 +525,13 @@
         <div>
 
           <p>
-            Sul on projekt, idee või vajad professionaalset
-            pilku? Räägime.
+            Vajad stilisti, tahad oma garderoobi teadlikumalt
+            üles ehitada või sul on projekt, mis vajab professionaalset pilku?
+            Kirjuta mulle.
           </p>
 
-          <a href="mailto:" class="contact-link">
-            KIRJUTA MULLE ↗
+          <a href="mailto:kertu.moorits@gmail.com" class="contact-link">
+            KIRJUTA MULLE
           </a>
 
         </div>
@@ -520,11 +546,11 @@
   <footer>
 
     <span>
-      KERTU MOORITS
+      MOORITS.
     </span>
 
     <div>
-      <a href="#">INSTAGRAM ↗</a>
+      <a href="#">INSTAGRAM</a>
       <a href="#kontakt">KONTAKT</a>
     </div>
 
