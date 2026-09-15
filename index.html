@@ -27,9 +27,7 @@
 
     <nav class="desktop-nav">
 
-      <a href="/" class="active">
-        AVALEHT
-      </a>
+      <a href="/" class="active">AVALEHT</a>
 
       <div class="nav-dropdown">
 
@@ -44,13 +42,8 @@
 
       </div>
 
-      <a href="/brandidele/">
-        BRÄNDIDELE
-      </a>
-
-      <a href="/portfoolio/">
-        PORTFOOLIO
-      </a>
+      <a href="/brandidele/">BRÄNDIDELE</a>
+      <a href="/portfoolio/">PORTFOOLIO</a>
 
     </nav>
 
@@ -71,33 +64,17 @@
 
     <div class="mobile-links">
 
-      <a href="/">
-        Avaleht
-      </a>
+      <a href="/">Avaleht</a>
 
       <span class="mobile-nav-label">
         PERSONAALSTILISTIKA
       </span>
 
-      <a href="/meestele/">
-        Meestele
-      </a>
-
-      <a href="/naistele/">
-        Naistele
-      </a>
-
-      <a href="/brandidele/">
-        Brändidele
-      </a>
-
-      <a href="/portfoolio/">
-        Portfoolio
-      </a>
-
-      <a href="#kontakt">
-        Kontakt
-      </a>
+      <a href="/meestele/">Meestele</a>
+      <a href="/naistele/">Naistele</a>
+      <a href="/brandidele/">Brändidele</a>
+      <a href="/portfoolio/">Portfoolio</a>
+      <a href="#kontakt">Kontakt</a>
 
     </div>
 
@@ -376,7 +353,6 @@
 
       <div class="portfolio-grid">
 
-
         <!-- SÕBRALT SÕBRALE -->
 
         <a href="/portfoolio/" class="work work-1">
@@ -392,15 +368,8 @@
           </div>
 
           <div class="work-meta">
-
-            <span>
-              SÕBRALT SÕBRALE
-            </span>
-
-            <span>
-              STILISTIKA
-            </span>
-
+            <span>SÕBRALT SÕBRALE</span>
+            <span>STILISTIKA</span>
           </div>
 
         </a>
@@ -421,15 +390,8 @@
           </div>
 
           <div class="work-meta">
-
-            <span>
-              N-20
-            </span>
-
-            <span>
-              FOTOLAVASTUS
-            </span>
-
+            <span>N-20</span>
+            <span>FOTOLAVASTUS</span>
           </div>
 
         </a>
@@ -450,15 +412,8 @@
           </div>
 
           <div class="work-meta">
-
-            <span>
-              EKVILIBRIST
-            </span>
-
-            <span>
-              EDITORIAL
-            </span>
-
+            <span>EKVILIBRIST</span>
+            <span>EDITORIAL</span>
           </div>
 
         </a>
@@ -538,15 +493,8 @@
       <div class="task-grid">
 
         <div class="task-title">
-
-          <span>
-            TASKU
-          </span>
-
-          <span>
-            STILIST.
-          </span>
-
+          <span>TASKU</span>
+          <span>STILIST.</span>
         </div>
 
 
@@ -564,27 +512,13 @@
           </p>
 
           <div class="task-row">
-
-            <span>
-              MEESTELE
-            </span>
-
-            <span>
-              TULEKUL
-            </span>
-
+            <span>MEESTELE</span>
+            <span>TULEKUL</span>
           </div>
 
           <div class="task-row">
-
-            <span>
-              NAISTELE
-            </span>
-
-            <span>
-              TULEKUL
-            </span>
-
+            <span>NAISTELE</span>
+            <span>TULEKUL</span>
           </div>
 
         </div>
@@ -596,37 +530,187 @@
 
     <!-- CONTACT -->
 
-    <section class="contact" id="kontakt">
+    <section class="contact contact-form-section" id="kontakt">
 
-      <p class="label light">
-        KONTAKT
-      </p>
-
-      <div class="contact-grid">
-
-        <h2>
-          Teeme midagi<br>
-          koos.
-        </h2>
+      <div class="contact-form-head">
 
         <div>
 
-          <p>
-            Vajad stilisti, tahad oma garderoobi teadlikumalt
-            üles ehitada või sul on projekt, mis vajab
-            professionaalset pilku? Kirjuta mulle.
+          <p class="label light">
+            KONTAKT
           </p>
 
-          <a
-            href="mailto:kertu.moorits@gmail.com"
-            class="contact-link"
-          >
-            KIRJUTA MULLE
-          </a>
+          <h2>
+            Võta<br>
+            ühendust.
+          </h2>
 
         </div>
 
+
+        <p class="contact-intro">
+          Soovid broneerida teenust, arutada projekti
+          või lihtsalt midagi küsida? Kirjuta mulle.
+        </p>
+
       </div>
+
+
+      <form class="contact-form" id="contactForm">
+
+        <!-- NIMI + E-POST -->
+
+        <div class="form-row">
+
+          <div class="form-field">
+
+            <label for="name">
+              NIMI
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Sinu nimi"
+              autocomplete="name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="email">
+              E-POST
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="sinu@email.ee"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- TELEFON -->
+
+        <div class="form-field">
+
+          <label for="phone">
+            TELEFON
+          </label>
+
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+372 ..."
+            autocomplete="tel"
+          >
+
+        </div>
+
+
+        <!-- TEENUSE DROPDOWN -->
+
+        <div class="form-field form-select-field">
+
+          <label for="service">
+            MILLISE TEENUSE VASTU TUNNED HUVI?
+          </label>
+
+          <select
+            id="service"
+            name="service"
+            required
+          >
+
+            <option value="" disabled selected>
+              Vali teenus
+            </option>
+
+            <option value="Personaalstilistika naistele">
+              Personaalstilistika naistele
+            </option>
+
+            <option value="Personaalstilistika meestele">
+              Personaalstilistika meestele
+            </option>
+
+            <option value="Garderoobiaudit">
+              Garderoobiaudit
+            </option>
+
+            <option value="Stiil ja Shopping">
+              Stiil &amp; Shopping
+            </option>
+
+            <option value="Garderoob ja Shopping">
+              Garderoob + Shopping
+            </option>
+
+            <option value="Stiili kiirabi">
+              Stiili kiirabi
+            </option>
+
+            <option value="Brändid ja produktsioonid">
+              Brändid &amp; produktsioonid
+            </option>
+
+            <option value="Muu küsimus">
+              Muu küsimus
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- SÕNUM -->
+
+        <div class="form-field">
+
+          <label for="message">
+            SÕNUM
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Kirjuta lühidalt oma soovist..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <div class="form-bottom">
+
+          <p>
+            Vastan esimesel võimalusel.
+          </p>
+
+          <button
+            type="submit"
+            class="form-submit"
+          >
+            SAADA
+          </button>
+
+        </div>
+
+      </form>
 
     </section>
 
