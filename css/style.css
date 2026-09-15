@@ -5214,3 +5214,209 @@ a.service:hover {
   }
 
 }
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+.contact-form-section {
+  padding: 110px 6vw 120px;
+  background: #54202b;
+  color: #fffdf9;
+}
+
+.contact-form-head {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 90px;
+}
+
+.contact-form-head h2 {
+  margin: 18px 0 0;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(54px, 7vw, 105px);
+  line-height: 0.9;
+  font-weight: 600;
+  letter-spacing: -0.065em;
+}
+
+.contact-intro {
+  max-width: 470px;
+  margin: 0 0 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255, 253, 249, 0.72);
+}
+
+
+/* FORM */
+
+.contact-form {
+  width: 100%;
+  border-top: 1px solid rgba(255, 253, 249, 0.35);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-row .form-field:first-child {
+  padding-right: 40px;
+  border-right: 1px solid rgba(255, 253, 249, 0.25);
+}
+
+.form-row .form-field:last-child {
+  padding-left: 40px;
+}
+
+.form-field {
+  position: relative;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255, 253, 249, 0.35);
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  color: rgba(255, 253, 249, 0.58);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #fffdf9;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.form-field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(255, 253, 249, 0.42);
+}
+
+.form-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.form-field select option {
+  color: #211b19;
+  background: #fffdf9;
+}
+
+
+/* BOTTOM */
+
+.form-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding-top: 35px;
+}
+
+.form-bottom p {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 253, 249, 0.55);
+}
+
+.form-submit {
+  min-width: 180px;
+  padding: 17px 28px;
+  border: 1px solid #fffdf9;
+  border-radius: 0;
+  background: transparent;
+  color: #fffdf9;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.form-submit:hover {
+  background: #fffdf9;
+  color: #54202b;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .contact-form-section {
+    padding: 75px 24px 85px;
+  }
+
+  .contact-form-head {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-bottom: 55px;
+  }
+
+  .contact-form-head h2 {
+    font-size: clamp(52px, 17vw, 76px);
+  }
+
+  .contact-intro {
+    font-size: 14px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row .form-field:first-child,
+  .form-row .form-field:last-child {
+    padding-left: 0;
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .form-field {
+    padding: 25px 0;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-size: 17px;
+  }
+
+  .form-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .form-submit {
+    width: 100%;
+  }
+
+}
