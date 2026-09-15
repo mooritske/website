@@ -5670,3 +5670,363 @@ a.service:hover {
   }
 
 }
+/* =========================================================
+   MEN — PREMIUM EDITORIAL STORY
+   ========================================================= */
+
+.men-story {
+  padding: 120px 6vw 135px;
+  background: #f7f2eb;
+  color: #211b19;
+}
+
+
+/* STORY TOP */
+
+.men-story-top {
+  padding-bottom: 75px;
+}
+
+.men-story-top h2 {
+  max-width: 1150px;
+  margin: 22px 0 0;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(52px, 6vw, 96px);
+  line-height: 0.94;
+  font-weight: 600;
+  letter-spacing: -0.065em;
+}
+
+.men-story-top h2 span {
+  color: #54202b;
+}
+
+
+/* CASE */
+
+.men-story-case {
+  border-top: 1px solid rgba(33, 27, 25, 0.35);
+}
+
+.men-story-case-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 22px 0 55px;
+}
+
+.men-story-case-number {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #756c67;
+}
+
+.men-story-case-head > div {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.men-story-case-head strong,
+.men-story-case-head div span {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.men-story-case-head div span {
+  color: #756c67;
+}
+
+
+/* STORY BODY */
+
+.men-story-case-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9vw;
+  padding: 35px 0 100px;
+}
+
+.men-story-lead {
+  max-width: 560px;
+}
+
+.men-story-lead p:first-child {
+  margin: 0 0 25px;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(30px, 3vw, 48px);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  color: #211b19;
+}
+
+.men-story-lead p:last-child {
+  max-width: 480px;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #756c67;
+}
+
+.men-story-copy {
+  max-width: 520px;
+}
+
+.men-story-copy p {
+  margin: 0 0 24px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #756c67;
+}
+
+.men-story-copy .men-story-copy-strong {
+  margin-top: 42px;
+  font-size: 19px;
+  line-height: 1.55;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #211b19;
+}
+
+
+/* GROWTH */
+
+.men-story-growth {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(33, 27, 25, 0.35);
+  border-bottom: 1px solid rgba(33, 27, 25, 0.35);
+}
+
+.men-story-growth > div {
+  min-height: 190px;
+  padding: 30px 35px 35px 0;
+}
+
+.men-story-growth > div + div {
+  padding-left: 35px;
+  border-left: 1px solid rgba(33, 27, 25, 0.25);
+}
+
+.men-story-growth span {
+  display: block;
+  margin-bottom: 45px;
+  font-family: "Poppins", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #756c67;
+}
+
+.men-story-growth strong {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(24px, 2.3vw, 38px);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  color: #211b19;
+}
+
+
+/* CONTRAST */
+
+.men-story-contrast {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: start;
+  padding: 90px 0 100px;
+}
+
+.men-story-contrast > span {
+  padding-top: 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #54202b;
+}
+
+.men-story-contrast p {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(42px, 5.3vw, 84px);
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  color: #211b19;
+}
+
+.men-story-contrast strong {
+  font-weight: 600;
+  color: #54202b;
+}
+
+
+/* ENDING */
+
+.men-story-ending {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  padding-top: 35px;
+  border-top: 1px solid #211b19;
+}
+
+.men-story-ending > p {
+  max-width: 240px;
+  margin: 5px 0 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #756c67;
+}
+
+.men-story-ending h3 {
+  max-width: 900px;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(36px, 4.5vw, 70px);
+  line-height: 1.02;
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  color: #211b19;
+}
+
+.men-story-ending h3 span {
+  color: #54202b;
+}
+
+
+/* SERVICES */
+
+.men-services-heading h2 span {
+  color: #54202b;
+}
+
+
+/* =========================================================
+   MEN STORY — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .men-story {
+    padding: 80px 24px 90px;
+  }
+
+  .men-story-top {
+    padding-bottom: 50px;
+  }
+
+  .men-story-top h2 {
+    font-size: clamp(44px, 12.5vw, 62px);
+    line-height: 0.97;
+  }
+
+  .men-story-case-head {
+    padding: 18px 0 38px;
+  }
+
+  .men-story-case-head > div {
+    gap: 15px;
+  }
+
+
+  /* BODY */
+
+  .men-story-case-body {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 15px 0 70px;
+  }
+
+  .men-story-lead p:first-child {
+    font-size: 30px;
+  }
+
+  .men-story-lead p:last-child,
+  .men-story-copy p {
+    font-size: 14px;
+  }
+
+  .men-story-copy .men-story-copy-strong {
+    margin-top: 35px;
+    font-size: 18px;
+  }
+
+
+  /* GROWTH */
+
+  .men-story-growth {
+    grid-template-columns: 1fr;
+  }
+
+  .men-story-growth > div {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 20px;
+    align-items: center;
+    min-height: 0;
+    padding: 24px 0;
+  }
+
+  .men-story-growth > div + div {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid rgba(33, 27, 25, 0.25);
+  }
+
+  .men-story-growth span {
+    margin: 0;
+  }
+
+  .men-story-growth strong {
+    font-size: 23px;
+  }
+
+
+  /* CONTRAST */
+
+  .men-story-contrast {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 65px 0 75px;
+  }
+
+  .men-story-contrast > span {
+    padding-top: 0;
+  }
+
+  .men-story-contrast p {
+    font-size: clamp(42px, 12.5vw, 60px);
+    line-height: 1;
+  }
+
+
+  /* ENDING */
+
+  .men-story-ending {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 28px;
+  }
+
+  .men-story-ending > p {
+    max-width: none;
+  }
+
+  .men-story-ending h3 {
+    font-size: clamp(35px, 10vw, 49px);
+    line-height: 1.04;
+  }
+
+}
