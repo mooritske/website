@@ -13,9 +13,294 @@
   >
 
   <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+
+    /* =========================================================
+       MEN — CASE STUDY
+       ========================================================= */
+
+    .men-case {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 120px 6vw 130px;
+      background: #f7f2eb;
+      color: #211b19;
+    }
+
+    .men-case *,
+    .men-case *::before,
+    .men-case *::after {
+      box-sizing: border-box;
+    }
+
+
+    /* CASE HEADER */
+
+    .men-case-header {
+      max-width: 1180px;
+      margin-bottom: 90px;
+    }
+
+    .men-case-header .label {
+      margin: 0 0 24px;
+    }
+
+    .men-case-header h2 {
+      max-width: 1100px;
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(52px, 6vw, 94px);
+      line-height: 0.96;
+      font-weight: 600;
+      letter-spacing: -0.065em;
+      color: #211b19;
+    }
+
+    .men-case-header h2 span {
+      color: #54202b;
+    }
+
+
+    /* CASE STORY */
+
+    .men-case-story {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 7vw;
+      padding: 35px 0 90px;
+      border-top: 1px solid rgba(33, 27, 25, 0.3);
+    }
+
+    .men-case-person {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .men-case-person > span {
+      font-family: "Poppins", sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: #756c67;
+    }
+
+    .men-case-person > div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .men-case-person strong {
+      font-family: "Poppins", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #211b19;
+    }
+
+    .men-case-person small {
+      font-family: "Poppins", sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #756c67;
+    }
+
+    .men-case-main {
+      max-width: 900px;
+    }
+
+    .men-case-lead {
+      margin: 0 0 55px;
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(30px, 3vw, 46px);
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      color: #211b19;
+    }
+
+    .men-case-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 70px;
+    }
+
+    .men-case-columns p {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #756c67;
+    }
+
+
+    /* CHANGE */
+
+    .men-case-change {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid rgba(33, 27, 25, 0.3);
+      border-bottom: 1px solid rgba(33, 27, 25, 0.3);
+    }
+
+    .men-case-change p {
+      min-height: 220px;
+      margin: 0;
+      padding: 45px 5vw 45px 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(25px, 2.4vw, 38px);
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      color: #211b19;
+    }
+
+    .men-case-change p + p {
+      padding-left: 5vw;
+      border-left: 1px solid rgba(33, 27, 25, 0.3);
+    }
+
+    .men-case-change strong {
+      display: block;
+      font-size: clamp(32px, 3.4vw, 54px);
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+    }
+
+    .men-case-change p:last-child strong {
+      color: #54202b;
+    }
+
+
+    /* QUESTION */
+
+    .men-case-question {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 7vw;
+      padding-top: 95px;
+    }
+
+    .men-case-question > span {
+      max-width: 190px;
+      padding-top: 8px;
+      font-family: "Poppins", sans-serif;
+      font-size: 11px;
+      line-height: 1.6;
+      color: #756c67;
+    }
+
+    .men-case-question h3 {
+      max-width: 1000px;
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(42px, 5vw, 78px);
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: -0.06em;
+      color: #211b19;
+    }
+
+    .men-case-question h3 em {
+      font-style: normal;
+      color: #54202b;
+    }
+
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 700px) {
+
+      .men-case {
+        padding: 80px 24px 90px;
+      }
+
+      .men-case-header {
+        margin-bottom: 55px;
+      }
+
+      .men-case-header h2 {
+        font-size: clamp(43px, 12vw, 60px);
+        line-height: 0.98;
+      }
+
+      .men-case-story {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 25px 0 65px;
+      }
+
+      .men-case-person {
+        justify-content: flex-start;
+        gap: 35px;
+      }
+
+      .men-case-lead {
+        margin-bottom: 35px;
+        font-size: 29px;
+      }
+
+      .men-case-columns {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .men-case-columns p {
+        font-size: 14px;
+      }
+
+      .men-case-change {
+        grid-template-columns: 1fr;
+      }
+
+      .men-case-change p {
+        min-height: 170px;
+        padding: 30px 0;
+      }
+
+      .men-case-change p + p {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid rgba(33, 27, 25, 0.3);
+      }
+
+      .men-case-change strong {
+        font-size: 35px;
+      }
+
+      .men-case-question {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 65px;
+      }
+
+      .men-case-question > span {
+        max-width: none;
+      }
+
+      .men-case-question h3 {
+        font-size: clamp(37px, 10.5vw, 50px);
+        line-height: 1.03;
+      }
+
+    }
+
+  </style>
 </head>
 
+
 <body class="men-page">
+
 
   <!-- HEADER -->
 
@@ -24,9 +309,11 @@
     <a href="/" class="logo">MOORITS.</a>
 
     <nav class="desktop-nav">
+
       <a href="/">AVALEHT</a>
 
       <div class="nav-dropdown">
+
         <button class="nav-dropdown-trigger" type="button">
           PERSONAALSTILISTIKA
         </button>
@@ -35,10 +322,12 @@
           <a href="/meestele/" class="active">MEESTELE</a>
           <a href="/naistele/">NAISTELE</a>
         </div>
+
       </div>
 
       <a href="/brandidele/">BRÄNDIDELE</a>
       <a href="/portfoolio/">PORTFOOLIO</a>
+
     </nav>
 
     <button class="menu-button" id="menuButton" type="button">
@@ -48,7 +337,7 @@
   </header>
 
 
-  <!-- MOBILE NAV -->
+  <!-- MOBILE MENU -->
 
   <nav class="mobile-nav" id="mobileNav">
 
@@ -128,11 +417,14 @@
 
     <!-- MAITI NÄIDE -->
 
-    <section class="men-story">
+    <section class="men-case">
 
-      <div class="men-story-top">
 
-        <p class="label men-label">
+      <!-- CASE HEADER -->
+
+      <div class="men-case-header">
+
+        <p class="label">
           ÜKS NÄIDE
         </p>
 
@@ -144,125 +436,88 @@
       </div>
 
 
-      <div class="men-story-case">
+      <!-- STORY -->
 
+      <div class="men-case-story">
 
-        <!-- CASE HEADER -->
+        <div class="men-case-person">
 
-        <div class="men-story-case-head">
-
-          <span class="men-story-case-number">
-            01
-          </span>
+          <span>01</span>
 
           <div>
             <strong>MAIT</strong>
-            <span>IT-ETTEVÕTE</span>
+            <small>IT-ETTEVÕTE</small>
           </div>
 
         </div>
 
 
-        <!-- CASE BODY -->
+        <div class="men-case-main">
 
-        <div class="men-story-case-body">
+          <p class="men-case-lead">
+            Mait on oma ala spetsialist.
+          </p>
 
-          <div class="men-story-lead">
-
-            <p>
-              Mait on oma ala spetsialist.
-            </p>
+          <div class="men-case-columns">
 
             <p>
               Ta kohtub klientidega, juhib projekte ja istub
               laua taga inimestega, kelle arvamus loeb.
-            </p>
-
-          </div>
-
-
-          <div class="men-story-copy">
-
-            <p>
               Hommikul võtab ta kapist esimese puhta särgi,
               püksid ja läheb.
             </p>
 
             <p>
-              Ta ei ole kunagi mõelnud, et tema riietel
-              oleks midagi viga.
-            </p>
-
-            <p class="men-story-copy-strong">
-              Aga ta pole ka kunagi mõelnud, kas need näitavad
-              välja seda meest, kes ta tegelikult on.
+              Ta ei ole kunagi mõelnud, et tema riietel oleks
+              midagi viga. Aga ta pole ka kunagi mõelnud,
+              kas need näitavad välja seda meest,
+              kes ta tegelikult on.
             </p>
 
           </div>
 
         </div>
 
-
-        <!-- GROWTH -->
-
-        <div class="men-story-growth">
-
-          <div>
-            <span>KOGEMUS</span>
-            <strong>on kasvanud.</strong>
-          </div>
-
-          <div>
-            <span>VASTUTUS</span>
-            <strong>on kasvanud.</strong>
-          </div>
-
-          <div>
-            <span>ENESEKINDLUS</span>
-            <strong>on kasvanud.</strong>
-          </div>
-
-        </div>
+      </div>
 
 
-        <!-- CONTRAST -->
+      <!-- CHANGE -->
 
-        <div class="men-story-contrast">
+      <div class="men-case-change">
 
-          <span>
-            AGA
-          </span>
+        <p>
+          Kogemus, vastutus ja enesekindlus
+          <strong>on kasvanud.</strong>
+        </p>
 
-          <p>
-            Tema välimus<br>
-            <strong>on jäänud samaks.</strong>
-          </p>
+        <p>
+          Tema välimus
+          <strong>on jäänud samaks.</strong>
+        </p>
 
-        </div>
+      </div>
 
 
-        <!-- ENDING -->
+      <!-- QUESTION -->
 
-        <div class="men-story-ending">
+      <div class="men-case-question">
 
-          <p>
-            Ühel hetkel märkab Mait seda ka ise.
-          </p>
+        <span>
+          Ühel hetkel märkab Mait seda ka ise.
+        </span>
 
-          <h3>
-            Kas see, kuidas ma välja näen,<br>
-            sobib veel sellega,<br>
-            <span>kes ma täna olen?</span>
-          </h3>
-
-        </div>
+        <h3>
+          Kas see, kuidas ma välja näen,<br>
+          sobib veel sellega,<br>
+          <em>kes ma täna olen?</em>
+        </h3>
 
       </div>
 
     </section>
 
 
-    <!-- TEENUSED -->
+    <!-- SERVICES -->
 
     <section class="men-services" id="teenused">
 
@@ -296,7 +551,7 @@
       <div class="men-service-comparison">
 
 
-        <!-- 01 GARDEROOBIAUDIT -->
+        <!-- 01 -->
 
         <article class="men-comparison-card">
 
@@ -341,7 +596,7 @@
         </article>
 
 
-        <!-- 02 STIIL & SHOPPING -->
+        <!-- 02 -->
 
         <article class="men-comparison-card men-comparison-featured">
 
@@ -386,7 +641,7 @@
         </article>
 
 
-        <!-- 03 GARDEROOB + SHOPPING -->
+        <!-- 03 -->
 
         <article class="men-comparison-card">
 
@@ -433,7 +688,7 @@
       </div>
 
 
-      <!-- TEENUSTE INFO -->
+      <!-- SERVICES NOTE -->
 
       <div class="men-services-note">
 
