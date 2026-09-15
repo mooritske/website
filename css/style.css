@@ -6304,3 +6304,149 @@ a.service:hover {
   }
 
 }
+/* =========================================================
+   MOBILE NAV — MOORITS.
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  #mobileNav {
+    display: flex !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 99999 !important;
+
+    flex-direction: column !important;
+
+    padding:
+      max(26px, env(safe-area-inset-top))
+      24px
+      max(30px, env(safe-area-inset-bottom)) !important;
+
+    background: #f7f2eb !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+
+    transform: translateY(-8px);
+
+    transition:
+      opacity .25s ease,
+      transform .25s ease,
+      visibility .25s ease;
+  }
+
+
+  #mobileNav.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0);
+  }
+
+
+  /* SULGE */
+
+  #mobileClose {
+    display: block !important;
+    align-self: flex-end;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: .14em;
+
+    color: #211b19;
+    cursor: pointer;
+  }
+
+
+  /* LINKS WRAPPER */
+
+  #mobileNav .mobile-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+
+    width: 100%;
+
+    gap: 0 !important;
+    margin: 70px 0 0 !important;
+  }
+
+
+  /* MAIN LINKS */
+
+  #mobileNav .mobile-links > a {
+    display: block;
+
+    margin: 0 !important;
+    padding: 15px 0 !important;
+
+    border: 0;
+
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(31px, 9vw, 43px) !important;
+    line-height: 1.05 !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.045em !important;
+
+    color: #211b19 !important;
+    text-decoration: none !important;
+  }
+
+
+  /* PERSONAALSTILISTIKA LABEL */
+
+  #mobileNav .mobile-nav-label {
+    display: block;
+
+    margin: 25px 0 8px !important;
+    padding: 0 !important;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 9px !important;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: .15em;
+
+    color: #9b928d !important;
+  }
+
+
+  /* MEESTELE + NAISTELE */
+
+  #mobileNav .mobile-nav-label + a,
+  #mobileNav .mobile-nav-label + a + a {
+    padding: 10px 0 !important;
+  }
+
+
+  /* SEPARATE LOWER NAV */
+
+  #mobileNav .mobile-nav-label + a + a + a {
+    margin-top: 25px !important;
+  }
+
+
+  /* KONTAKT */
+
+  #mobileNav .mobile-links > a:last-child {
+    margin-top: 25px !important;
+    padding-top: 22px !important;
+
+    border-top: 1px solid rgba(33, 27, 25, .22);
+
+    font-size: 18px !important;
+    letter-spacing: -0.02em !important;
+  }
+
+}
