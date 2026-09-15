@@ -4810,3 +4810,407 @@ footer > span:last-child {
   }
 
 }
+/* =========================================================
+   MOORITS. AVALEHE UUENDUSED
+   ========================================================= */
+
+
+/* HEADER */
+
+.header .logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  color: #211b19;
+  text-decoration: none;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.desktop-nav > a,
+.nav-dropdown-trigger {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.07em;
+  color: #211b19;
+  text-decoration: none;
+}
+
+.nav-dropdown-trigger {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+
+/* MENÜÜ NUPP */
+
+.menu-button {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px !important;
+  line-height: 1;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em;
+  color: #211b19 !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   TEENUSED
+   ========================================================= */
+
+.services {
+  padding: 110px 6vw;
+  background: #f7f2eb;
+  color: #211b19;
+}
+
+.services .section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(33, 27, 25, 0.35);
+}
+
+.services .section-head .label,
+.services .section-head > span {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+
+/* ÜKS TEENUSE RIDA */
+
+.service {
+  display: grid;
+  grid-template-columns:
+    55px
+    minmax(220px, 1fr)
+    minmax(300px, 1.25fr)
+    minmax(130px, auto);
+
+  gap: 35px;
+  align-items: center;
+
+  min-height: 175px;
+  padding: 35px 0;
+
+  border-bottom: 1px solid rgba(33, 27, 25, 0.35);
+
+  color: #211b19;
+  text-decoration: none;
+}
+
+.service .number {
+  align-self: start;
+  padding-top: 7px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.service h3 {
+  margin: 0 0 7px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(25px, 2.1vw, 36px);
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.service small {
+  display: block;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  color: #756c67;
+}
+
+.service > p {
+  max-width: 520px;
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #756c67;
+}
+
+
+/* PERSONAALSTILISTIKA VALIKUD */
+
+.service-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.service-link,
+.service-more {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+
+  color: #54202b;
+  text-decoration: none;
+}
+
+.service-link {
+  position: relative;
+}
+
+.service-link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 3px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+.service-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+/* BRÄNDID & PRODUKTSIOONID */
+
+a.service {
+  transition:
+    padding-left 0.25s ease,
+    padding-right 0.25s ease,
+    background 0.25s ease;
+}
+
+a.service:hover {
+  padding-left: 18px;
+  padding-right: 18px;
+  background: #eee6dc;
+}
+
+
+/* TASKUSTILIST TEASER */
+
+.service-coming {
+  position: relative;
+}
+
+.service-coming .service-more {
+  color: #756c67;
+}
+
+
+/* =========================================================
+   PORTFOOLIO PÄRIS PILDID
+   ========================================================= */
+
+.portfolio .work {
+  display: block;
+  color: #211b19;
+  text-decoration: none;
+}
+
+.portfolio .work-image {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: #e7dbcf;
+}
+
+.portfolio .work-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.portfolio .work:hover .work-image img {
+  transform: scale(1.025);
+}
+
+
+/* erinevad kõrgused jätavad editorial mulje */
+
+.portfolio .work-1 .work-image {
+  aspect-ratio: 4 / 5;
+}
+
+.portfolio .work-2 .work-image {
+  aspect-ratio: 3 / 4;
+}
+
+.portfolio .work-3 .work-image {
+  aspect-ratio: 4 / 5;
+}
+
+.work-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-top: 12px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .header .logo {
+    font-size: 23px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #211b19 !important;
+  }
+
+
+  /* MOBILE MENU */
+
+  #mobileNav .mobile-links a {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(26px, 8vw, 40px);
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: #211b19;
+    text-decoration: none;
+  }
+
+  #mobileNav .mobile-nav-label {
+    margin-top: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #756c67;
+  }
+
+  #mobileClose {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #211b19 !important;
+  }
+
+
+  /* TEENUSED */
+
+  .services {
+    padding: 75px 24px;
+  }
+
+  .service {
+    display: grid;
+
+    grid-template-columns:
+      32px
+      minmax(0, 1fr);
+
+    gap: 10px 15px;
+
+    min-height: 0;
+    padding: 30px 0;
+  }
+
+  .service .number {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+  }
+
+  .service > div:not(.service-actions) {
+    grid-column: 2;
+  }
+
+  .service h3 {
+    font-size: clamp(24px, 7vw, 34px);
+  }
+
+  .service > p {
+    grid-column: 2;
+    max-width: 100%;
+    margin-top: 12px;
+
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .service-actions {
+    grid-column: 2;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 20px;
+    margin-top: 12px;
+  }
+
+  .service > .service-more {
+    grid-column: 2;
+    margin-top: 12px;
+  }
+
+  a.service:hover {
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent;
+  }
+
+
+  /* PORTFOOLIO */
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio .work-1 .work-image,
+  .portfolio .work-2 .work-image,
+  .portfolio .work-3 .work-image {
+    aspect-ratio: 4 / 5;
+  }
+
+}
