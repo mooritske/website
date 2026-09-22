@@ -31,3 +31,41 @@ document.addEventListener("keydown", (event) => {
     closeMenu();
   }
 });
+const contactForm = document.getElementById("contactForm");
+const formSuccess = document.getElementById("formSuccess");
+
+if (contactForm && formSuccess) {
+  contactForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "SAADAN...";
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: new FormData(contactForm),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        contactForm.reset();
+        contactForm.hidden = true;
+        formSuccess.hidden = false;
+      } else {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+        alert("Sõnumi saatmine ebaõnnestus. Palun proovi uuesti.");
+      }
+    } catch (error) {
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+      alert("Sõnumi saatmine ebaõnnestus. Palun proovi uuesti.");
+    }
+  });
+}
