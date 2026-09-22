@@ -69,3 +69,41 @@ if (contactForm && formSuccess) {
     }
   });
 }
+const brandContactForm = document.getElementById("brandContactForm");
+const brandFormSuccess = document.getElementById("brandFormSuccess");
+
+if (brandContactForm && brandFormSuccess) {
+  brandContactForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const submitButton = brandContactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "SAADAN...";
+
+    try {
+      const response = await fetch(brandContactForm.action, {
+        method: brandContactForm.method,
+        body: new FormData(brandContactForm),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        brandContactForm.reset();
+        brandContactForm.hidden = true;
+        brandFormSuccess.hidden = false;
+      } else {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+        alert("Sõnumi saatmine ebaõnnestus. Palun proovi uuesti.");
+      }
+    } catch (error) {
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+      alert("Sõnumi saatmine ebaõnnestus. Palun proovi uuesti.");
+    }
+  });
+}
