@@ -421,23 +421,23 @@
 
 
       <form
-  class="contact-form"
-  id="brandContactForm"
-  action="https://formspree.io/f/mjykwdko"
-  method="POST"
->
+        class="contact-form"
+        id="brandContactForm"
+        action="https://formspree.io/f/mjykwdko"
+        method="POST"
+      >
 
         <div class="form-row">
 
           <div class="form-field">
 
-            <label for="name">
+            <label for="brand-name">
               NIMI
             </label>
 
             <input
               type="text"
-              id="name"
+              id="brand-name"
               name="name"
               placeholder="Sinu nimi"
               autocomplete="name"
@@ -449,13 +449,13 @@
 
           <div class="form-field">
 
-            <label for="email">
+            <label for="brand-email">
               E-POST
             </label>
 
             <input
               type="email"
-              id="email"
+              id="brand-email"
               name="email"
               placeholder="sinu@email.ee"
               autocomplete="email"
@@ -469,13 +469,13 @@
 
         <div class="form-field">
 
-          <label for="company">
+          <label for="brand-company">
             BRÄND / ETTEVÕTE
           </label>
 
           <input
             type="text"
-            id="company"
+            id="brand-company"
             name="company"
             placeholder="Brändi või ettevõtte nimi"
           >
@@ -485,12 +485,12 @@
 
         <div class="form-field">
 
-          <label for="project">
+          <label for="brand-project">
             RÄÄGI MULLE PROJEKTIST
           </label>
 
           <textarea
-            id="project"
+            id="brand-project"
             name="project"
             rows="6"
             placeholder="Mis projektiga on tegemist, millist tulemust soovid ja millal see toimub?"
@@ -516,10 +516,23 @@
         </div>
 
       </form>
-      <div class="form-success" id="formSuccess" hidden>
-  <p>Aitäh! Sinu sõnum on saadetud.</p>
-  <span>Võtan sinuga esimesel võimalusel ühendust.</span>
-</div>
+
+
+      <!-- SUCCESS MESSAGE -->
+
+      <div
+        class="form-success"
+        id="brandFormSuccess"
+        hidden
+      >
+        <p>
+          Aitäh! Sinu sõnum on saadetud.
+        </p>
+
+        <span>
+          Võtan sinuga esimesel võimalusel ühendust.
+        </span>
+      </div>
 
     </section>
 
@@ -536,9 +549,13 @@
 
     <div>
 
-     <a href="https://www.instagram.com/mooritzmoments" target="_blank" rel="noopener noreferrer">
-  INSTAGRAM
-</a>
+      <a
+        href="https://www.instagram.com/mooritzmoments"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        INSTAGRAM
+      </a>
 
       <a href="#kontakt">
         KONTAKT
@@ -556,4 +573,5 @@
   <script src="../js/main.js"></script>
 
 </body>
+
 </html>
