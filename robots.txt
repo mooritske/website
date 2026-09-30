@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moorits.com/sitemap.xml
