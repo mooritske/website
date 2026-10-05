@@ -6928,3 +6928,1409 @@ a.service:hover {
   }
 
 }
+/* =========================================================
+   TASKUSTILIST — ARTICLE
+   ========================================================= */
+
+
+/* PAGE */
+
+.article-page {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.article-hero {
+  min-height: 92vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding:
+    120px
+    var(--page)
+    35px;
+
+  background: var(--cream);
+}
+
+
+.article-hero-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+
+.article-hero-meta a,
+.article-hero-meta span {
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+}
+
+
+.article-hero-meta a {
+  color: var(--wine);
+}
+
+
+.article-hero-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(260px, 0.5fr);
+
+  gap: 8vw;
+
+  align-items: end;
+
+  padding:
+    8vh
+    0
+    7vh;
+}
+
+
+.article-hero h1 {
+  max-width: 1100px;
+
+  margin: 0;
+
+  font-size: clamp(72px, 10vw, 155px);
+  font-weight: 700;
+
+  line-height: 0.82;
+  letter-spacing: -0.075em;
+}
+
+
+.article-hero-side {
+  padding-bottom: 5px;
+}
+
+
+.article-hero-lead {
+  margin: 0 0 55px;
+
+  font-size: clamp(24px, 2.5vw, 38px);
+  font-weight: 500;
+
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+
+.article-author {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid var(--line);
+}
+
+
+.article-author span {
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+}
+
+
+.article-hero-footer {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-top: 17px;
+
+  border-top: 1px solid var(--line);
+}
+
+
+.article-hero-footer span {
+  color: var(--muted);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.article-introduction {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(300px, 0.55fr);
+
+  gap: 11vw;
+
+  padding:
+    120px
+    var(--page)
+    135px;
+
+  background: var(--beige-light);
+}
+
+
+.article-intro-lead {
+  max-width: 980px;
+
+  margin: 0;
+
+  font-size: clamp(42px, 5.3vw, 80px);
+  font-weight: 600;
+
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+
+.article-intro-copy {
+  align-self: end;
+}
+
+
+.article-intro-copy p {
+  margin: 0 0 23px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  line-height: 1.85;
+}
+
+
+.article-intro-copy p:last-child {
+  margin-bottom: 0;
+}
+
+
+.article-intro-copy strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   QUICK SUMMARY
+   ========================================================= */
+
+.article-summary {
+  padding:
+    55px
+    var(--page)
+    75px;
+
+  background: var(--wine);
+
+  color: var(--white);
+}
+
+
+.article-summary-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 23px;
+
+  border-bottom: 1px solid var(--line-light);
+}
+
+
+.article-summary-head > span {
+  color: rgba(255,255,255,0.55);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+}
+
+
+.article-summary-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap: 10vw;
+
+  padding:
+    75px
+    0
+    55px;
+}
+
+
+.article-summary h2 {
+  margin: 0;
+
+  font-size: clamp(52px, 6.4vw, 98px);
+  font-weight: 600;
+
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+}
+
+
+.article-summary-list {
+  border-top: 1px solid var(--line-light);
+}
+
+
+.summary-row {
+  display: grid;
+
+  grid-template-columns:
+    42px
+    1fr;
+
+  gap: 22px;
+
+  padding: 22px 0;
+
+  border-bottom: 1px solid var(--line-light);
+}
+
+
+.summary-row > span {
+  padding-top: 2px;
+
+  color: rgba(255,255,255,0.45);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+
+.summary-row p {
+  margin: 0;
+
+  color: rgba(255,255,255,0.72);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+.summary-row strong {
+  color: var(--white);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.article-summary-note {
+  max-width: 620px;
+
+  margin:
+    15px
+    0
+    0
+    auto;
+
+  color: rgba(255,255,255,0.62);
+
+  font-size: 11px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   ARTICLE BODY
+   ========================================================= */
+
+.article-body {
+  padding:
+    0
+    var(--page);
+
+  background: var(--cream);
+}
+
+
+.article-chapter {
+  display: grid;
+
+  grid-template-columns:
+    minmax(60px, 0.25fr)
+    minmax(0, 1.25fr)
+    minmax(80px, 0.45fr);
+
+  gap: 30px;
+
+  padding:
+    115px
+    0
+    120px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+
+.article-chapter-number {
+  padding-top: 8px;
+
+  color: var(--wine);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+}
+
+
+.article-chapter-content {
+  grid-column: 2;
+
+  max-width: 900px;
+}
+
+
+.article-chapter-content h2 {
+  max-width: 900px;
+
+  margin:
+    0
+    0
+    55px;
+
+  font-size: clamp(45px, 5.2vw, 78px);
+  font-weight: 600;
+
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+
+.article-chapter-content > p {
+  max-width: 660px;
+
+  margin:
+    0
+    0
+    23px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+
+.article-chapter-content > p strong {
+  color: var(--ink);
+
+  font-weight: 600;
+}
+
+
+/* LARGE QUESTION */
+
+.article-chapter-content .article-question {
+  max-width: 780px;
+
+  margin:
+    55px
+    0;
+
+  padding:
+    30px
+    0;
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  color: var(--wine);
+
+  font-size: clamp(25px, 2.7vw, 40px);
+  font-weight: 600;
+
+  line-height: 1.22;
+  letter-spacing: -0.04em;
+}
+
+
+/* EMPHASIS */
+
+.article-chapter-content .article-emphasis {
+  max-width: 800px;
+
+  margin:
+    60px
+    0
+    0;
+
+  color: var(--ink);
+
+  font-size: clamp(27px, 3.2vw, 48px);
+  font-weight: 600;
+
+  line-height: 1.17;
+  letter-spacing: -0.045em;
+}
+
+
+/* =========================================================
+   WORD EXAMPLES
+   ========================================================= */
+
+.article-word-examples {
+  max-width: 780px;
+
+  margin:
+    55px
+    0;
+
+  border-top: 1px solid var(--line);
+}
+
+
+.article-word-examples span {
+  display: block;
+
+  padding:
+    18px
+    0;
+
+  border-bottom: 1px solid var(--line);
+
+  color: var(--wine);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   EXERCISE
+   ========================================================= */
+
+.article-exercise {
+  padding:
+    55px
+    var(--page)
+    95px;
+
+  background: var(--wine-dark);
+
+  color: var(--white);
+}
+
+
+.article-exercise-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 23px;
+
+  border-bottom: 1px solid var(--line-light);
+}
+
+
+.article-exercise-head > span {
+  color: rgba(255,255,255,0.5);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+}
+
+
+.article-exercise-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.85fr)
+    minmax(0, 1.15fr);
+
+  gap: 10vw;
+
+  padding:
+    80px
+    0
+    70px;
+}
+
+
+.article-exercise-grid h2 {
+  max-width: 750px;
+
+  margin:
+    0
+    0
+    35px;
+
+  font-size: clamp(52px, 6.3vw, 96px);
+  font-weight: 600;
+
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+}
+
+
+.article-exercise-grid > div:first-child > p {
+  max-width: 430px;
+
+  color: rgba(255,255,255,0.65);
+
+  font-size: 12px;
+
+  line-height: 1.8;
+}
+
+
+.exercise-steps {
+  border-top: 1px solid var(--line-light);
+}
+
+
+.exercise-row {
+  display: grid;
+
+  grid-template-columns:
+    90px
+    1fr;
+
+  gap: 30px;
+
+  align-items: center;
+
+  padding:
+    25px
+    0;
+
+  border-bottom: 1px solid var(--line-light);
+}
+
+
+.exercise-row > span {
+  color: var(--beige);
+
+  font-size: clamp(42px, 4.5vw, 70px);
+  font-weight: 600;
+
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+
+.exercise-row p {
+  margin: 0;
+
+  color: rgba(255,255,255,0.68);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+.exercise-row strong {
+  color: var(--white);
+
+  font-weight: 600;
+}
+
+
+.exercise-question {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 8vw;
+
+  padding:
+    50px
+    0;
+
+  border-top: 1px solid var(--line-light);
+  border-bottom: 1px solid var(--line-light);
+}
+
+
+.exercise-question p {
+  margin: 0;
+
+  color: rgba(255,255,255,0.72);
+
+  font-size: clamp(23px, 2.5vw, 37px);
+  font-weight: 400;
+
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+
+
+.exercise-question strong {
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--white);
+
+  font-weight: 600;
+}
+
+
+.exercise-bottom {
+  max-width: 650px;
+
+  margin:
+    50px
+    0
+    0
+    auto;
+
+  color: rgba(255,255,255,0.62);
+
+  font-size: 12px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   CONCLUSION
+   ========================================================= */
+
+.article-conclusion {
+  padding:
+    115px
+    var(--page)
+    135px;
+
+  background: var(--beige-light);
+}
+
+
+.article-conclusion .label {
+  color: var(--wine);
+}
+
+
+.article-conclusion-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(300px, 0.55fr);
+
+  gap: 10vw;
+
+  align-items: start;
+
+  margin-top: 60px;
+}
+
+
+.article-conclusion h2 {
+  max-width: 950px;
+
+  margin: 0;
+
+  font-size: clamp(52px, 6.5vw, 100px);
+  font-weight: 700;
+
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+
+
+.article-conclusion-grid > div {
+  padding-top: 7px;
+}
+
+
+.article-conclusion-grid > div > p {
+  margin:
+    0
+    0
+    22px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  line-height: 1.85;
+}
+
+
+.article-conclusion-grid .article-final-quote {
+  margin-top: 50px;
+
+  color: var(--wine);
+
+  font-size: clamp(34px, 3.8vw, 58px);
+  font-weight: 600;
+
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   PERSONAALSTILISTIKA CTA
+   ========================================================= */
+
+.article-services {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.85fr)
+    minmax(0, 1.15fr);
+
+  gap: 10vw;
+
+  padding:
+    95px
+    var(--page)
+    105px;
+
+  background: var(--wine);
+
+  color: var(--white);
+}
+
+
+.article-services-intro h2 {
+  max-width: 720px;
+
+  margin:
+    35px
+    0
+    30px;
+
+  font-size: clamp(45px, 5.4vw, 82px);
+  font-weight: 600;
+
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+}
+
+
+.article-services-intro > p:last-child {
+  max-width: 500px;
+
+  color: rgba(255,255,255,0.68);
+
+  font-size: 12px;
+
+  line-height: 1.85;
+}
+
+
+.article-service-links {
+  align-self: end;
+
+  border-top: 1px solid var(--line-light);
+}
+
+
+.article-service-links a {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto;
+
+  gap: 15px;
+
+  padding:
+    30px
+    0;
+
+  border-bottom: 1px solid var(--line-light);
+
+  color: var(--white);
+
+  transition:
+    padding 0.25s ease,
+    opacity 0.25s ease;
+}
+
+
+.article-service-links a:hover {
+  padding-left: 15px;
+
+  opacity: 0.75;
+}
+
+
+.article-service-links a > span {
+  grid-column: 1 / -1;
+
+  color: rgba(255,255,255,0.48);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+}
+
+
+.article-service-links strong {
+  font-size: clamp(30px, 3.2vw, 48px);
+  font-weight: 600;
+
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+
+.article-service-links small {
+  align-self: end;
+
+  padding-bottom: 4px;
+
+  color: rgba(255,255,255,0.6);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   BACK TO TASKUSTILIST
+   ========================================================= */
+
+.article-back {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 30px;
+
+  padding:
+    38px
+    var(--page);
+
+  background: var(--cream);
+
+  border-bottom: 1px solid var(--line);
+}
+
+
+.article-back span {
+  color: var(--muted);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+}
+
+
+.article-back a {
+  padding-bottom: 4px;
+
+  border-bottom: 1px solid var(--wine);
+
+  color: var(--wine);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .article-hero-grid {
+    grid-template-columns:
+      minmax(0, 1.25fr)
+      minmax(230px, 0.55fr);
+
+    gap: 6vw;
+  }
+
+
+  .article-introduction {
+    gap: 7vw;
+  }
+
+
+  .article-summary-grid {
+    gap: 6vw;
+  }
+
+
+  .article-chapter {
+    grid-template-columns:
+      60px
+      minmax(0, 1fr);
+  }
+
+
+  .article-chapter-content {
+    grid-column: 2;
+  }
+
+
+  .article-exercise-grid,
+  .article-conclusion-grid,
+  .article-services {
+    gap: 7vw;
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+
+  /* HERO */
+
+  .article-hero {
+    min-height: auto;
+
+    padding:
+      100px
+      var(--page)
+      25px;
+  }
+
+
+  .article-hero-meta {
+    padding-bottom: 14px;
+  }
+
+
+  .article-hero-meta a,
+  .article-hero-meta span {
+    font-size: 7px;
+  }
+
+
+  .article-hero-grid {
+    display: block;
+
+    padding:
+      65px
+      0
+      55px;
+  }
+
+
+  .article-hero h1 {
+    max-width: 100%;
+
+    font-size: clamp(57px, 18vw, 82px);
+
+    line-height: 0.85;
+  }
+
+
+  .article-hero-side {
+    max-width: 82%;
+
+    margin:
+      55px
+      0
+      0
+      auto;
+  }
+
+
+  .article-hero-lead {
+    margin-bottom: 32px;
+
+    font-size: 25px;
+  }
+
+
+  .article-author span,
+  .article-hero-footer span {
+    font-size: 7px;
+  }
+
+
+  /* INTRO */
+
+  .article-introduction {
+    display: block;
+
+    padding:
+      75px
+      var(--page)
+      85px;
+  }
+
+
+  .article-intro-lead {
+    font-size: clamp(36px, 10.5vw, 49px);
+
+    line-height: 1.02;
+  }
+
+
+  .article-intro-copy {
+    max-width: 88%;
+
+    margin:
+      55px
+      0
+      0
+      auto;
+
+    padding-top: 23px;
+
+    border-top: 1px solid var(--line);
+  }
+
+
+  .article-intro-copy p {
+    font-size: 12px;
+  }
+
+
+  /* SUMMARY */
+
+  .article-summary {
+    padding:
+      38px
+      var(--page)
+      60px;
+  }
+
+
+  .article-summary-grid {
+    display: block;
+
+    padding:
+      55px
+      0
+      35px;
+  }
+
+
+  .article-summary h2 {
+    margin-bottom: 48px;
+
+    font-size: clamp(45px, 13vw, 60px);
+  }
+
+
+  .summary-row {
+    grid-template-columns:
+      30px
+      1fr;
+
+    gap: 13px;
+
+    padding:
+      20px
+      0;
+  }
+
+
+  .summary-row p {
+    font-size: 11px;
+  }
+
+
+  .summary-row strong {
+    font-size: 13px;
+  }
+
+
+  .article-summary-note {
+    margin-top: 35px;
+  }
+
+
+  /* ARTICLE BODY */
+
+  .article-body {
+    padding:
+      0
+      var(--page);
+  }
+
+
+  .article-chapter {
+    display: grid;
+
+    grid-template-columns:
+      28px
+      minmax(0, 1fr);
+
+    gap: 13px;
+
+    padding:
+      75px
+      0
+      80px;
+  }
+
+
+  .article-chapter-number {
+    padding-top: 5px;
+
+    font-size: 8px;
+  }
+
+
+  .article-chapter-content {
+    grid-column: 2;
+  }
+
+
+  .article-chapter-content h2 {
+    margin-bottom: 40px;
+
+    font-size: clamp(36px, 10.5vw, 48px);
+
+    line-height: 1;
+  }
+
+
+  .article-chapter-content > p {
+    font-size: 12px;
+
+    line-height: 1.85;
+  }
+
+
+  .article-chapter-content .article-question {
+    margin:
+      43px
+      0;
+
+    padding:
+      25px
+      0;
+
+    font-size: 23px;
+  }
+
+
+  .article-chapter-content .article-emphasis {
+    margin-top: 45px;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+  }
+
+
+  .article-word-examples {
+    margin:
+      45px
+      0;
+  }
+
+
+  .article-word-examples span {
+    font-size: 8px;
+
+    line-height: 1.6;
+  }
+
+
+  /* EXERCISE */
+
+  .article-exercise {
+    padding:
+      38px
+      var(--page)
+      70px;
+  }
+
+
+  .article-exercise-grid {
+    display: block;
+
+    padding:
+      55px
+      0;
+  }
+
+
+  .article-exercise-grid h2 {
+    font-size: clamp(46px, 13vw, 62px);
+  }
+
+
+  .exercise-steps {
+    margin-top: 55px;
+  }
+
+
+  .exercise-row {
+    grid-template-columns:
+      60px
+      1fr;
+
+    gap: 18px;
+
+    padding:
+      22px
+      0;
+  }
+
+
+  .exercise-row > span {
+    font-size: 42px;
+  }
+
+
+  .exercise-question {
+    display: block;
+
+    padding:
+      45px
+      0;
+  }
+
+
+  .exercise-question p {
+    font-size: 23px;
+  }
+
+
+  .exercise-question p + p {
+    margin-top: 40px;
+  }
+
+
+  .exercise-bottom {
+    margin-top: 40px;
+  }
+
+
+  /* CONCLUSION */
+
+  .article-conclusion {
+    padding:
+      80px
+      var(--page)
+      90px;
+  }
+
+
+  .article-conclusion-grid {
+    display: block;
+
+    margin-top: 45px;
+  }
+
+
+  .article-conclusion h2 {
+    font-size: clamp(43px, 12vw, 58px);
+  }
+
+
+  .article-conclusion-grid > div {
+    margin-top: 55px;
+  }
+
+
+  .article-conclusion-grid .article-final-quote {
+    margin-top: 40px;
+
+    font-size: 34px;
+  }
+
+
+  /* SERVICES */
+
+  .article-services {
+    display: block;
+
+    padding:
+      70px
+      var(--page)
+      75px;
+  }
+
+
+  .article-services-intro h2 {
+    font-size: clamp(41px, 11.5vw, 55px);
+  }
+
+
+  .article-service-links {
+    margin-top: 60px;
+  }
+
+
+  .article-service-links strong {
+    font-size: 29px;
+  }
+
+
+  .article-service-links small {
+    font-size: 7px;
+  }
+
+
+  /* BACK */
+
+  .article-back {
+    display: block;
+
+    padding:
+      32px
+      var(--page);
+  }
+
+
+  .article-back a {
+    display: inline-block;
+
+    margin-top: 18px;
+  }
+
+}
