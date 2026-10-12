@@ -5,39 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Kertu Moorits | Stilisti portfoolio — MOORITS.</title>
-
-  <meta
-    name="description"
-    content="Kertu Mooritsa stilisti portfoolio — stilistika, visuaalsed kontseptsioonid, fotolavastused, moeetendused ja teatriprojektid."
-  >
-
+  <title>Kertu Moorits | Portfoolio — MOORITS.</title>
+  <meta name="description" content="Kertu Mooritsa stilisti portfoolio. Stilistika, fotolavastused, moeetendused ja teatriprojektid.">
   <link rel="canonical" href="https://moorits.com/portfoolio/">
 
-  <!-- OPEN GRAPH -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="et_EE">
   <meta property="og:site_name" content="MOORITS.">
-
-  <meta
-    property="og:title"
-    content="Kertu Moorits | Stilisti portfoolio — MOORITS."
-  >
-
-  <meta
-    property="og:description"
-    content="Valitud stilistika- ja visuaalsed projektid: fotolavastused, moeshow'd ja teater."
-  >
-
+  <meta property="og:title" content="Kertu Moorits | Portfoolio — MOORITS.">
+  <meta property="og:description" content="Valitud stilistika-, moe- ja teatriprojektid.">
   <meta property="og:url" content="https://moorits.com/portfoolio/">
 
-  <!-- STRUCTURED DATA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Kertu Moorits — stilisti portfoolio",
-    "description": "Kertu Mooritsa stilistika ja visuaalsete projektide portfoolio.",
+    "name": "Kertu Moorits — portfoolio",
     "url": "https://moorits.com/portfoolio/",
     "about": {
       "@type": "Person",
@@ -48,193 +31,263 @@
   }
   </script>
 
-  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 
   <style>
-    /* Portfoolio kujundus – ei muuda teisi lehti */
+    /* PORTFOOLIO – ainult selle lehe kujundus */
 
-    .portfolio-page .portfolio-new {
-      background: #f7f2eb;
-      color: #211b19;
-      min-height: 100vh;
-    }
-
+    .portfolio-page .portfolio-new,
     .portfolio-page .portfolio-new * {
       box-sizing: border-box;
     }
 
-    .portfolio-new .pn-hero {
-      padding: 160px 5vw 80px;
-      border-bottom: 1px solid #d6cbc3;
+    .portfolio-new {
+      background: #f7f2eb;
+      color: #211b19;
     }
 
-    .portfolio-new .pn-eyebrow {
-      font-size: 11px;
-      letter-spacing: .18em;
-      font-weight: 600;
+    .pn-hero {
+      padding: 150px 6vw 90px;
+      border-bottom: 1px solid #d8cdc3;
+    }
+
+    .pn-eyebrow {
+      margin: 0;
       color: #54202b;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
     }
 
-    .portfolio-new .pn-hero h1 {
-      font-size: clamp(56px, 11vw, 165px);
-      letter-spacing: -.075em;
+    .pn-hero h1 {
+      margin: 22px 0 28px;
+      font-size: clamp(54px, 10vw, 150px);
       line-height: 1;
-      margin: 24px 0 30px;
+      letter-spacing: -.075em;
       font-weight: 700;
     }
 
-    .portfolio-new .pn-intro {
-      max-width: 620px;
+    .pn-intro {
+      max-width: 590px;
       font-size: clamp(15px, 1.5vw, 19px);
-      line-height: 1.65;
+      line-height: 1.8;
       color: #756c67;
     }
 
-    .portfolio-new .pn-section {
-      padding: 75px 5vw 105px;
-      border-bottom: 1px solid #d6cbc3;
+    .pn-section {
+      padding: 90px 6vw 110px;
+      border-bottom: 1px solid #d8cdc3;
     }
 
-    .portfolio-new .pn-section-head {
+    .pn-section-head {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       gap: 20px;
-      border-bottom: 1px solid #d6cbc3;
-      padding-bottom: 18px;
-      margin-bottom: 48px;
+      padding-bottom: 20px;
+      margin-bottom: 55px;
+      border-bottom: 1px solid #d8cdc3;
     }
 
-    .portfolio-new .pn-section-head h2 {
-      font-size: clamp(32px, 5vw, 70px);
-      letter-spacing: -.06em;
-      line-height: 1.1;
+    .pn-section-head h2 {
       margin: 0;
+      font-size: clamp(32px, 5.3vw, 72px);
+      line-height: 1.1;
+      letter-spacing: -.06em;
     }
 
-    .portfolio-new .pn-section-head span {
+    .pn-section-head span {
       font-size: 11px;
       letter-spacing: .16em;
       color: #54202b;
-      font-weight: 600;
+      white-space: nowrap;
     }
 
-    .portfolio-new .pn-grid {
+    /* STILISTIKA – ajakirjalik paigutus */
+
+    .pn-grid {
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 55px 2.5vw;
+      column-gap: 3vw;
+      row-gap: 70px;
       align-items: start;
     }
 
-    .portfolio-new .pn-card {
+    .pn-card {
       grid-column: span 6;
       min-width: 0;
     }
 
-    .portfolio-new .pn-card:nth-child(4n+2) {
+    .pn-grid .pn-card:nth-child(4n+2) {
       grid-column: span 5;
-      margin-top: 65px;
+      margin-top: 85px;
     }
 
-    .portfolio-new .pn-card:nth-child(4n+3) {
+    .pn-grid .pn-card:nth-child(4n+3) {
       grid-column: span 5;
-      margin-left: 10%;
-      margin-top: 20px;
+      margin-left: 8%;
     }
 
-    .portfolio-new .pn-card:nth-child(4n+4) {
+    .pn-grid .pn-card:nth-child(4n+4) {
       grid-column: span 6;
-      margin-top: 75px;
+      margin-top: 80px;
     }
 
-    .portfolio-new .pn-card button {
-      border: 0;
-      padding: 0;
-      background: transparent;
-      text-align: left;
-      color: inherit;
+    .pn-card button {
+      display: block;
       width: 100%;
-      cursor: pointer;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      text-align: left;
       font: inherit;
+      cursor: pointer;
     }
 
-    .portfolio-new .pn-cover {
+    .pn-cover {
       display: block;
       overflow: hidden;
-      background: #e7dbcf;
       aspect-ratio: 4 / 5;
+      background: #e7dbcf;
     }
 
-    .portfolio-new .pn-card:nth-child(3n+2) .pn-cover {
+    .pn-grid .pn-card:nth-child(3n+2) .pn-cover {
       aspect-ratio: 3 / 4;
     }
 
-    .portfolio-new .pn-card:nth-child(3n+3) .pn-cover {
+    .pn-grid .pn-card:nth-child(3n+3) .pn-cover {
       aspect-ratio: 5 / 4;
     }
 
-    .portfolio-new .pn-cover img {
+    .pn-cover img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform .45s ease;
+      transition: transform .5s ease;
     }
 
-    .portfolio-new .pn-card button:hover img {
-      transform: scale(1.035);
+    .pn-card button:hover .pn-cover img {
+      transform: scale(1.04);
     }
 
-    .portfolio-new .pn-card-meta {
+    .pn-card button:focus-visible {
+      outline: 2px solid #54202b;
+      outline-offset: 6px;
+    }
+
+    .pn-card-meta {
       display: flex;
       justify-content: space-between;
-      gap: 12px;
       align-items: baseline;
-      padding-top: 17px;
+      gap: 15px;
+      padding-top: 18px;
     }
 
-    .portfolio-new .pn-card-meta strong {
-      font-size: clamp(13px, 1.3vw, 18px);
-      letter-spacing: -.025em;
+    .pn-card-meta strong {
+      font-size: clamp(13px, 1.35vw, 19px);
       font-weight: 600;
+      letter-spacing: -.02em;
     }
 
-    .portfolio-new .pn-card-meta span {
+    .pn-card-meta span {
       font-size: 10px;
       letter-spacing: .1em;
       color: #756c67;
       text-align: right;
     }
 
-    .portfolio-new .pn-contact {
+    /* MOEETENDUSED – väiksem sektsioon */
+
+    .pn-section-compact {
+      padding-top: 65px;
+      padding-bottom: 75px;
+    }
+
+    .pn-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+      align-items: center;
+      gap: 6vw;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .pn-feature .pn-cover {
+      aspect-ratio: 16 / 10;
+    }
+
+    .pn-feature .pn-card-meta {
+      display: none;
+    }
+
+    .pn-feature-info .pn-feature-type {
+      font-size: 11px;
+      letter-spacing: .15em;
+      color: #54202b;
+    }
+
+    .pn-feature-info h3 {
+      font-size: clamp(25px, 3vw, 45px);
+      line-height: 1.2;
+      letter-spacing: -.05em;
+      margin: 18px 0;
+    }
+
+    .pn-feature-info p {
+      color: #756c67;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .pn-feature-link {
+      margin-top: 20px;
+      padding: 0 0 7px;
+      border: 0;
+      border-bottom: 1px solid #54202b;
+      background: none;
+      font: 600 11px Poppins, sans-serif;
+      letter-spacing: .12em;
+      color: #54202b;
+      cursor: pointer;
+    }
+
+    /* TEATER */
+
+    .pn-theatre {
+      background: #eee6dc;
+    }
+
+    .pn-theatre .pn-feature {
+      max-width: 1150px;
+    }
+
+    /* KONTAKT */
+
+    .pn-contact {
+      padding: 95px 6vw 105px;
       background: #54202b;
       color: #fffdf9;
-      padding: 90px 5vw 100px;
     }
 
-    .portfolio-new .pn-contact h2 {
-      font-size: clamp(34px, 6vw, 85px);
-      line-height: 1.05;
+    .pn-contact h2 {
+      font-size: clamp(35px, 6vw, 85px);
+      line-height: 1.08;
       letter-spacing: -.055em;
-      margin: 25px 0 35px;
+      margin: 25px 0 38px;
     }
 
-    .portfolio-new .pn-contact a {
+    .pn-contact a {
       color: #fffdf9;
       font-size: 12px;
       letter-spacing: .12em;
     }
 
-    /* Avanev projektigalerii */
+    /* AVANEV PROJEKTIVAADE */
 
     .pn-modal[hidden] {
       display: none !important;
@@ -244,10 +297,10 @@
       position: fixed;
       inset: 0;
       z-index: 10000;
-      background: #f7f2eb;
-      color: #211b19;
       overflow-y: auto;
       overscroll-behavior: contain;
+      background: #f7f2eb;
+      color: #211b19;
     }
 
     .pn-modal-bar {
@@ -257,69 +310,120 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding: 18px 5vw;
+      gap: 20px;
+      padding: 20px 6vw;
       background: #f7f2eb;
-      border-bottom: 1px solid #d6cbc3;
+      border-bottom: 1px solid #d8cdc3;
     }
 
     .pn-modal-bar strong {
       font-size: 12px;
-      letter-spacing: .1em;
+      letter-spacing: .12em;
     }
 
     .pn-modal-bar button {
-      background: transparent;
       border: 0;
-      cursor: pointer;
+      background: none;
+      color: #54202b;
       font: 600 11px Poppins, sans-serif;
       letter-spacing: .12em;
-      color: #54202b;
-      padding: 8px 0;
+      cursor: pointer;
     }
 
     .pn-modal-inner {
       max-width: 1350px;
-      margin: auto;
-      padding: 55px 5vw 90px;
-    }
-
-    .pn-modal-inner h2 {
-      font-size: clamp(36px, 6vw, 85px);
-      letter-spacing: -.06em;
-      line-height: 1.1;
-      margin: 12px 0 18px;
+      margin: 0 auto;
+      padding: 65px 6vw 100px;
     }
 
     .pn-modal-kind {
-      font-size: 11px;
-      letter-spacing: .12em;
       color: #54202b;
+      font-size: 11px;
+      letter-spacing: .14em;
     }
 
-    .pn-modal-description {
-      max-width: 720px;
-      font-size: 14px;
-      line-height: 1.85;
-      color: #756c67;
+    .pn-modal-inner h2 {
+      font-size: clamp(38px, 6vw, 85px);
+      line-height: 1.1;
+      letter-spacing: -.065em;
+      margin: 15px 0 30px;
+    }
+
+    .pn-modal-text {
+      max-width: 780px;
+      margin-bottom: 55px;
+    }
+
+    .pn-modal-intro {
+      font-size: clamp(16px, 1.7vw, 21px);
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .pn-modal-quote {
+      padding: 15px 0 15px 25px;
+      margin: 25px 0;
+      border-left: 2px solid #54202b;
+      color: #54202b;
+      font-size: clamp(17px, 2vw, 25px);
+      font-style: italic;
+      line-height: 1.6;
       white-space: pre-line;
-      margin-bottom: 45px;
+    }
+
+    .pn-modal-body p {
+      color: #625a55;
+      font-size: 14px;
+      line-height: 1.9;
+      margin: 0 0 18px;
+    }
+
+    .pn-modal-credits {
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px solid #d8cdc3;
+    }
+
+    .pn-credit {
+      display: grid;
+      grid-template-columns: 175px 1fr;
+      gap: 15px;
+      margin-bottom: 9px;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .pn-credit strong {
+      font-weight: 600;
+    }
+
+    .pn-credit span {
+      color: #625a55;
+    }
+
+    .pn-project-link {
+      display: inline-block;
+      margin-top: 25px;
+      color: #54202b;
+      font-size: 12px;
+      text-decoration: underline;
+      text-underline-offset: 5px;
     }
 
     .pn-modal-images {
       columns: 2;
-      column-gap: 20px;
+      column-gap: 22px;
     }
 
     .pn-modal-images figure {
+      margin: 0 0 22px;
       break-inside: avoid;
-      margin: 0 0 20px;
     }
 
     .pn-modal-images img {
+      display: block;
       width: 100%;
       height: auto;
-      display: block;
     }
 
     body.pn-modal-open {
@@ -327,67 +431,95 @@
     }
 
     @media (max-width: 760px) {
-      .portfolio-new .pn-hero {
-        padding: 120px 5vw 55px;
+      .pn-hero {
+        padding: 120px 5vw 65px;
       }
 
-      .portfolio-new .pn-hero h1 {
+      .pn-hero h1 {
         font-size: clamp(48px, 12vw, 75px);
       }
 
-      .portfolio-new .pn-section {
-        padding: 55px 5vw 75px;
+      .pn-section {
+        padding: 60px 5vw 80px;
       }
 
-      .portfolio-new .pn-section-head {
-        margin-bottom: 30px;
+      .pn-section-head {
+        margin-bottom: 35px;
       }
 
-      .portfolio-new .pn-grid {
+      .pn-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 35px 14px;
       }
 
-      .portfolio-new .pn-card,
-      .portfolio-new .pn-card:nth-child(4n+2),
-      .portfolio-new .pn-card:nth-child(4n+3),
-      .portfolio-new .pn-card:nth-child(4n+4) {
+      .pn-grid .pn-card,
+      .pn-grid .pn-card:nth-child(4n+2),
+      .pn-grid .pn-card:nth-child(4n+3),
+      .pn-grid .pn-card:nth-child(4n+4) {
         grid-column: span 1;
         margin: 0;
       }
 
-      .portfolio-new .pn-card:nth-child(even) {
+      .pn-grid .pn-card:nth-child(even) {
         margin-top: 45px;
       }
 
-      .portfolio-new .pn-cover,
-      .portfolio-new .pn-card:nth-child(3n+2) .pn-cover,
-      .portfolio-new .pn-card:nth-child(3n+3) .pn-cover {
+      .pn-grid .pn-card .pn-cover,
+      .pn-grid .pn-card:nth-child(3n+2) .pn-cover,
+      .pn-grid .pn-card:nth-child(3n+3) .pn-cover {
         aspect-ratio: 3 / 4;
       }
 
-      .portfolio-new .pn-card-meta {
+      .pn-card-meta {
         display: block;
       }
 
-      .portfolio-new .pn-card-meta strong {
+      .pn-card-meta strong {
         display: block;
         font-size: 12px;
       }
 
-      .portfolio-new .pn-card-meta span {
+      .pn-card-meta span {
         display: block;
+        margin-top: 5px;
         text-align: left;
         font-size: 9px;
-        margin-top: 4px;
+      }
+
+      .pn-feature {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .pn-feature .pn-cover {
+        aspect-ratio: 16 / 11;
+      }
+
+      .pn-feature-info h3 {
+        margin: 12px 0;
       }
 
       .pn-modal-inner {
-        padding-top: 35px;
+        padding: 35px 5vw 70px;
       }
 
       .pn-modal-images {
         columns: 1;
+      }
+
+      .pn-credit {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .pn-contact {
+        padding: 75px 5vw;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pn-cover img {
+        transition: none;
       }
     }
   </style>
@@ -395,7 +527,7 @@
 
 <body class="portfolio-page">
 
-  <!-- HEADER -->
+  <!-- PÄIS -->
   <header class="header portfolio-header">
     <a href="/" class="logo">MOORITS.</a>
 
@@ -406,7 +538,6 @@
         <button class="nav-dropdown-trigger" type="button">
           PERSONAALSTILISTIKA
         </button>
-
         <div class="nav-dropdown-menu">
           <a href="/meestele/">MEESTELE</a>
           <a href="/naistele/">NAISTELE</a>
@@ -415,7 +546,6 @@
 
       <a href="/brandidele/">BRÄNDIDELE</a>
       <a href="/portfoolio/" class="active">PORTFOOLIO</a>
-      <a href="/stilist-taskus/">TASKUSTILIST</a>
     </nav>
 
     <button class="menu-button" id="menuButton" type="button">
@@ -423,7 +553,7 @@
     </button>
   </header>
 
-  <!-- MOBILE MENU -->
+  <!-- MOBIILIMENÜÜ -->
   <nav class="mobile-nav" id="mobileNav">
     <button class="mobile-close" id="mobileClose" type="button">
       SULGE
@@ -431,31 +561,29 @@
 
     <div class="mobile-links">
       <a href="/">Avaleht</a>
-
       <span class="mobile-nav-label">PERSONAALSTILISTIKA</span>
-
       <a href="/meestele/">Meestele</a>
       <a href="/naistele/">Naistele</a>
       <a href="/brandidele/">Brändidele</a>
       <a href="/portfoolio/">Portfoolio</a>
-      <a href="/stilist-taskus/">Taskustilist</a>
       <a href="/#kontakt">Kontakt</a>
     </div>
   </nav>
 
   <main class="portfolio-new">
 
-    <!-- HERO -->
+    <!-- SISSEJUHATUS -->
     <section class="pn-hero">
       <p class="pn-eyebrow">MOORITS. / VALITUD TÖÖD</p>
       <h1>PORTFOOLIO.</h1>
       <p class="pn-intro">
-        Valik stilistika-, moe- ja teatriprojektidest.
-        Iga töö taga on oma lugu, inimesed ja visuaalne maailm.
+        Stilistika, visuaalsed kontseptsioonid ja loomingulised
+        koostööd. Valik projektidest, kus idee saab vormi
+        rõivaste, detailide ja visuaalse jutustuse kaudu.
       </p>
     </section>
 
-    <!-- STILISTIKA -->
+    <!-- 01 STILISTIKA -->
     <section class="pn-section" id="stilistika">
       <div class="pn-section-head">
         <h2>STILISTIKA</h2>
@@ -465,27 +593,64 @@
       <div class="pn-grid" id="pn-stilistika"></div>
     </section>
 
-    <!-- MOEETENDUSED -->
-    <section class="pn-section" id="moeetendused">
+    <!-- 02 MOEETENDUSED -->
+    <section class="pn-section pn-section-compact" id="moeetendused">
       <div class="pn-section-head">
         <h2>MOEETENDUSED</h2>
         <span>02 / 03</span>
       </div>
 
-      <div class="pn-grid" id="pn-moeetendused"></div>
+      <div class="pn-feature">
+        <div id="pn-moeetendused"></div>
+
+        <div class="pn-feature-info">
+          <p class="pn-feature-type">MOEETENDUS</p>
+          <h3>ESTONIAN FASHION FESTIVAL</h3>
+          <p>
+            Pilguheit moeetenduste maailma ja lavale jõudnud
+            loomingulistesse tervikutesse.
+          </p>
+          <button
+            type="button"
+            class="pn-feature-link"
+            data-project="gallery-eff"
+          >
+            VAATA PROJEKTI →
+          </button>
+        </div>
+      </div>
     </section>
 
-    <!-- TEATER -->
-    <section class="pn-section" id="teater">
+    <!-- 03 TEATER -->
+    <section class="pn-section pn-theatre" id="teater">
       <div class="pn-section-head">
         <h2>TEATER</h2>
         <span>03 / 03</span>
       </div>
 
-      <div class="pn-grid" id="pn-teater"></div>
+      <div class="pn-feature">
+        <div id="pn-teater"></div>
+
+        <div class="pn-feature-info">
+          <p class="pn-feature-type">TARTU UUS TEATER · 2025</p>
+          <h3>SOOSTERI KOOLKOND</h3>
+          <p>
+            Lavastuse visuaalse maailma teostamine:
+            lavakujunduse, kostüümide ja rekvisiitidega seotud
+            tööd ning kõigi paberrekvisiitide valmistamine.
+          </p>
+          <button
+            type="button"
+            class="pn-feature-link"
+            data-project="gallery-tartu-uus-teater"
+          >
+            VAATA PROJEKTI →
+          </button>
+        </div>
+      </div>
     </section>
 
-    <!-- KONTAKT -->
+    <!-- KOOSTÖÖ -->
     <section class="pn-contact" id="kontakt">
       <p class="pn-eyebrow" style="color:#e7dbcf">
         KOOSTÖÖ
@@ -503,26 +668,7 @@
 
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <span>MOORITS.</span>
-
-    <div>
-      <a
-        href="https://www.instagram.com/mooritzmoments"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        INSTAGRAM
-      </a>
-
-      <a href="/#kontakt">KONTAKT</a>
-    </div>
-
-    <span>© 2026</span>
-  </footer>
-
-  <!-- PROJEKTI AVANEV VADE -->
+  <!-- PROJEKTIGALERII -->
   <div
     class="pn-modal"
     id="pnModal"
@@ -533,26 +679,30 @@
   >
     <div class="pn-modal-bar">
       <strong>MOORITS. / PORTFOOLIO</strong>
-
-      <button id="pnModalClose" type="button">
+      <button type="button" id="pnModalClose">
         SULGE ✕
       </button>
     </div>
 
     <div class="pn-modal-inner">
       <p class="pn-modal-kind" id="pnModalKind"></p>
-
       <h2 id="pnModalTitle"></h2>
 
-      <p
-        class="pn-modal-description"
-        id="pnModalDescription"
-      ></p>
+      <div class="pn-modal-text">
+        <p class="pn-modal-quote" id="pnModalQuote" hidden></p>
+        <p class="pn-modal-intro" id="pnModalIntro"></p>
+        <div class="pn-modal-body" id="pnModalBody"></div>
+        <div class="pn-modal-credits" id="pnModalCredits"></div>
+        <a
+          class="pn-project-link"
+          id="pnModalLink"
+          target="_blank"
+          rel="noopener noreferrer"
+          hidden
+        ></a>
+      </div>
 
-      <div
-        class="pn-modal-images"
-        id="pnModalImages"
-      ></div>
+      <div class="pn-modal-images" id="pnModalImages"></div>
     </div>
   </div>
 
@@ -560,17 +710,21 @@
 
   <script>
     /*
-      OLEMASOLEVAD FOTOD
+      FOTODE ANDMED
 
-      Kõik failinimed ja kaustad on säilitatud.
-      Uue foto lisamiseks lisa selle nimi
-      vastava projekti images-nimekirja.
+      coverIndex määrab esindusfoto.
+      0 = esimene foto
+      1 = teine foto
+      2 = kolmas foto jne.
+
+      Kõik olemasolevad failiteed on säilitatud.
     */
 
-    const portfolioGalleries = [
+    const galleries = [
       {
         id: "gallery-sobraltsobrale",
         folder: "../images/portfoolio/fotolavastused/sõbraltsõbrale/",
+        coverIndex: 0,
         images: [
           "Facetune_05-06-2025-17-43-07 2.jpeg",
           "Facetune_05-06-2025-17-43-07.jpeg",
@@ -585,6 +739,7 @@
       {
         id: "gallery-n20",
         folder: "../images/portfoolio/fotolavastused/n-20/",
+        coverIndex: 0,
         images: [
           "DSC07285-2dfb7b86f94346cf8f1a0ef1ae4be9ef.jpg",
           "DSC07305.jpg",
@@ -600,6 +755,7 @@
       {
         id: "gallery-backhome",
         folder: "../images/portfoolio/fotolavastused/backhome/",
+        coverIndex: 0,
         images: [
           "1.jpg",
           "2-1461bfc715ff48e385c7acce32c897c9.jpg",
@@ -610,6 +766,7 @@
       {
         id: "gallery-ajakirjaprojekt",
         folder: "../images/portfoolio/fotolavastused/ajakirjaprojekt/",
+        coverIndex: 0,
         images: [
           "Ekvilibrist-0107.jpg",
           "Ekvilibrist-0135.jpg",
@@ -623,6 +780,7 @@
       {
         id: "gallery-eff",
         folder: "../images/portfoolio/moeshowd/Estonian-Fashion-Festival/",
+        coverIndex: 0,
         images: [
           "506833869_722498610150467_8464762404106660000_n 2.jpg",
           "506833869_722498610150467_8464762404106660000_n.jpg",
@@ -641,6 +799,7 @@
       {
         id: "gallery-tartu-uus-teater",
         folder: "../images/portfoolio/Tartu-Uus-Teater/",
+        coverIndex: 0,
         images: [
           "tut-sooster-lbimng-22-okt-2025-_a747163_54874557441_o (1).jpg",
           "tut-sooster-lbimng-22-okt-2025-_a747448_54874791988_o.jpg",
@@ -655,97 +814,277 @@
     ];
 
     /*
-      PROJEKTIDE INFO
+      PROJEKTIDE TEKSTID
 
-      section määrab, millises sektsioonis
-      projekt kuvatakse.
-
-      Võimalikud väärtused:
-      stilistika
-      moeetendused
-      teater
+      Iga projekt koosneb:
+      - pealkirjast
+      - liigist
+      - sissejuhatusest
+      - põhitekstist
+      - tiimi andmetest
     */
 
-    const projectDetails = [
+    const projects = [
       {
         id: "gallery-sobraltsobrale",
         section: "stilistika",
         title: "SÕBRALT SÕBRALE",
-        kind: "FOTOLAVASTUS",
-        description:
-          "Fotograaf, stilist, jumestus ja soeng: Kertu Moorits\n" +
-          "Modell: Vitalia Hulak\n\n" +
-          "Visuaalne fotolavastus, mille lähtekohaks oli " +
-          "meeleolu, värv, vorm ja karakter."
+        kind: "FOTOLAVASTUS · KONTSEPTSIOON JA STILISTIKA",
+
+        quote:
+          "Vallatu oled / roheline ookean / peas loojangusall.",
+
+        intro:
+          "Haikust inspireeritud fotolavastus, milles luule " +
+          "kujundlikkus on tõlgitud värvide, vormide, valguse " +
+          "ja stilistika kaudu visuaalseks tervikuks.",
+
+        paragraphs: [
+          "Kontseptsiooni keskmes on salvei- ja oliivrohelised " +
+          "toonid, mida tasakaalustavad pehme beež ja elevandiluu. " +
+          "Roheliste harmooniale lisab kontrasti punane valgus, " +
+          "mis sümboliseerib päikeseloojangut ning loob fotodesse " +
+          "emotsionaalset sügavust.",
+
+          "Retrohõnguline ja kergelt teatrilik stilistika seob " +
+          "tervikuks rõivad, pearätiku, kindad ja valguse. " +
+          "Iga detail toetab haiku meeleolu ja selle " +
+          "visuaalset tõlgendust.",
+
+          "Kõik rõivad ja rekvisiidid pärinevad Tartu " +
+          "Sõbralt Sõbrale kauplustest."
+        ],
+
+        credits: [
+          ["Fotograaf", "Kertu Moorits"],
+          ["Stilist", "Kertu Moorits"],
+          ["Jumestus ja soeng", "Kertu Moorits"],
+          ["Modell", "Vitalia Hulak"]
+        ]
       },
+
       {
         id: "gallery-n20",
         section: "stilistika",
         title: "N-20 STUUDIO",
-        kind: "FOTOLAVASTUS",
-        description:
-          "Fotograafid: Helen-Mary Vartsun ja Kertu Moorits\n" +
-          "Stilist ja jumestaja: Kertu Moorits\n" +
-          "Riided ja aksessuaarid: N-20 Stuudio ja erakogu\n\n" +
-          "Visuaalse suuna, rõivakombinatsioonide ja jumestuse " +
-          "loomine ning fotosessiooni praktiline läbiviimine."
+        kind: "FOTOLAVASTUS · STILISTIKA JA PRODUKTSIOON",
+
+        intro:
+          "N-20 Stuudio rõivaste ja aksessuaaride ümber " +
+          "loodud fotosessioon, mille visuaalne suund " +
+          "sündis koostöös meeskonnaga.",
+
+        paragraphs: [
+          "Minu vastutusalasse kuulusid rõivakomplektide " +
+          "stiliseerimine, jumestuse kavandamine ja teostamine " +
+          "ning fotosessiooni praktiline korraldamine. " +
+          "Koostasin meigikaardid ja võtteajakava, juhendasin " +
+          "kolme modelli ning teostasin jumestuse kahele modellile.",
+
+          "Lisaks tegelesin võttepaiga ettevalmistamise, " +
+          "kaamera seadistamise ja kohapealse töö koordineerimisega, " +
+          "et hoida visuaalne tulemus ühtne ja võtteprotsess sujuv."
+        ],
+
+        credits: [
+          ["Fotograafid", "Helen-Mary Vartšun ja Kertu Moorits"],
+          ["Stilist ja jumestaja", "Kertu Moorits"],
+          ["Riided ja aksessuaarid", "N-20 Stuudio ja erakogu"]
+        ]
       },
+
       {
         id: "gallery-backhome",
         section: "stilistika",
         title: "BACK HOME",
-        kind: "EDITORIAL",
-        description:
-          "Tiim: Kertu Moorits, Anastassia Povstanskaja, Geilin Raudsepp\n" +
-          "Jumestus: Kertu Moorits\n" +
-          "Soeng: Anastassia Povstanskaja\n\n" +
-          "Lätis valminud ajakirjakaane kontseptsioon, " +
-          "mille rõivad valiti ja hangiti taaskasutusest."
+        kind: "EDITORIAL · AJAKIRJAKAANE KONTSEPTSIOON",
+
+        intro:
+          "„Lumivalgeke on tagasi kodus“ – muinasjutulisest " +
+          "karakterist inspireeritud ajakirjakaane kontseptsioon, " +
+          "mis tõlgendab tuttavat lugu kaasaegses moevõtmes.",
+
+        paragraphs: [
+          "Lätis valminud fotoprojekti visuaalne suund loodi " +
+          "koostöös kolmeliikmelise meeskonnaga. Kontseptsiooni " +
+          "elluviimisel ühendasime stilistika, jumestuse, " +
+          "soengu ja fotograafia terviklikuks visuaalseks jutustuseks.",
+
+          "Projekti rõivad valisime Läti taaskasutuskauplustest, " +
+          "luues olemasolevatest esemetest kontseptsiooniga " +
+          "sobivad komplektid."
+        ],
+
+        credits: [
+          ["Tiim", "Kertu Moorits, Anastassia Povstanskaja, Geilin Raudsepp"],
+          ["Jumestus", "Kertu Moorits"],
+          ["Soeng", "Anastassia Povstanskaja"]
+        ]
       },
+
       {
         id: "gallery-ajakirjaprojekt",
         section: "stilistika",
         title: "AJAKIRJAPROJEKT",
-        kind: "EDITORIAL",
-        description:
-          "Fotograaf: Ekvilibrist\n" +
-          "Stilist: Kertu Moorits\n" +
-          "Jumestus ja soeng: Liisi Haas\n\n" +
-          "Ajakirjaprojekti jaoks loodud stilistika ja visuaalne tervik."
+        kind: "EDITORIAL · STILISTIKA",
+
+        intro:
+          "Ajakirja visuaalse sisu loomiseks valminud " +
+          "fotoprojekt, kus rõivaste stilistika, jumestus, " +
+          "soeng ja fotograafia moodustavad ühtse terviku.",
+
+        paragraphs: [
+          "Minu roll oli luua fotosessiooni stilistika " +
+          "ning kujundada rõivaste ja aksessuaaride abil " +
+          "terviklikud visuaalsed lahendused.",
+
+          "Osa valminud fotodest on leidnud kasutust " +
+          "ka HOPP disaini veebilehel."
+        ],
+
+        credits: [
+          ["Fotograaf", "Ekvilibrist"],
+          ["Stilist", "Kertu Moorits"],
+          ["Jumestus ja soeng", "Liisi Haas"]
+        ]
       },
+
       {
         id: "gallery-eff",
         section: "moeetendused",
         title: "ESTONIAN FASHION FESTIVAL",
         kind: "MOEETENDUS",
-        description: ""
+
+        intro:
+          "Estonian Fashion Festival – moeetenduste " +
+          "ja disaineriloomingu visuaalne maailm.",
+
+        paragraphs: [],
+
+        credits: []
       },
+
       {
         id: "gallery-tartu-uus-teater",
         section: "teater",
-        title: "TARTU UUS TEATER",
-        kind: "TEATER",
-        description: ""
+        title: "SOOSTERI KOOLKOND",
+        kind: "TARTU UUS TEATER · 2025",
+
+        intro:
+          "Osalesin lavastuse visuaalse maailma teostamises, " +
+          "sealhulgas lavakujunduse, kostüümide ja " +
+          "rekvisiitidega seotud töödes.",
+
+        paragraphs: [
+          "Minu iseseisvaks vastutusvaldkonnaks oli kõigi " +
+          "lavastuse paberrekvisiitide valmistamine."
+        ],
+
+        credits: [
+          ["Lavakujunduse, kostüümide ja rekvisiitide teostus",
+           "Meeskonnatöö"],
+          ["Paberrekvisiidid", "Kertu Moorits"],
+          ["Autor-lavastaja", "Ivar Põllu"],
+          ["Kunstnik", "Kristiina Põllu"]
+        ],
+
+        link: "https://uusteater.ee/kava-soosteri-koolkond",
+        linkText: "VAATA LAVASTUSE AMETLIKKU KAVA →"
       }
     ];
 
-    /* GALERII TÖÖLOOGIKA */
+    /* GALERII FUNKTSIOONID */
 
-    const folders = Object.fromEntries(
-      portfolioGalleries.map(gallery => [gallery.id, gallery])
+    const galleryMap = Object.fromEntries(
+      galleries.map(gallery => [gallery.id, gallery])
+    );
+
+    const projectMap = Object.fromEntries(
+      projects.map(project => [project.id, project])
     );
 
     const modal = document.getElementById("pnModal");
     const modalTitle = document.getElementById("pnModalTitle");
     const modalKind = document.getElementById("pnModalKind");
-    const modalDescription = document.getElementById("pnModalDescription");
+    const modalQuote = document.getElementById("pnModalQuote");
+    const modalIntro = document.getElementById("pnModalIntro");
+    const modalBody = document.getElementById("pnModalBody");
+    const modalCredits = document.getElementById("pnModalCredits");
     const modalImages = document.getElementById("pnModalImages");
+    const modalLink = document.getElementById("pnModalLink");
     const modalClose = document.getElementById("pnModalClose");
 
     let previousFocus = null;
 
-    function imgUrl(gallery, file) {
+    function imageUrl(gallery, file) {
       return gallery.folder + encodeURIComponent(file);
+    }
+
+    function openProject(project) {
+      const gallery = galleryMap[project.id];
+      if (!gallery) return;
+
+      previousFocus = document.activeElement;
+
+      modalTitle.textContent = project.title;
+      modalKind.textContent = project.kind;
+      modalIntro.textContent = project.intro || "";
+
+      modalQuote.hidden = !project.quote;
+      modalQuote.textContent = project.quote || "";
+
+      modalBody.replaceChildren();
+      modalCredits.replaceChildren();
+      modalImages.replaceChildren();
+
+      (project.paragraphs || []).forEach(text => {
+        const p = document.createElement("p");
+        p.textContent = text;
+        modalBody.appendChild(p);
+      });
+
+      (project.credits || []).forEach(([label, value]) => {
+        const row = document.createElement("div");
+        row.className = "pn-credit";
+
+        const strong = document.createElement("strong");
+        strong.textContent = label;
+
+        const span = document.createElement("span");
+        span.textContent = value;
+
+        row.append(strong, span);
+        modalCredits.appendChild(row);
+      });
+
+      modalCredits.hidden = !(project.credits || []).length;
+
+      if (project.link) {
+        modalLink.href = project.link;
+        modalLink.textContent = project.linkText || "VAATA LISAKS →";
+        modalLink.hidden = false;
+      } else {
+        modalLink.removeAttribute("href");
+        modalLink.hidden = true;
+      }
+
+      gallery.images.forEach((file, index) => {
+        const figure = document.createElement("figure");
+        const img = document.createElement("img");
+
+        img.src = imageUrl(gallery, file);
+        img.alt = project.title + " – foto " + (index + 1);
+        img.loading = index < 2 ? "eager" : "lazy";
+        img.decoding = "async";
+
+        figure.appendChild(img);
+        modalImages.appendChild(figure);
+      });
+
+      modal.hidden = false;
+      document.body.classList.add("pn-modal-open");
+      modal.scrollTop = 0;
+      modalClose.focus();
     }
 
     function closeProject() {
@@ -758,58 +1097,15 @@
       }
     }
 
-    function openProject(project) {
-      const gallery = folders[project.id];
-
-      if (!gallery) return;
-
-      previousFocus = document.activeElement;
-
-      modalTitle.textContent = project.title;
-      modalKind.textContent = project.kind;
-      modalDescription.textContent = project.description;
-      modalDescription.hidden = !project.description;
-
-      modalImages.replaceChildren();
-
-      gallery.images.forEach((file, index) => {
-        const figure = document.createElement("figure");
-        const image = document.createElement("img");
-
-        image.src = imgUrl(gallery, file);
-        image.alt = project.title + " – foto " + (index + 1);
-        image.loading = index < 2 ? "eager" : "lazy";
-        image.decoding = "async";
-
-        figure.appendChild(image);
-        modalImages.appendChild(figure);
-      });
-
-      modal.hidden = false;
-      document.body.classList.add("pn-modal-open");
-      modal.scrollTop = 0;
-      modalClose.focus();
-    }
-
-    /* PROJEKTIKAARTIDE LOOMINE */
-
-    projectDetails.forEach(project => {
-      const gallery = folders[project.id];
-
-      if (!gallery || !gallery.images.length) return;
-
-      const grid = document.getElementById(
-        "pn-" + project.section
-      );
-
-      if (!grid) return;
+    function createProjectCard(project) {
+      const gallery = galleryMap[project.id];
+      if (!gallery || !gallery.images.length) return null;
 
       const article = document.createElement("article");
       article.className = "pn-card";
 
       const button = document.createElement("button");
       button.type = "button";
-
       button.setAttribute(
         "aria-label",
         project.title + " – ava projekti galerii"
@@ -819,10 +1115,14 @@
       cover.className = "pn-cover";
 
       const image = document.createElement("img");
-      image.src = imgUrl(gallery, gallery.images[0]);
+      const coverFile =
+        gallery.images[gallery.coverIndex] || gallery.images[0];
+
+      image.src = imageUrl(gallery, coverFile);
       image.alt = project.title;
-      image.loading =
-        project.section === "stilistika" ? "eager" : "lazy";
+      image.loading = project.section === "stilistika"
+        ? "eager"
+        : "lazy";
       image.decoding = "async";
 
       cover.appendChild(image);
@@ -844,16 +1144,70 @@
       });
 
       article.appendChild(button);
-      grid.appendChild(article);
+      return article;
+    }
+
+    /* KAARTIDE PAIGUTAMINE */
+
+    projects.forEach(project => {
+      const container = document.getElementById(
+        "pn-" + project.section
+      );
+
+      if (!container) return;
+
+      const card = createProjectCard(project);
+
+      if (card) {
+        container.appendChild(card);
+      }
     });
 
-    /* PROJEKTIVAATE SULGEMINE */
+    /* ERALDI "VAATA PROJEKTI" NUPUD */
+
+    document.querySelectorAll("[data-project]").forEach(button => {
+      button.addEventListener("click", () => {
+        const project = projectMap[button.dataset.project];
+
+        if (project) {
+          openProject(project);
+        }
+      });
+    });
+
+    /* SULGEMINE */
 
     modalClose.addEventListener("click", closeProject);
 
     document.addEventListener("keydown", event => {
-      if (event.key === "Escape" && !modal.hidden) {
+      if (modal.hidden) return;
+
+      if (event.key === "Escape") {
         closeProject();
+      }
+
+      if (event.key === "Tab") {
+        const focusable = Array.from(
+          modal.querySelectorAll(
+            'button:not([disabled]), a[href]'
+          )
+        ).filter(element => element.getClientRects().length);
+
+        if (!focusable.length) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (
+          !event.shiftKey &&
+          document.activeElement === last
+        ) {
+          event.preventDefault();
+          first.focus();
+        }
       }
     });
   </script>
