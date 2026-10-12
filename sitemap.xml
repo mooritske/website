@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
@@ -19,6 +20,10 @@
 
   <url>
     <loc>https://moorits.com/portfoolio/</loc>
+  </url>
+
+  <url>
+    <loc>https://moorits.com/stilist-taskus/</loc>
   </url>
 
 </urlset>
