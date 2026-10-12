@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfoolio | Kertu Moorits — MOORITS.</title>
+<title>Portfoolio | MOORITS.</title>
 <meta name="description" content="Kertu Mooritsa stilistika portfoolio. Fotolavastused, moeetendused ja teatriprojektid.">
 <link rel="canonical" href="https://moorits.com/portfoolio/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,26 +21,31 @@
   --pf-muted:#756c67;
   --pf-line:#d9cec4;
 }
+
 .portfolio-page {
   background:var(--pf-cream);
   color:var(--pf-ink);
 }
+
 .portfolio-page .pf,
 .portfolio-page .pf *,
 .pf-modal *,
 .pf-viewer * {
   box-sizing:border-box;
 }
+
 .pf {
   font-family:Poppins,sans-serif;
   background:var(--pf-cream);
   color:var(--pf-ink);
 }
+
 .pf button,
 .pf-modal button,
 .pf-viewer button {
   font-family:inherit;
 }
+
 .pf-kicker {
   margin:0;
   color:var(--pf-wine);
@@ -49,10 +54,14 @@
   letter-spacing:.18em;
   text-transform:uppercase;
 }
+
+/* HERO */
+
 .pf-hero {
   padding:150px 6vw 95px;
   border-bottom:1px solid var(--pf-line);
 }
+
 .pf-hero h1 {
   font-size:clamp(54px,10vw,145px);
   letter-spacing:-.075em;
@@ -60,16 +69,21 @@
   margin:20px 0 28px;
   font-weight:700;
 }
+
 .pf-hero p:last-child {
   font-size:clamp(15px,1.5vw,19px);
   line-height:1.85;
   color:var(--pf-muted);
   max-width:630px;
 }
+
+/* SECTIONS */
+
 .pf-section {
   padding:88px 6vw 115px;
   border-bottom:1px solid var(--pf-line);
 }
+
 .pf-heading {
   display:flex;
   justify-content:space-between;
@@ -79,6 +93,7 @@
   padding-bottom:22px;
   margin-bottom:55px;
 }
+
 .pf-heading h2 {
   font-size:clamp(32px,5vw,70px);
   letter-spacing:-.065em;
@@ -86,34 +101,43 @@
   margin:0;
   font-weight:600;
 }
+
 .pf-heading span {
   color:var(--pf-wine);
   font-size:11px;
   letter-spacing:.13em;
   white-space:nowrap;
 }
+
+/* PORTFOLIO GRID */
+
 .pf-grid {
   display:grid;
   grid-template-columns:repeat(12,minmax(0,1fr));
   gap:65px 3vw;
   align-items:start;
 }
+
 .pf-card {
   grid-column:span 6;
   min-width:0;
 }
+
 .pf-grid .pf-card:nth-child(4n+2) {
   grid-column:span 5;
   margin-top:90px;
 }
+
 .pf-grid .pf-card:nth-child(4n+3) {
   grid-column:span 5;
   margin-left:7%;
 }
+
 .pf-grid .pf-card:nth-child(4n+4) {
   grid-column:span 6;
   margin-top:75px;
 }
+
 .pf-card-button {
   display:block;
   width:100%;
@@ -124,6 +148,7 @@
   color:inherit;
   cursor:pointer;
 }
+
 .pf-card-button:focus-visible,
 .pf-open:focus-visible,
 .pf-close:focus-visible,
@@ -133,18 +158,22 @@
   outline:2px solid var(--pf-wine);
   outline-offset:5px;
 }
+
 .pf-image {
   display:block;
   aspect-ratio:4/5;
   background:var(--pf-beige);
   overflow:hidden;
 }
+
 .pf-grid .pf-card:nth-child(3n+2) .pf-image {
   aspect-ratio:3/4;
 }
+
 .pf-grid .pf-card:nth-child(3n+3) .pf-image {
   aspect-ratio:5/4;
 }
+
 .pf-image img {
   display:block;
   width:100%;
@@ -152,9 +181,13 @@
   object-fit:cover;
   transition:transform .45s ease;
 }
+
 .pf-card-button:hover .pf-image img {
   transform:scale(1.035);
 }
+
+/* PROJECT CAPTIONS */
+
 .pf-caption {
   display:flex;
   justify-content:space-between;
@@ -162,20 +195,66 @@
   gap:15px;
   padding-top:18px;
 }
+
 .pf-caption strong {
   font-size:clamp(13px,1.3vw,18px);
   font-weight:600;
 }
+
 .pf-caption small {
   font-size:10px;
   letter-spacing:.09em;
   color:var(--pf-muted);
   text-align:right;
 }
+
+/* BACK HOME SPECIAL LAYOUT */
+
+/*
+  Ajakirjakaane puhul ei tohi kasutada
+  object-fit:cover, sest see lõikab teksti ära.
+*/
+
+.pf-card[data-project="backhome"] .pf-image {
+  aspect-ratio:auto !important;
+  height:auto !important;
+  background:var(--pf-cream);
+  overflow:visible;
+}
+
+.pf-card[data-project="backhome"] .pf-image img {
+  display:block;
+  width:100%;
+  height:auto !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  object-position:center;
+}
+
+/* BACK HOME TITLE ON ONE LINE */
+
+.pf-card[data-project="backhome"] .pf-caption {
+  align-items:flex-start;
+  gap:20px;
+}
+
+.pf-card[data-project="backhome"] .pf-caption strong {
+  white-space:nowrap;
+  flex-shrink:0;
+}
+
+.pf-card[data-project="backhome"] .pf-caption small {
+  flex:1;
+  min-width:0;
+}
+
+/* FEATURE PROJECTS */
+
 .pf-compact {
   padding-top:70px;
   padding-bottom:82px;
 }
+
 .pf-feature {
   display:grid;
   grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
@@ -184,15 +263,19 @@
   max-width:1120px;
   margin:auto;
 }
+
 .pf-feature .pf-image {
   aspect-ratio:16/10;
 }
+
 .pf-feature .pf-caption {
   display:none;
 }
+
 .pf-feature-text .pf-kicker {
   margin-bottom:16px;
 }
+
 .pf-feature-text h3 {
   font-size:clamp(26px,3.3vw,46px);
   line-height:1.18;
@@ -200,11 +283,13 @@
   font-weight:600;
   margin:0 0 20px;
 }
+
 .pf-feature-text p:not(.pf-kicker) {
   font-size:14px;
   line-height:1.9;
   color:var(--pf-muted);
 }
+
 .pf-open {
   background:none;
   border:0;
@@ -217,23 +302,30 @@
   font-weight:600;
   cursor:pointer;
 }
+
 .pf-theatre {
   background:#eee6dc;
 }
+
+/* CTA */
+
 .pf-cta {
   background:var(--pf-wine);
   color:#fffdf9;
   padding:95px 6vw 105px;
 }
+
 .pf-cta .pf-kicker {
   color:var(--pf-beige);
 }
+
 .pf-cta h2 {
   font-size:clamp(34px,6vw,80px);
   line-height:1.12;
   letter-spacing:-.06em;
   margin:25px 0 36px;
 }
+
 .pf-cta a {
   color:#fffdf9;
   text-decoration:underline;
@@ -242,12 +334,13 @@
   letter-spacing:.1em;
 }
 
-/* PROJEKTI AVAMINE */
+/* PROJECT MODAL */
 
 .pf-modal[hidden],
 .pf-viewer[hidden] {
   display:none!important;
 }
+
 .pf-modal {
   position:fixed;
   inset:0;
@@ -258,6 +351,7 @@
   color:var(--pf-ink);
   font-family:Poppins,sans-serif;
 }
+
 .pf-modal-bar {
   position:sticky;
   top:0;
@@ -270,10 +364,12 @@
   background:var(--pf-cream);
   border-bottom:1px solid var(--pf-line);
 }
+
 .pf-modal-bar strong {
   font-size:12px;
   letter-spacing:.1em;
 }
+
 .pf-close {
   border:0;
   background:transparent;
@@ -283,26 +379,31 @@
   letter-spacing:.12em;
   cursor:pointer;
 }
+
 .pf-modal-content {
   max-width:1350px;
   margin:auto;
   padding:60px 6vw 110px;
 }
+
 .pf-modal-content h2 {
   font-size:clamp(38px,6vw,82px);
   letter-spacing:-.065em;
   line-height:1.1;
   margin:16px 0 35px;
 }
+
 .pf-project-text {
   max-width:780px;
   margin-bottom:60px;
 }
+
 .pf-project-intro {
   font-size:clamp(16px,1.65vw,20px);
   line-height:1.8;
   margin:0 0 28px;
 }
+
 .pf-project-quote {
   border-left:2px solid var(--pf-wine);
   padding:10px 0 10px 24px;
@@ -313,17 +414,20 @@
   margin:25px 0;
   white-space:pre-line;
 }
+
 .pf-project-body p {
   font-size:14px;
   line-height:1.9;
   color:#625a55;
   margin:0 0 17px;
 }
+
 .pf-credits {
   border-top:1px solid var(--pf-line);
   margin-top:30px;
   padding-top:22px;
 }
+
 .pf-credit {
   display:grid;
   grid-template-columns:180px 1fr;
@@ -332,34 +436,40 @@
   font-size:12px;
   line-height:1.7;
 }
+
 .pf-credit strong {
   font-weight:600;
 }
+
 .pf-credit span {
   color:#625a55;
 }
 
-/* FOTOGALERII */
+/* PHOTO GALLERY */
 
 .pf-photos {
   columns:2;
   column-gap:22px;
 }
+
 .pf-photos figure {
   break-inside:avoid;
   margin:0 0 22px;
   cursor:zoom-in;
 }
+
 .pf-photos img {
   width:100%;
   height:auto;
   display:block;
 }
+
 .pf-process {
   margin:70px 0 0;
   padding-top:28px;
   border-top:1px solid var(--pf-line);
 }
+
 .pf-process h3 {
   color:var(--pf-wine);
   font-size:12px;
@@ -367,12 +477,14 @@
   letter-spacing:.14em;
   margin:0 0 20px;
 }
+
 .pf-process-grid {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:14px;
   max-width:780px;
 }
+
 .pf-process-grid img {
   display:block;
   width:100%;
@@ -381,7 +493,7 @@
   cursor:zoom-in;
 }
 
-/* SUURENDATUD FOTO JA SWIPE */
+/* IMAGE VIEWER */
 
 .pf-viewer {
   position:fixed;
@@ -393,6 +505,7 @@
   flex-direction:column;
   font-family:Poppins,sans-serif;
 }
+
 .pf-viewer-top {
   display:flex;
   align-items:center;
@@ -401,11 +514,13 @@
   padding:18px 5vw;
   min-height:70px;
 }
+
 .pf-viewer-title {
   font-size:11px;
   font-weight:600;
   letter-spacing:.12em;
 }
+
 .pf-viewer-close {
   border:0;
   background:transparent;
@@ -415,6 +530,7 @@
   font-weight:600;
   letter-spacing:.12em;
 }
+
 .pf-viewer-stage {
   position:relative;
   flex:1;
@@ -427,6 +543,7 @@
   user-select:none;
   -webkit-user-select:none;
 }
+
 .pf-viewer-image {
   display:block;
   max-width:calc(100% - 150px);
@@ -437,6 +554,7 @@
   pointer-events:none;
   -webkit-user-drag:none;
 }
+
 .pf-viewer-arrow {
   position:absolute;
   top:50%;
@@ -455,12 +573,15 @@
   align-items:center;
   justify-content:center;
 }
+
 .pf-viewer-prev {
   left:4vw;
 }
+
 .pf-viewer-next {
   right:4vw;
 }
+
 .pf-viewer-bottom {
   text-align:center;
   padding:17px 20px 23px;
@@ -468,29 +589,35 @@
   letter-spacing:.13em;
   color:#ddd;
 }
+
 body.pf-locked {
   overflow:hidden;
 }
 
-/* MOBIIL */
+/* MOBILE */
 
 @media(max-width:760px) {
   .pf-hero {
     padding:115px 5vw 65px;
   }
+
   .pf-hero h1 {
     font-size:clamp(48px,12vw,78px);
   }
+
   .pf-section {
     padding:62px 5vw 82px;
   }
+
   .pf-heading {
     margin-bottom:36px;
   }
+
   .pf-grid {
     grid-template-columns:repeat(2,minmax(0,1fr));
     gap:38px 15px;
   }
+
   .pf-grid .pf-card,
   .pf-grid .pf-card:nth-child(4n+2),
   .pf-grid .pf-card:nth-child(4n+3),
@@ -498,60 +625,76 @@ body.pf-locked {
     grid-column:span 1;
     margin:0;
   }
+
   .pf-grid .pf-card:nth-child(even) {
     margin-top:45px;
   }
+
   .pf-grid .pf-card .pf-image {
     aspect-ratio:3/4;
   }
+
   .pf-caption {
     display:block;
   }
+
   .pf-caption strong {
     display:block;
     font-size:12px;
   }
+
   .pf-caption small {
     display:block;
     margin-top:5px;
     text-align:left;
     font-size:9px;
   }
+
   .pf-feature {
     grid-template-columns:1fr;
     gap:28px;
   }
+
   .pf-feature .pf-image {
     aspect-ratio:16/11;
   }
+
   .pf-modal-content {
     padding:35px 5vw 75px;
   }
+
   .pf-photos {
     columns:1;
   }
+
   .pf-credit {
     grid-template-columns:1fr;
     gap:1px;
   }
+
   .pf-process-grid {
     gap:8px;
   }
+
   .pf-cta {
     padding:75px 5vw;
   }
+
   .pf-viewer-top {
     padding:15px 5vw;
     min-height:60px;
   }
+
   .pf-viewer-title {
     max-width:65%;
     line-height:1.5;
   }
+
   .pf-viewer-image {
     max-width:100%;
     max-height:100%;
   }
+
   .pf-viewer-arrow {
     width:36px;
     height:36px;
@@ -559,16 +702,46 @@ body.pf-locked {
     background:rgba(0,0,0,.45);
     border:0;
   }
+
   .pf-viewer-prev {
     left:8px;
   }
+
   .pf-viewer-next {
     right:8px;
   }
+
   .pf-viewer-bottom {
     padding:14px;
   }
+
+  /* BACK HOME ON MOBILE */
+
+  .pf-grid .pf-card[data-project="backhome"] .pf-image {
+    aspect-ratio:auto !important;
+    height:auto !important;
+  }
+
+  .pf-grid .pf-card[data-project="backhome"] .pf-image img {
+    height:auto !important;
+    object-fit:contain !important;
+  }
+
+  .pf-card[data-project="backhome"] .pf-caption {
+    display:block;
+  }
+
+  .pf-card[data-project="backhome"] .pf-caption strong {
+    font-size:clamp(10px,2.7vw,14px);
+    white-space:nowrap;
+  }
+
+  .pf-card[data-project="backhome"] .pf-caption small {
+    margin-top:8px;
+    text-align:left;
+  }
 }
+
 @media(prefers-reduced-motion:reduce) {
   .pf-image img {
     transition:none;
@@ -705,7 +878,7 @@ body.pf-locked {
 
 </main>
 
-<!-- PROJEKTI DETAILVAADE -->
+<!-- PROJECT MODAL -->
 
 <div
   class="pf-modal"
@@ -737,7 +910,7 @@ body.pf-locked {
   </div>
 </div>
 
-<!-- SUURE FOTO VAATAJA -->
+<!-- IMAGE VIEWER -->
 
 <div
   class="pf-viewer"
@@ -786,9 +959,7 @@ body.pf-locked {
 
 <script>
 
-/* ================================
-   PROJEKTID
-================================ */
+/* PROJECT DATA */
 
 const projects = [
 
@@ -893,6 +1064,7 @@ const projects = [
     cover:0,
 
     photos:[
+      'back home 1.jpg',
       '1.jpg',
       '2-1461bfc715ff48e385c7acce32c897c9.jpg',
       '_MG_2297 (2)-f363de2e209e457a8ed8e33deecabfe0.jpg',
@@ -1061,9 +1233,7 @@ const projects = [
   }
 ];
 
-/* ================================
-   ÜLDISED MUUTUJAD
-================================ */
+/* VARIABLES */
 
 const projectMap = new Map(
   projects.map(project => [project.id,project])
@@ -1090,13 +1260,14 @@ function photoUrl(project,file) {
   return project.folder + encodeURIComponent(file);
 }
 
-/* ================================
-   PROJEKTIKAARDID
-================================ */
+/* PROJECT CARDS */
 
 function createCard(project) {
   const article = document.createElement('article');
   article.className = 'pf-card';
+
+  // Allows project-specific CSS without affecting other cards.
+  article.dataset.project = project.id;
 
   const button = document.createElement('button');
   button.className = 'pf-card-button';
@@ -1114,6 +1285,7 @@ function createCard(project) {
     project,
     project.photos[project.cover] || project.photos[0]
   );
+
   image.alt = project.title + ' – esindusfoto';
   image.loading = project.section === 'styling'
     ? 'eager'
@@ -1152,9 +1324,7 @@ projects.forEach(project => {
   }
 });
 
-/* ================================
-   SUURE FOTO GALERII
-================================ */
+/* IMAGE VIEWER */
 
 function showViewerImage() {
   const item = viewerPhotos[viewerIndex];
@@ -1217,9 +1387,7 @@ document.getElementById('pfViewerPrev')
 document.getElementById('pfViewerNext')
   .addEventListener('click',() => stepViewer(1));
 
-/* ================================
-   TELEFONI SWIPE
-================================ */
+/* MOBILE SWIPE */
 
 viewerStage.addEventListener('touchstart',event => {
   if(event.touches.length !== 1) return;
@@ -1260,9 +1428,7 @@ viewerStage.addEventListener('touchcancel',() => {
   touchStartY = null;
 });
 
-/* ================================
-   KLAVIATUURI NOOLED
-================================ */
+/* KEYBOARD CONTROLS */
 
 document.addEventListener('keydown',event => {
   if(viewer.hidden) return;
@@ -1304,9 +1470,7 @@ document.addEventListener('keydown',event => {
   }
 });
 
-/* ================================
-   FOTODE KLIKITAVAKS MUUTMINE
-================================ */
+/* CLICKABLE PHOTOS */
 
 function makePhotosClickable(
   container,
@@ -1353,9 +1517,7 @@ function makePhotosClickable(
     });
 }
 
-/* ================================
-   PROJEKTI AVAMINE
-================================ */
+/* OPEN PROJECT */
 
 function openProject(id) {
   const project = projectMap.get(id);
@@ -1413,7 +1575,7 @@ function openProject(id) {
     previousProcess.remove();
   }
 
-  /* PROJEKTI FOTOD */
+  /* MAIN PROJECT PHOTOS */
 
   project.photos.forEach((file,index) => {
     const figure = document.createElement('figure');
@@ -1434,7 +1596,7 @@ function openProject(id) {
     project.photos
   );
 
-  /* TEATRI TÖÖPROTSESSI FOTOD */
+  /* THEATRE PROCESS PHOTOS */
 
   if(
     project.id === 'theatre' &&
@@ -1475,7 +1637,6 @@ function openProject(id) {
       true
     );
 
-    /* TÖÖPROTSESS JÄÄB KÕIGE LÕPPU */
     photos.after(process);
   }
 
@@ -1486,9 +1647,7 @@ function openProject(id) {
   closeButton.focus();
 }
 
-/* ================================
-   PROJEKTI SULGEMINE
-================================ */
+/* CLOSE PROJECT */
 
 function closeProject() {
   closeViewer();
@@ -1516,9 +1675,7 @@ document.querySelectorAll('[data-open]')
     });
   });
 
-/* ================================
-   PROJEKTI KLAVIATUURIJUHTIMINE
-================================ */
+/* MODAL KEYBOARD */
 
 document.addEventListener('keydown',event => {
   if(!viewer.hidden || modal.hidden) return;
