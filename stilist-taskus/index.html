@@ -131,6 +131,109 @@
         font-size: 8px;
       }
     }
+    
+/* TASKUSTILIST HERO PARANDUS */
+
+.pocket-page .pocket-hero {
+  min-height: 90vh;
+  padding: 125px var(--page) 35px;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pocket-page .pocket-hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.pocket-page .pocket-hero-main {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  align-items: end;
+  gap: 6vw;
+  padding: 70px 0;
+}
+
+.pocket-page .pocket-hero h1 {
+  font-size: clamp(70px, 10vw, 155px);
+  line-height: 0.83;
+  letter-spacing: -0.075em;
+  font-weight: 700;
+}
+
+.pocket-page .pocket-hero h1 span {
+  display: block;
+}
+
+.pocket-page .pocket-hero h1 span:last-child {
+  color: var(--wine);
+}
+
+.pocket-page .pocket-hero-copy {
+  max-width: 360px;
+  padding-bottom: 10px;
+}
+
+.pocket-page .pocket-lead {
+  margin-bottom: 25px;
+  font-size: clamp(25px, 3vw, 42px);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.pocket-page .pocket-hero-copy > p:last-child {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.pocket-page .pocket-hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.pocket-page .pocket-hero-bottom span,
+.pocket-page .pocket-issue {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 760px) {
+  .pocket-page .pocket-hero {
+    min-height: auto;
+    padding: 115px var(--page) 35px;
+  }
+
+  .pocket-page .pocket-hero-main {
+    display: block;
+    padding: 75px 0;
+  }
+
+  .pocket-page .pocket-hero h1 {
+    font-size: clamp(55px, 13vw, 90px);
+  }
+
+  .pocket-page .pocket-hero-copy {
+    margin: 55px 0 0 auto;
+  }
+
+  .pocket-page .pocket-hero-bottom {
+    justify-content: flex-start;
+    gap: 15px 25px;
+  }
+}
+
   </style>
 </head>
 
