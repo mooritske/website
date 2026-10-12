@@ -2,1303 +2,1562 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfoolio | Kertu Moorits — MOORITS.</title>
-  <meta name="description" content="Kertu Mooritsa stilistika portfoolio. Fotolavastused, moefotod, moeetendused ja teatriprojektid.">
-  <link rel="canonical" href="https://moorits.com/portfoolio/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-
-  <style>
-    :root {
-      --pf-cream: #f7f2eb;
-      --pf-beige: #e7dbcf;
-      --pf-wine: #54202b;
-      --pf-ink: #211b19;
-      --pf-muted: #756c67;
-      --pf-line: #d9cec4;
-    }
-
-    .portfolio-page {
-      background: var(--pf-cream);
-      color: var(--pf-ink);
-    }
-
-    .portfolio-page .pf,
-    .portfolio-page .pf * {
-      box-sizing: border-box;
-    }
-
-    .pf {
-      font-family: Poppins, sans-serif;
-      background: var(--pf-cream);
-      color: var(--pf-ink);
-    }
-
-    .pf button,
-    .pf-modal button {
-      font-family: inherit;
-    }
-
-    /* HERO */
-
-    .pf-hero {
-      padding: 150px 6vw 95px;
-      border-bottom: 1px solid var(--pf-line);
-    }
-
-    .pf-kicker {
-      margin: 0;
-      color: var(--pf-wine);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .pf-hero h1 {
-      font-size: clamp(54px, 10vw, 145px);
-      letter-spacing: -.075em;
-      line-height: 1.05;
-      margin: 20px 0 28px;
-      font-weight: 700;
-    }
-
-    .pf-hero p:last-child {
-      font-size: clamp(15px, 1.5vw, 19px);
-      line-height: 1.85;
-      color: var(--pf-muted);
-      max-width: 630px;
-    }
-
-    /* SECTIONS */
-
-    .pf-section {
-      padding: 88px 6vw 115px;
-      border-bottom: 1px solid var(--pf-line);
-    }
-
-    .pf-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 20px;
-      border-bottom: 1px solid var(--pf-line);
-      padding-bottom: 22px;
-      margin-bottom: 55px;
-    }
-
-    .pf-heading h2 {
-      font-size: clamp(32px, 5vw, 70px);
-      letter-spacing: -.065em;
-      line-height: 1.1;
-      margin: 0;
-      font-weight: 600;
-    }
-
-    .pf-heading span {
-      color: var(--pf-wine);
-      font-size: 11px;
-      letter-spacing: .13em;
-      white-space: nowrap;
-    }
-
-    /* STILISTIKA */
-
-    .pf-grid {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 65px 3vw;
-      align-items: start;
-    }
-
-    .pf-card {
-      grid-column: span 6;
-      min-width: 0;
-    }
-
-    .pf-grid .pf-card:nth-child(4n+2) {
-      grid-column: span 5;
-      margin-top: 90px;
-    }
-
-    .pf-grid .pf-card:nth-child(4n+3) {
-      grid-column: span 5;
-      margin-left: 7%;
-    }
-
-    .pf-grid .pf-card:nth-child(4n+4) {
-      grid-column: span 6;
-      margin-top: 75px;
-    }
-
-    .pf-card-button {
-      display: block;
-      width: 100%;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      text-align: left;
-      color: inherit;
-      cursor: pointer;
-    }
-
-    .pf-card-button:focus-visible,
-    .pf-open:focus-visible,
-    .pf-close:focus-visible {
-      outline: 2px solid var(--pf-wine);
-      outline-offset: 5px;
-    }
-
-    .pf-image {
-      display: block;
-      aspect-ratio: 4 / 5;
-      background: var(--pf-beige);
-      overflow: hidden;
-    }
-
-    .pf-grid .pf-card:nth-child(3n+2) .pf-image {
-      aspect-ratio: 3 / 4;
-    }
-
-    .pf-grid .pf-card:nth-child(3n+3) .pf-image {
-      aspect-ratio: 5 / 4;
-    }
-
-    .pf-image img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .45s ease;
-    }
-
-    .pf-card-button:hover .pf-image img {
-      transform: scale(1.035);
-    }
-
-    .pf-caption {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 15px;
-      padding-top: 18px;
-    }
-
-    .pf-caption strong {
-      font-size: clamp(13px, 1.3vw, 18px);
-      font-weight: 600;
-    }
-
-    .pf-caption small {
-      font-size: 10px;
-      letter-spacing: .09em;
-      color: var(--pf-muted);
-      text-align: right;
-    }
-
-    /* MOEETENDUSED JA TEATER */
-
-    .pf-compact {
-      padding-top: 70px;
-      padding-bottom: 82px;
-    }
-
-    .pf-feature {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
-      gap: 6vw;
-      align-items: center;
-      max-width: 1120px;
-      margin: auto;
-    }
-
-    .pf-feature .pf-image {
-      aspect-ratio: 16 / 10;
-    }
-
-    .pf-feature .pf-caption {
-      display: none;
-    }
-
-    .pf-feature-text .pf-kicker {
-      margin-bottom: 16px;
-    }
-
-    .pf-feature-text h3 {
-      font-size: clamp(26px, 3.3vw, 46px);
-      line-height: 1.18;
-      letter-spacing: -.05em;
-      font-weight: 600;
-      margin: 0 0 20px;
-    }
-
-    .pf-feature-text p:not(.pf-kicker) {
-      font-size: 14px;
-      line-height: 1.9;
-      color: var(--pf-muted);
-    }
-
-    .pf-open {
-      background: none;
-      border: 0;
-      border-bottom: 1px solid var(--pf-wine);
-      padding: 0 0 8px;
-      margin-top: 20px;
-      color: var(--pf-wine);
-      font-size: 11px;
-      letter-spacing: .12em;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .pf-theatre {
-      background: #eee6dc;
-    }
-
-    /* CONTACT */
-
-    .pf-cta {
-      background: var(--pf-wine);
-      color: #fffdf9;
-      padding: 95px 6vw 105px;
-    }
-
-    .pf-cta .pf-kicker {
-      color: var(--pf-beige);
-    }
-
-    .pf-cta h2 {
-      font-size: clamp(34px, 6vw, 80px);
-      line-height: 1.12;
-      letter-spacing: -.06em;
-      margin: 25px 0 36px;
-    }
-
-    .pf-cta a {
-      color: #fffdf9;
-      text-decoration: underline;
-      text-underline-offset: 7px;
-      font-size: 12px;
-      letter-spacing: .1em;
-    }
-
-    /* PROJECT MODAL */
-
-    .pf-modal[hidden] {
-      display: none !important;
-    }
-
-    .pf-modal {
-      position: fixed;
-      inset: 0;
-      z-index: 10000;
-      overflow: auto;
-      overscroll-behavior: contain;
-      background: var(--pf-cream);
-      color: var(--pf-ink);
-      font-family: Poppins, sans-serif;
-    }
-
-    .pf-modal-bar {
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 20px 6vw;
-      background: var(--pf-cream);
-      border-bottom: 1px solid var(--pf-line);
-    }
-
-    .pf-modal-bar strong {
-      font-size: 12px;
-      letter-spacing: .1em;
-    }
-
-    .pf-close {
-      border: 0;
-      background: transparent;
-      color: var(--pf-wine);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .12em;
-      cursor: pointer;
-    }
-
-    .pf-modal-content {
-      max-width: 1350px;
-      margin: auto;
-      padding: 60px 6vw 110px;
-    }
-
-    .pf-modal-content h2 {
-      font-size: clamp(38px, 6vw, 82px);
-      letter-spacing: -.065em;
-      line-height: 1.1;
-      margin: 16px 0 35px;
-    }
-
-    .pf-project-text {
-      max-width: 780px;
-      margin-bottom: 60px;
-    }
-
-    .pf-project-intro {
-      font-size: clamp(16px, 1.65vw, 20px);
-      line-height: 1.8;
-      margin: 0 0 28px;
-    }
-
-    .pf-project-quote {
-      border-left: 2px solid var(--pf-wine);
-      padding: 10px 0 10px 24px;
-      color: var(--pf-wine);
-      font-size: clamp(17px, 2vw, 24px);
-      line-height: 1.7;
-      font-style: italic;
-      margin: 25px 0;
-      white-space: pre-line;
-    }
-
-    .pf-project-body p {
-      font-size: 14px;
-      line-height: 1.9;
-      color: #625a55;
-      margin: 0 0 17px;
-    }
-
-    .pf-credits {
-      border-top: 1px solid var(--pf-line);
-      margin-top: 30px;
-      padding-top: 22px;
-    }
-
-    .pf-credit {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 12px;
-      margin-bottom: 10px;
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    .pf-credit strong {
-      font-weight: 600;
-    }
-
-    .pf-credit span {
-      color: #625a55;
-    }
-
-    /* MINU TÖÖ JA PROTSESS – GALERII LÕPUS */
-
-    .pf-process {
-      margin: 70px 0 0;
-      padding-top: 28px;
-      border-top: 1px solid var(--pf-line);
-    }
-
-    .pf-process h3 {
-      color: var(--pf-wine);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .14em;
-      margin: 0 0 20px;
-    }
-
-    .pf-process-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      max-width: 780px;
-    }
-
-    .pf-process-grid img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-    }
-
-    /* SUUR FOTOGALERII */
-
-    .pf-photos {
-      columns: 2;
-      column-gap: 22px;
-    }
-
-    .pf-photos figure {
-      break-inside: avoid;
-      margin: 0 0 22px;
-    }
-
-    .pf-photos img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    body.pf-locked {
-      overflow: hidden;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 760px) {
-      .pf-hero {
-        padding: 115px 5vw 65px;
-      }
-
-      .pf-hero h1 {
-        font-size: clamp(48px, 12vw, 78px);
-      }
-
-      .pf-section {
-        padding: 62px 5vw 82px;
-      }
-
-      .pf-heading {
-        margin-bottom: 36px;
-      }
-
-      .pf-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 38px 15px;
-      }
-
-      .pf-grid .pf-card,
-      .pf-grid .pf-card:nth-child(4n+2),
-      .pf-grid .pf-card:nth-child(4n+3),
-      .pf-grid .pf-card:nth-child(4n+4) {
-        grid-column: span 1;
-        margin: 0;
-      }
-
-      .pf-grid .pf-card:nth-child(even) {
-        margin-top: 45px;
-      }
-
-      .pf-grid .pf-card .pf-image {
-        aspect-ratio: 3 / 4;
-      }
-
-      .pf-caption {
-        display: block;
-      }
-
-      .pf-caption strong {
-        display: block;
-        font-size: 12px;
-      }
-
-      .pf-caption small {
-        display: block;
-        margin-top: 5px;
-        text-align: left;
-        font-size: 9px;
-      }
-
-      .pf-feature {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .pf-feature .pf-image {
-        aspect-ratio: 16 / 11;
-      }
-
-      .pf-modal-content {
-        padding: 35px 5vw 75px;
-      }
-
-      .pf-photos {
-        columns: 1;
-      }
-
-      .pf-credit {
-        grid-template-columns: 1fr;
-        gap: 1px;
-      }
-
-      .pf-process-grid {
-        gap: 8px;
-      }
-
-      .pf-cta {
-        padding: 75px 5vw;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .pf-image img {
-        transition: none;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfoolio | Kertu Moorits — MOORITS.</title>
+<meta name="description" content="Kertu Mooritsa stilistika portfoolio. Fotolavastused, moeetendused ja teatriprojektid.">
+<link rel="canonical" href="https://moorits.com/portfoolio/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+:root {
+  --pf-cream:#f7f2eb;
+  --pf-beige:#e7dbcf;
+  --pf-wine:#54202b;
+  --pf-ink:#211b19;
+  --pf-muted:#756c67;
+  --pf-line:#d9cec4;
+}
+.portfolio-page {
+  background:var(--pf-cream);
+  color:var(--pf-ink);
+}
+.portfolio-page .pf,
+.portfolio-page .pf *,
+.pf-modal *,
+.pf-viewer * {
+  box-sizing:border-box;
+}
+.pf {
+  font-family:Poppins,sans-serif;
+  background:var(--pf-cream);
+  color:var(--pf-ink);
+}
+.pf button,
+.pf-modal button,
+.pf-viewer button {
+  font-family:inherit;
+}
+.pf-kicker {
+  margin:0;
+  color:var(--pf-wine);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.pf-hero {
+  padding:150px 6vw 95px;
+  border-bottom:1px solid var(--pf-line);
+}
+.pf-hero h1 {
+  font-size:clamp(54px,10vw,145px);
+  letter-spacing:-.075em;
+  line-height:1.05;
+  margin:20px 0 28px;
+  font-weight:700;
+}
+.pf-hero p:last-child {
+  font-size:clamp(15px,1.5vw,19px);
+  line-height:1.85;
+  color:var(--pf-muted);
+  max-width:630px;
+}
+.pf-section {
+  padding:88px 6vw 115px;
+  border-bottom:1px solid var(--pf-line);
+}
+.pf-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  border-bottom:1px solid var(--pf-line);
+  padding-bottom:22px;
+  margin-bottom:55px;
+}
+.pf-heading h2 {
+  font-size:clamp(32px,5vw,70px);
+  letter-spacing:-.065em;
+  line-height:1.1;
+  margin:0;
+  font-weight:600;
+}
+.pf-heading span {
+  color:var(--pf-wine);
+  font-size:11px;
+  letter-spacing:.13em;
+  white-space:nowrap;
+}
+.pf-grid {
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:65px 3vw;
+  align-items:start;
+}
+.pf-card {
+  grid-column:span 6;
+  min-width:0;
+}
+.pf-grid .pf-card:nth-child(4n+2) {
+  grid-column:span 5;
+  margin-top:90px;
+}
+.pf-grid .pf-card:nth-child(4n+3) {
+  grid-column:span 5;
+  margin-left:7%;
+}
+.pf-grid .pf-card:nth-child(4n+4) {
+  grid-column:span 6;
+  margin-top:75px;
+}
+.pf-card-button {
+  display:block;
+  width:100%;
+  padding:0;
+  border:0;
+  background:transparent;
+  text-align:left;
+  color:inherit;
+  cursor:pointer;
+}
+.pf-card-button:focus-visible,
+.pf-open:focus-visible,
+.pf-close:focus-visible,
+.pf-photos figure:focus-visible,
+.pf-process-grid img:focus-visible,
+.pf-viewer button:focus-visible {
+  outline:2px solid var(--pf-wine);
+  outline-offset:5px;
+}
+.pf-image {
+  display:block;
+  aspect-ratio:4/5;
+  background:var(--pf-beige);
+  overflow:hidden;
+}
+.pf-grid .pf-card:nth-child(3n+2) .pf-image {
+  aspect-ratio:3/4;
+}
+.pf-grid .pf-card:nth-child(3n+3) .pf-image {
+  aspect-ratio:5/4;
+}
+.pf-image img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .45s ease;
+}
+.pf-card-button:hover .pf-image img {
+  transform:scale(1.035);
+}
+.pf-caption {
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:15px;
+  padding-top:18px;
+}
+.pf-caption strong {
+  font-size:clamp(13px,1.3vw,18px);
+  font-weight:600;
+}
+.pf-caption small {
+  font-size:10px;
+  letter-spacing:.09em;
+  color:var(--pf-muted);
+  text-align:right;
+}
+.pf-compact {
+  padding-top:70px;
+  padding-bottom:82px;
+}
+.pf-feature {
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+  gap:6vw;
+  align-items:center;
+  max-width:1120px;
+  margin:auto;
+}
+.pf-feature .pf-image {
+  aspect-ratio:16/10;
+}
+.pf-feature .pf-caption {
+  display:none;
+}
+.pf-feature-text .pf-kicker {
+  margin-bottom:16px;
+}
+.pf-feature-text h3 {
+  font-size:clamp(26px,3.3vw,46px);
+  line-height:1.18;
+  letter-spacing:-.05em;
+  font-weight:600;
+  margin:0 0 20px;
+}
+.pf-feature-text p:not(.pf-kicker) {
+  font-size:14px;
+  line-height:1.9;
+  color:var(--pf-muted);
+}
+.pf-open {
+  background:none;
+  border:0;
+  border-bottom:1px solid var(--pf-wine);
+  padding:0 0 8px;
+  margin-top:20px;
+  color:var(--pf-wine);
+  font-size:11px;
+  letter-spacing:.12em;
+  font-weight:600;
+  cursor:pointer;
+}
+.pf-theatre {
+  background:#eee6dc;
+}
+.pf-cta {
+  background:var(--pf-wine);
+  color:#fffdf9;
+  padding:95px 6vw 105px;
+}
+.pf-cta .pf-kicker {
+  color:var(--pf-beige);
+}
+.pf-cta h2 {
+  font-size:clamp(34px,6vw,80px);
+  line-height:1.12;
+  letter-spacing:-.06em;
+  margin:25px 0 36px;
+}
+.pf-cta a {
+  color:#fffdf9;
+  text-decoration:underline;
+  text-underline-offset:7px;
+  font-size:12px;
+  letter-spacing:.1em;
+}
+
+/* PROJEKTI AVAMINE */
+
+.pf-modal[hidden],
+.pf-viewer[hidden] {
+  display:none!important;
+}
+.pf-modal {
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  overflow:auto;
+  overscroll-behavior:contain;
+  background:var(--pf-cream);
+  color:var(--pf-ink);
+  font-family:Poppins,sans-serif;
+}
+.pf-modal-bar {
+  position:sticky;
+  top:0;
+  z-index:2;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:20px 6vw;
+  background:var(--pf-cream);
+  border-bottom:1px solid var(--pf-line);
+}
+.pf-modal-bar strong {
+  font-size:12px;
+  letter-spacing:.1em;
+}
+.pf-close {
+  border:0;
+  background:transparent;
+  color:var(--pf-wine);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.12em;
+  cursor:pointer;
+}
+.pf-modal-content {
+  max-width:1350px;
+  margin:auto;
+  padding:60px 6vw 110px;
+}
+.pf-modal-content h2 {
+  font-size:clamp(38px,6vw,82px);
+  letter-spacing:-.065em;
+  line-height:1.1;
+  margin:16px 0 35px;
+}
+.pf-project-text {
+  max-width:780px;
+  margin-bottom:60px;
+}
+.pf-project-intro {
+  font-size:clamp(16px,1.65vw,20px);
+  line-height:1.8;
+  margin:0 0 28px;
+}
+.pf-project-quote {
+  border-left:2px solid var(--pf-wine);
+  padding:10px 0 10px 24px;
+  color:var(--pf-wine);
+  font-size:clamp(17px,2vw,24px);
+  line-height:1.7;
+  font-style:italic;
+  margin:25px 0;
+  white-space:pre-line;
+}
+.pf-project-body p {
+  font-size:14px;
+  line-height:1.9;
+  color:#625a55;
+  margin:0 0 17px;
+}
+.pf-credits {
+  border-top:1px solid var(--pf-line);
+  margin-top:30px;
+  padding-top:22px;
+}
+.pf-credit {
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:12px;
+  margin-bottom:10px;
+  font-size:12px;
+  line-height:1.7;
+}
+.pf-credit strong {
+  font-weight:600;
+}
+.pf-credit span {
+  color:#625a55;
+}
+
+/* FOTOGALERII */
+
+.pf-photos {
+  columns:2;
+  column-gap:22px;
+}
+.pf-photos figure {
+  break-inside:avoid;
+  margin:0 0 22px;
+  cursor:zoom-in;
+}
+.pf-photos img {
+  width:100%;
+  height:auto;
+  display:block;
+}
+.pf-process {
+  margin:70px 0 0;
+  padding-top:28px;
+  border-top:1px solid var(--pf-line);
+}
+.pf-process h3 {
+  color:var(--pf-wine);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.14em;
+  margin:0 0 20px;
+}
+.pf-process-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  max-width:780px;
+}
+.pf-process-grid img {
+  display:block;
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  cursor:zoom-in;
+}
+
+/* SUURENDATUD FOTO JA SWIPE */
+
+.pf-viewer {
+  position:fixed;
+  inset:0;
+  z-index:20000;
+  background:#151313;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  font-family:Poppins,sans-serif;
+}
+.pf-viewer-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:18px 5vw;
+  min-height:70px;
+}
+.pf-viewer-title {
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.12em;
+}
+.pf-viewer-close {
+  border:0;
+  background:transparent;
+  color:white;
+  cursor:pointer;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.12em;
+}
+.pf-viewer-stage {
+  position:relative;
+  flex:1;
+  min-height:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  touch-action:pan-y;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.pf-viewer-image {
+  display:block;
+  max-width:calc(100% - 150px);
+  max-height:100%;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  pointer-events:none;
+  -webkit-user-drag:none;
+}
+.pf-viewer-arrow {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:2;
+  width:48px;
+  height:48px;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:50%;
+  background:rgba(0,0,0,.25);
+  color:white;
+  font-size:30px;
+  line-height:1;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.pf-viewer-prev {
+  left:4vw;
+}
+.pf-viewer-next {
+  right:4vw;
+}
+.pf-viewer-bottom {
+  text-align:center;
+  padding:17px 20px 23px;
+  font-size:11px;
+  letter-spacing:.13em;
+  color:#ddd;
+}
+body.pf-locked {
+  overflow:hidden;
+}
+
+/* MOBIIL */
+
+@media(max-width:760px) {
+  .pf-hero {
+    padding:115px 5vw 65px;
+  }
+  .pf-hero h1 {
+    font-size:clamp(48px,12vw,78px);
+  }
+  .pf-section {
+    padding:62px 5vw 82px;
+  }
+  .pf-heading {
+    margin-bottom:36px;
+  }
+  .pf-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:38px 15px;
+  }
+  .pf-grid .pf-card,
+  .pf-grid .pf-card:nth-child(4n+2),
+  .pf-grid .pf-card:nth-child(4n+3),
+  .pf-grid .pf-card:nth-child(4n+4) {
+    grid-column:span 1;
+    margin:0;
+  }
+  .pf-grid .pf-card:nth-child(even) {
+    margin-top:45px;
+  }
+  .pf-grid .pf-card .pf-image {
+    aspect-ratio:3/4;
+  }
+  .pf-caption {
+    display:block;
+  }
+  .pf-caption strong {
+    display:block;
+    font-size:12px;
+  }
+  .pf-caption small {
+    display:block;
+    margin-top:5px;
+    text-align:left;
+    font-size:9px;
+  }
+  .pf-feature {
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .pf-feature .pf-image {
+    aspect-ratio:16/11;
+  }
+  .pf-modal-content {
+    padding:35px 5vw 75px;
+  }
+  .pf-photos {
+    columns:1;
+  }
+  .pf-credit {
+    grid-template-columns:1fr;
+    gap:1px;
+  }
+  .pf-process-grid {
+    gap:8px;
+  }
+  .pf-cta {
+    padding:75px 5vw;
+  }
+  .pf-viewer-top {
+    padding:15px 5vw;
+    min-height:60px;
+  }
+  .pf-viewer-title {
+    max-width:65%;
+    line-height:1.5;
+  }
+  .pf-viewer-image {
+    max-width:100%;
+    max-height:100%;
+  }
+  .pf-viewer-arrow {
+    width:36px;
+    height:36px;
+    font-size:23px;
+    background:rgba(0,0,0,.45);
+    border:0;
+  }
+  .pf-viewer-prev {
+    left:8px;
+  }
+  .pf-viewer-next {
+    right:8px;
+  }
+  .pf-viewer-bottom {
+    padding:14px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .pf-image img {
+    transition:none;
+  }
+}
+</style>
 </head>
 
 <body class="portfolio-page">
 
-  <!-- HEADER -->
+<header class="header portfolio-header">
+  <a href="/" class="logo">MOORITS.</a>
 
-  <header class="header portfolio-header">
-    <a href="/" class="logo">MOORITS.</a>
+  <nav class="desktop-nav">
+    <a href="/">AVALEHT</a>
 
-    <nav class="desktop-nav">
-      <a href="/">AVALEHT</a>
-
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-trigger" type="button">
-          PERSONAALSTILISTIKA
-        </button>
-
-        <div class="nav-dropdown-menu">
-          <a href="/meestele/">MEESTELE</a>
-          <a href="/naistele/">NAISTELE</a>
-        </div>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-trigger" type="button">
+        PERSONAALSTILISTIKA
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="/meestele/">MEESTELE</a>
+        <a href="/naistele/">NAISTELE</a>
       </div>
-
-      <a href="/brandidele/">BRÄNDIDELE</a>
-      <a href="/portfoolio/" class="active" aria-current="page">
-        PORTFOOLIO
-      </a>
-    </nav>
-
-    <button class="menu-button" id="menuButton" type="button">
-      MENÜÜ
-    </button>
-  </header>
-
-  <!-- MOBILE NAVIGATION -->
-
-  <nav class="mobile-nav" id="mobileNav">
-    <button class="mobile-close" id="mobileClose" type="button">
-      SULGE
-    </button>
-
-    <div class="mobile-links">
-      <a href="/">Avaleht</a>
-      <span class="mobile-nav-label">PERSONAALSTILISTIKA</span>
-      <a href="/meestele/">Meestele</a>
-      <a href="/naistele/">Naistele</a>
-      <a href="/brandidele/">Brändidele</a>
-      <a href="/portfoolio/">Portfoolio</a>
-      <a href="/#kontakt">Kontakt</a>
     </div>
+
+    <a href="/brandidele/">BRÄNDIDELE</a>
+    <a href="/portfoolio/" class="active" aria-current="page">
+      PORTFOOLIO
+    </a>
   </nav>
 
-  <main class="pf">
+  <button class="menu-button" id="menuButton" type="button">
+    MENÜÜ
+  </button>
+</header>
 
-    <!-- INTRO -->
+<nav class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose" type="button">
+    SULGE
+  </button>
 
-    <section class="pf-hero">
-      <p class="pf-kicker">MOORITS. / VALITUD TÖÖD</p>
-      <h1>PORTFOOLIO.</h1>
+  <div class="mobile-links">
+    <a href="/">Avaleht</a>
+    <span class="mobile-nav-label">PERSONAALSTILISTIKA</span>
+    <a href="/meestele/">Meestele</a>
+    <a href="/naistele/">Naistele</a>
+    <a href="/brandidele/">Brändidele</a>
+    <a href="/portfoolio/">Portfoolio</a>
+    <a href="/#kontakt">Kontakt</a>
+  </div>
+</nav>
 
-      <p>
-        Stilistika, visuaalsed kontseptsioonid ja loomingulised
-        koostööd. Valik projektidest, kus idee saab vormi
-        rõivaste, detailide ja visuaalse jutustuse kaudu.
-      </p>
-    </section>
+<main class="pf">
 
-    <!-- 01 STILISTIKA -->
+  <section class="pf-hero">
+    <p class="pf-kicker">MOORITS. / VALITUD TÖÖD</p>
+    <h1>PORTFOOLIO.</h1>
+    <p>
+      Stilistika, visuaalsed kontseptsioonid ja loomingulised
+      koostööd. Valik projektidest, kus idee saab vormi
+      rõivaste, detailide ja visuaalse jutustuse kaudu.
+    </p>
+  </section>
 
-    <section class="pf-section" id="stilistika">
-      <div class="pf-heading">
-        <h2>STILISTIKA</h2>
-        <span>01 / 03</span>
-      </div>
+  <section class="pf-section" id="stilistika">
+    <div class="pf-heading">
+      <h2>STILISTIKA</h2>
+      <span>01 / 03</span>
+    </div>
+    <div class="pf-grid" id="pf-styling"></div>
+  </section>
 
-      <div class="pf-grid" id="pf-styling"></div>
-    </section>
-
-    <!-- 02 MOEETENDUSED -->
-
-    <section class="pf-section pf-compact" id="moeetendused">
-      <div class="pf-heading">
-        <h2>MOEETENDUSED</h2>
-        <span>02 / 03</span>
-      </div>
-
-      <div class="pf-feature">
-        <div id="pf-fashion"></div>
-
-        <div class="pf-feature-text">
-          <p class="pf-kicker">MOEETENDUS · DISAINERI ASSISTENT</p>
-          <h3>ESTONIAN FASHION FESTIVAL</h3>
-
-          <p>
-            Osalesin disainer Alice Pärtelpoja kollektsiooni
-            juures assistendina, toetades lavatagust tööd,
-            modellide ettevalmistust ja moeetenduse sujuvat
-            kulgemist.
-          </p>
-
-          <button
-            class="pf-open"
-            type="button"
-            data-open="eff"
-          >
-            VAATA PROJEKTI →
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- 03 TEATER -->
-
-    <section class="pf-section pf-theatre" id="teater">
-      <div class="pf-heading">
-        <h2>TEATER</h2>
-        <span>03 / 03</span>
-      </div>
-
-      <div class="pf-feature">
-        <div id="pf-theatre"></div>
-
-        <div class="pf-feature-text">
-          <p class="pf-kicker">TARTU UUS TEATER · 2025</p>
-          <h3>SOOSTERI KOOLKOND</h3>
-
-          <p>
-            Lavakujunduse, kostüümide ja rekvisiitide
-            teostus koostöös kunstnikuga.
-          </p>
-
-          <button
-            class="pf-open"
-            type="button"
-            data-open="theatre"
-          >
-            VAATA PROJEKTI →
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-
-    <section class="pf-cta" id="kontakt">
-      <p class="pf-kicker">KOOSTÖÖ</p>
-
-      <h2>
-        SUL ON IDEE.<br>
-        TEEME SELLE NÄHTAVAKS.
-      </h2>
-
-      <a href="/brandidele/">
-        TUTVU KOOSTÖÖVÕIMALUSTEGA →
-      </a>
-    </section>
-
-  </main>
-
-  <!-- PROJECT MODAL -->
-
-  <div
-    class="pf-modal"
-    id="pfModal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="pfModalTitle"
-    hidden
-  >
-    <div class="pf-modal-bar">
-      <strong>MOORITS. / PORTFOOLIO</strong>
-
-      <button class="pf-close" id="pfClose" type="button">
-        SULGE ✕
-      </button>
+  <section class="pf-section pf-compact" id="moeetendused">
+    <div class="pf-heading">
+      <h2>MOEETENDUSED</h2>
+      <span>02 / 03</span>
     </div>
 
-    <div class="pf-modal-content">
-      <p class="pf-kicker" id="pfModalKind"></p>
-      <h2 id="pfModalTitle"></h2>
+    <div class="pf-feature">
+      <div id="pf-fashion"></div>
 
-      <div class="pf-project-text">
-        <p class="pf-project-quote" id="pfQuote" hidden></p>
-        <p class="pf-project-intro" id="pfIntro"></p>
-        <div class="pf-project-body" id="pfBody"></div>
-        <div class="pf-credits" id="pfCredits"></div>
+      <div class="pf-feature-text">
+        <p class="pf-kicker">
+          MOEETENDUS · DISAINERI ASSISTENT
+        </p>
+        <h3>ESTONIAN FASHION FESTIVAL</h3>
+        <p>
+          Osalesin disainer Alice Pärtelpoja kollektsiooni
+          juures assistendina, toetades lavatagust tööd,
+          modellide ettevalmistust ja moeetenduse sujuvat
+          kulgemist.
+        </p>
+        <button class="pf-open" type="button" data-open="eff">
+          VAATA PROJEKTI →
+        </button>
       </div>
-
-      <div class="pf-photos" id="pfPhotos"></div>
     </div>
+  </section>
+
+  <section class="pf-section pf-theatre" id="teater">
+    <div class="pf-heading">
+      <h2>TEATER</h2>
+      <span>03 / 03</span>
+    </div>
+
+    <div class="pf-feature">
+      <div id="pf-theatre"></div>
+
+      <div class="pf-feature-text">
+        <p class="pf-kicker">TARTU UUS TEATER · 2025</p>
+        <h3>SOOSTERI KOOLKOND</h3>
+        <p>
+          Lavakujunduse, kostüümide ja rekvisiitide
+          teostus koostöös kunstnikuga.
+        </p>
+        <button class="pf-open" type="button" data-open="theatre">
+          VAATA PROJEKTI →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="pf-cta" id="kontakt">
+    <p class="pf-kicker">KOOSTÖÖ</p>
+    <h2>
+      SUL ON IDEE.<br>
+      TEEME SELLE NÄHTAVAKS.
+    </h2>
+    <a href="/brandidele/">
+      TUTVU KOOSTÖÖVÕIMALUSTEGA →
+    </a>
+  </section>
+
+</main>
+
+<!-- PROJEKTI DETAILVAADE -->
+
+<div
+  class="pf-modal"
+  id="pfModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="pfModalTitle"
+  hidden
+>
+  <div class="pf-modal-bar">
+    <strong>MOORITS. / PORTFOOLIO</strong>
+    <button class="pf-close" id="pfClose" type="button">
+      SULGE ✕
+    </button>
   </div>
 
-  <script src="../js/main.js"></script>
+  <div class="pf-modal-content">
+    <p class="pf-kicker" id="pfModalKind"></p>
+    <h2 id="pfModalTitle"></h2>
 
-  <script>
-    /*
-      PORTFOOLIO PROJEKTID
+    <div class="pf-project-text">
+      <p class="pf-project-quote" id="pfQuote" hidden></p>
+      <p class="pf-project-intro" id="pfIntro"></p>
+      <div class="pf-project-body" id="pfBody"></div>
+      <div class="pf-credits" id="pfCredits"></div>
+    </div>
 
-      cover: 0 = esimene foto
-      cover: 1 = teine foto
-      cover: 2 = kolmas foto
-    */
+    <div class="pf-photos" id="pfPhotos"></div>
+  </div>
+</div>
 
-    const projects = [
+<!-- SUURE FOTO VAATAJA -->
 
-      /* 01 SÕBRALT SÕBRALE */
+<div
+  class="pf-viewer"
+  id="pfViewer"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Suurendatud fotogalerii"
+  hidden
+>
+  <div class="pf-viewer-top">
+    <span class="pf-viewer-title" id="pfViewerTitle"></span>
+    <button class="pf-viewer-close" id="pfViewerClose" type="button">
+      SULGE ✕
+    </button>
+  </div>
 
-      {
-        id: 'friends',
-        section: 'styling',
-        title: 'SÕBRALT SÕBRALE',
-        kind: 'FOTOLAVASTUS · KONTSEPTSIOON JA STILISTIKA',
+  <div class="pf-viewer-stage" id="pfViewerStage">
+    <button
+      class="pf-viewer-arrow pf-viewer-prev"
+      id="pfViewerPrev"
+      type="button"
+      aria-label="Eelmine foto"
+    >‹</button>
 
-        folder: '../images/portfoolio/fotolavastused/sõbraltsõbrale/',
-        cover: 0,
+    <img
+      class="pf-viewer-image"
+      id="pfViewerImage"
+      alt=""
+      draggable="false"
+    >
 
-        photos: [
-          'Facetune_05-06-2025-17-43-07 2.jpeg',
-          'Facetune_05-06-2025-17-43-07.jpeg',
-          'Facetune_05-06-2025-17-43-07.jpg',
-          'Facetune_05-06-2025-17-46-19.jpeg',
-          'Facetune_05-06-2025-17-48-09.jpeg',
-          'Facetune_05-06-2025-18-17-53.jpeg',
-          'Facetune_05-06-2025-18-25-37.jpeg',
-          'Facetune_05-06-2025-18-50-25.jpeg'
-        ],
+    <button
+      class="pf-viewer-arrow pf-viewer-next"
+      id="pfViewerNext"
+      type="button"
+      aria-label="Järgmine foto"
+    >›</button>
+  </div>
 
-        quote:
-          'Vallatu oled / roheline ookean / peas loojangusall.',
+  <div class="pf-viewer-bottom">
+    <span id="pfViewerCounter"></span>
+  </div>
+</div>
 
-        intro:
-          'Haikust inspireeritud fotolavastus, milles luule ' +
-          'kujundlikkus on tõlgitud värvide, vormide, valguse ' +
-          'ja stilistika kaudu visuaalseks tervikuks.',
+<script src="../js/main.js"></script>
 
-        body: [
-          'Kontseptsiooni keskmes on salvei- ja oliivrohelised ' +
-          'toonid, mida tasakaalustavad pehme beež ja elevandiluu. ' +
-          'Roheliste harmooniale lisab kontrasti punane valgus, ' +
-          'mis sümboliseerib päikeseloojangut ning loob ' +
-          'fotodesse emotsionaalset sügavust.',
+<script>
 
-          'Retrohõnguline ja kergelt teatrilik stilistika ' +
-          'seob tervikuks rõivad, pearätiku, kindad ja valguse. ' +
-          'Iga detail toetab haiku meeleolu ja selle ' +
-          'visuaalset tõlgendust.',
+/* ================================
+   PROJEKTID
+================================ */
 
-          'Kõik rõivad ja rekvisiidid pärinevad Tartu ' +
-          'Sõbralt Sõbrale kauplustest.'
-        ],
+const projects = [
 
-        credits: [
-          ['Fotograaf', 'Kertu Moorits'],
-          ['Stilist', 'Kertu Moorits'],
-          ['Jumestus ja soeng', 'Kertu Moorits'],
-          ['Modell', 'Vitalia Hulak']
-        ]
-      },
+  {
+    id:'friends',
+    section:'styling',
+    title:'SÕBRALT SÕBRALE',
+    kind:'FOTOLAVASTUS · KONTSEPTSIOON JA STILISTIKA',
+    folder:'../images/portfoolio/fotolavastused/sõbraltsõbrale/',
+    cover:0,
 
-      /* 02 N-20 STUUDIO */
+    photos:[
+      'Facetune_05-06-2025-17-43-07 2.jpeg',
+      'Facetune_05-06-2025-17-43-07.jpeg',
+      'Facetune_05-06-2025-17-43-07.jpg',
+      'Facetune_05-06-2025-17-46-19.jpeg',
+      'Facetune_05-06-2025-17-48-09.jpeg',
+      'Facetune_05-06-2025-18-17-53.jpeg',
+      'Facetune_05-06-2025-18-25-37.jpeg',
+      'Facetune_05-06-2025-18-50-25.jpeg'
+    ],
 
-      {
-        id: 'n20',
-        section: 'styling',
-        title: 'N-20 STUUDIO',
-        kind: 'FOTOLAVASTUS · STILISTIKA JA PRODUKTSIOON',
+    quote:'Vallatu oled / roheline ookean / peas loojangusall.',
 
-        folder: '../images/portfoolio/fotolavastused/n-20/',
-        cover: 0,
+    intro:
+      'Haikust inspireeritud fotolavastus, milles luule '+
+      'kujundlikkus on tõlgitud värvide, vormide, valguse '+
+      'ja stilistika kaudu visuaalseks tervikuks.',
 
-        photos: [
-          'DSC07285-2dfb7b86f94346cf8f1a0ef1ae4be9ef.jpg',
-          'DSC07305.jpg',
-          'DSC07337.jpg',
-          'DSC07378.jpg',
-          'DSC07390.jpg',
-          'DSC07428.jpg',
-          'DSC07439.jpg',
-          'DSC07540.jpg',
-          'DSC07622.jpg'
-        ],
+    body:[
+      'Kontseptsiooni keskmes on salvei- ja oliivrohelised '+
+      'toonid, mida tasakaalustavad pehme beež ja elevandiluu. '+
+      'Roheliste harmooniale lisab kontrasti punane valgus, '+
+      'mis sümboliseerib päikeseloojangut ning loob '+
+      'fotodesse emotsionaalset sügavust.',
 
-        intro:
-          'N-20 Stuudio rõivaste ja aksessuaaride ümber ' +
-          'loodud fotosessioon, mille visuaalne suund ' +
-          'sündis koostöös meeskonnaga.',
+      'Retrohõnguline ja kergelt teatrilik stilistika '+
+      'seob tervikuks rõivad, pearätiku, kindad ja valguse. '+
+      'Iga detail toetab haiku meeleolu ja selle '+
+      'visuaalset tõlgendust.',
 
-        body: [
-          'Minu vastutusalasse kuulusid rõivakomplektide ' +
-          'stiliseerimine, jumestuse kavandamine ja teostamine ' +
-          'ning fotosessiooni praktiline korraldamine. ' +
-          'Koostasin meigikaardid ja võtteajakava, juhendasin ' +
-          'kolme modelli ning teostasin jumestuse kahele modellile.',
+      'Kõik rõivad ja rekvisiidid pärinevad Tartu '+
+      'Sõbralt Sõbrale kauplustest.'
+    ],
 
-          'Lisaks tegelesin võttepaiga ettevalmistamise, ' +
-          'kaamera seadistamise ja kohapealse töö koordineerimisega, ' +
-          'et hoida visuaalne tulemus ühtne ja võtteprotsess sujuv.'
-        ],
+    credits:[
+      ['Fotograaf','Kertu Moorits'],
+      ['Stilist','Kertu Moorits'],
+      ['Jumestus ja soeng','Kertu Moorits'],
+      ['Modell','Vitalia Hulak']
+    ]
+  },
 
-        credits: [
-          ['Fotograafid', 'Helen-Mary Vartšun ja Kertu Moorits'],
-          ['Stilist ja jumestaja', 'Kertu Moorits'],
-          ['Riided ja aksessuaarid', 'N-20 Stuudio ja erakogu']
-        ]
-      },
+  {
+    id:'n20',
+    section:'styling',
+    title:'N-20 STUUDIO',
+    kind:'FOTOLAVASTUS · STILISTIKA JA PRODUKTSIOON',
+    folder:'../images/portfoolio/fotolavastused/n-20/',
+    cover:0,
 
-      /* 03 BACK HOME */
+    photos:[
+      'DSC07285-2dfb7b86f94346cf8f1a0ef1ae4be9ef.jpg',
+      'DSC07305.jpg',
+      'DSC07337.jpg',
+      'DSC07378.jpg',
+      'DSC07390.jpg',
+      'DSC07428.jpg',
+      'DSC07439.jpg',
+      'DSC07540.jpg',
+      'DSC07622.jpg'
+    ],
 
-      {
-        id: 'backhome',
-        section: 'styling',
-        title: 'BACK HOME',
-        kind: 'EDITORIAL · AJAKIRJAKAANE KONTSEPTSIOON',
+    intro:
+      'N-20 Stuudio rõivaste ja aksessuaaride ümber '+
+      'loodud fotosessioon, mille visuaalne suund '+
+      'sündis koostöös meeskonnaga.',
 
-        folder: '../images/portfoolio/fotolavastused/backhome/',
-        cover: 0,
+    body:[
+      'Minu vastutusalasse kuulusid rõivakomplektide '+
+      'stiliseerimine, jumestuse kavandamine ja teostamine '+
+      'ning fotosessiooni praktiline korraldamine. '+
+      'Koostasin meigikaardid ja võtteajakava, juhendasin '+
+      'kolme modelli ning teostasin jumestuse kahele modellile.',
 
-        photos: [
-          '1.jpg',
-          '2-1461bfc715ff48e385c7acce32c897c9.jpg',
-          '_MG_2297 (2)-f363de2e209e457a8ed8e33deecabfe0.jpg',
-          '_MG_2297 (2).jpg'
-        ],
+      'Lisaks tegelesin võttepaiga ettevalmistamise, '+
+      'kaamera seadistamise ja kohapealse töö koordineerimisega, '+
+      'et hoida visuaalne tulemus ühtne ja võtteprotsess sujuv.'
+    ],
 
-        intro:
-          '„Lumivalgeke on tagasi kodus“ – muinasjutulisest ' +
-          'karakterist inspireeritud ajakirjakaane kontseptsioon, ' +
-          'mis tõlgendab tuttavat lugu kaasaegses moevõtmes.',
+    credits:[
+      ['Fotograafid','Helen-Mary Vartšun ja Kertu Moorits'],
+      ['Stilist ja jumestaja','Kertu Moorits'],
+      ['Riided ja aksessuaarid','N-20 Stuudio ja erakogu']
+    ]
+  },
 
-        body: [
-          'Fotoprojekt valmis kahenädalase õpirände raames Lätis. ' +
-          'Kolmeliikmelises meeskonnas lõime muinasjutulisest ' +
-          'karakterist inspireeritud ajakirjakaane kontseptsiooni, ' +
-          'ühendades stilistika, jumestuse, soengu ja fotograafia ' +
-          'terviklikuks visuaalseks jutustuseks.',
+  {
+    id:'backhome',
+    section:'styling',
+    title:'BACK HOME',
+    kind:'EDITORIAL · AJAKIRJAKAANE KONTSEPTSIOON',
+    folder:'../images/portfoolio/fotolavastused/backhome/',
+    cover:0,
 
-          'Projekti rõivad valisime Läti taaskasutuskauplustest, ' +
-          'luues olemasolevatest esemetest kontseptsiooniga ' +
-          'sobivad komplektid.'
-        ],
+    photos:[
+      '1.jpg',
+      '2-1461bfc715ff48e385c7acce32c897c9.jpg',
+      '_MG_2297 (2)-f363de2e209e457a8ed8e33deecabfe0.jpg',
+      '_MG_2297 (2).jpg'
+    ],
 
-        credits: [
-          ['Kontseptsioon ja stilistika', 'Meeskonnatöö'],
-          ['Jumestus', 'Kertu Moorits'],
-          ['Fotograafia ja soeng', 'Meeskonnatöö']
-        ]
-      },
+    intro:
+      '„Lumivalgeke on tagasi kodus“ – muinasjutulisest '+
+      'karakterist inspireeritud ajakirjakaane kontseptsioon, '+
+      'mis tõlgendab tuttavat lugu kaasaegses moevõtmes.',
 
-      /* 04 AJAKIRJAPROJEKT */
+    body:[
+      'Fotoprojekt valmis kahenädalase õpirände raames Lätis. '+
+      'Kolmeliikmelises meeskonnas lõime muinasjutulisest '+
+      'karakterist inspireeritud ajakirjakaane kontseptsiooni, '+
+      'ühendades stilistika, jumestuse, soengu ja fotograafia '+
+      'terviklikuks visuaalseks jutustuseks.',
 
-      {
-        id: 'editorial',
-        section: 'styling',
-        title: 'AJAKIRJAPROJEKT',
-        kind: 'EDITORIAL · STILISTIKA',
+      'Projekti rõivad valisime Läti taaskasutuskauplustest, '+
+      'luues olemasolevatest esemetest kontseptsiooniga '+
+      'sobivad komplektid.'
+    ],
 
-        folder: '../images/portfoolio/fotolavastused/ajakirjaprojekt/',
-        cover: 0,
+    credits:[
+      ['Kontseptsioon ja stilistika','Meeskonnatöö'],
+      ['Jumestus','Kertu Moorits'],
+      ['Fotograafia ja soeng','Meeskonnatöö']
+    ]
+  },
 
-        photos: [
-          'Ekvilibrist-0107.jpg',
-          'Ekvilibrist-0135.jpg',
-          'Ekvilibrist-0234.jpg',
-          'Ekvilibrist-0239 (1).jpg',
-          'Ekvilibrist-9901 (1).jpg',
-          'Ekvilibrist-9961.jpg',
-          'Ekvilibrist-9981 (2).jpg'
-        ],
+  {
+    id:'editorial',
+    section:'styling',
+    title:'AJAKIRJAPROJEKT',
+    kind:'EDITORIAL · STILISTIKA',
+    folder:'../images/portfoolio/fotolavastused/ajakirjaprojekt/',
+    cover:0,
 
-        intro:
-          'Ajakirja visuaalse sisu loomiseks valminud ' +
-          'fotoprojekt, kus rõivaste stilistika, jumestus, ' +
-          'soeng ja fotograafia moodustavad ühtse terviku.',
+    photos:[
+      'Ekvilibrist-0107.jpg',
+      'Ekvilibrist-0135.jpg',
+      'Ekvilibrist-0234.jpg',
+      'Ekvilibrist-0239 (1).jpg',
+      'Ekvilibrist-9901 (1).jpg',
+      'Ekvilibrist-9961.jpg',
+      'Ekvilibrist-9981 (2).jpg'
+    ],
 
-        body: [
-          'Minu roll oli luua fotosessiooni stilistika ' +
-          'ning kujundada rõivaste ja aksessuaaride abil ' +
-          'terviklikud visuaalsed lahendused.',
+    intro:
+      'Ajakirja visuaalse sisu loomiseks valminud '+
+      'fotoprojekt, kus rõivaste stilistika, jumestus, '+
+      'soeng ja fotograafia moodustavad ühtse terviku.',
 
-          'Osa fotosessioonil valminud fotodest on leidnud ' +
-          'kasutust ka Eesti nahadisaineri Tiina Androni veebilehel.'
-        ],
+    body:[
+      'Minu roll oli luua fotosessiooni stilistika '+
+      'ning kujundada rõivaste ja aksessuaaride abil '+
+      'terviklikud visuaalsed lahendused.',
 
-        credits: [
-          ['Fotograaf', 'Ekvilibrist'],
-          ['Stilist', 'Kertu Moorits'],
-          ['Jumestus ja soeng', 'Liisi Haas'],
-          ['Rekvisiidid', 'Kairi Kliimand (KAIRO)'],
-          ['Modell', 'Caroline Maquignon']
-        ]
-      },
+      'Osa fotosessioonil valminud fotodest on leidnud '+
+      'kasutust ka Eesti nahadisaineri Tiina Androni veebilehel.'
+    ],
 
-      /* 05 ESTONIAN FASHION FESTIVAL */
+    credits:[
+      ['Fotograaf','Ekvilibrist'],
+      ['Stilist','Kertu Moorits'],
+      ['Jumestus ja soeng','Liisi Haas'],
+      ['Rekvisiidid','Kairi Kliimand (KAIRO)'],
+      ['Modell','Caroline Maquignon']
+    ]
+  },
 
-      {
-        id: 'eff',
-        section: 'fashion',
-        title: 'ESTONIAN FASHION FESTIVAL',
-        kind: 'MOEETENDUS · DISAINERI ASSISTENT',
+  {
+    id:'eff',
+    section:'fashion',
+    title:'ESTONIAN FASHION FESTIVAL',
+    kind:'MOEETENDUS · DISAINERI ASSISTENT',
+    folder:'../images/portfoolio/moeshowd/Estonian-Fashion-Festival/',
+    cover:8,
 
-        folder: '../images/portfoolio/moeshowd/Estonian-Fashion-Festival/',
-        cover: 8,
+    photos:[
+      '506833869_722498610150467_8464762404106660000_n 2.jpg',
+      '506833869_722498610150467_8464762404106660000_n.jpg',
+      '506876881_722498673483794_1990138397419228751_n.jpg',
+      '506878860_722498676817127_5368974826368177837_n.jpg',
+      '54527369632_90f1d4b2a7_o.jpg',
+      '54528484753_cf23ea65d3_o.jpg',
+      '54597748826_38a120f1a1_c.jpg',
+      '548029874_792539803146347_4371838162567810987_n.jpg',
+      'Alice-Partelpoeg-OF-SCARCITY-Foto-Khandie-Reed1.jpg',
+      'Alice-Partelpoeg-OF-SCARCITY-Foto-Khandie-Reed2.jpg',
+      'Alice-Partelpoeg-OF-SCARCITY-Foto-Khandie-Reed3.jpg',
+      'Alice-Partelpoeg-OF-SCARCITY-Foto-Khandie-Reed4.jpg'
+    ],
 
-        photos: [
-          '506833869_722498610150467_8464762404106660000_n 2.jpg',
-          '506833869_722498610150467_8464762404106660000_n.jpg',
-          '506876881_722498673483794_1990138397419228751_n.jpg',
-          '506878860_722498676817127_5368974826368177837_n.jpg',
-          '54527369632_90f1d4b2a7_o.jpg',
-          '54528484753_cf23ea65d3_o.jpg',
-          '54597748826_38a120f1a1_c.jpg',
-          '548029874_792539803146347_4371838162567810987_n.jpg',
-          'Alice-Partelpoeg-OF-SCARCITY-Foto-Khandie-Reed1.jpg',
-          'Alice-Partelpoeg-OF-SCARCITY-Foto-Khandie-Reed2.jpg',
-          'Alice-Partelpoeg-OF-SCARCITY-Foto-Khandie-Reed3.jpg',
-          'Alice-Partelpoeg-OF-SCARCITY-Foto-Khandie-Reed4.jpg'
-        ],
+    intro:
+      'Osalesin Estonian Fashion Festivalil disainer '+
+      'Alice Pärtelpoja assistendina.',
 
-        intro:
-          'Osalesin Estonian Fashion Festivalil disainer ' +
-          'Alice Pärtelpoja assistendina.',
+    body:[
+      'Minu ülesanded olid seotud lavataguse töö ja '+
+      'moeetenduse sujuva kulgemise toetamisega. '+
+      'Suhtlesin ja juhendasin modelle enne lavaleminekut '+
+      'ning kontrollisin rõivaste ja aksessuaaride valmisolekut.',
 
-        body: [
-          'Minu ülesanded olid seotud lavataguse töö ja ' +
-          'moeetenduse sujuva kulgemise toetamisega. ' +
-          'Suhtlesin ja juhendasin modelle enne lavaleminekut ' +
-          'ning kontrollisin rõivaste ja aksessuaaride valmisolekut.',
+      'Lisaks aitasin lahendada jooksvalt tekkinud olukordi, '+
+      'sealhulgas kostüümidega seotud ootamatuid probleeme, '+
+      'ning toetasin disainerit praktilistes küsimustes '+
+      'kogu festivalipäeva vältel.'
+    ],
 
-          'Lisaks aitasin lahendada jooksvalt tekkinud olukordi, ' +
-          'sealhulgas kostüümidega seotud ootamatuid probleeme, ' +
-          'ning toetasin disainerit praktilistes küsimustes ' +
-          'kogu festivalipäeva vältel.'
-        ],
+    credits:[
+      ['Disainer','Alice Pärtelpoeg'],
+      ['Disaineri assistent','Kertu Moorits'],
+      ['Fotod','Khandie Reed']
+    ]
+  },
 
-        credits: [
-          ['Disainer', 'Alice Pärtelpoeg'],
-          ['Disaineri assistent', 'Kertu Moorits'],
-          ['Fotod', 'Khandie Reed']
-        ]
-      },
+  {
+    id:'theatre',
+    section:'theatre',
+    title:'SOOSTERI KOOLKOND',
+    kind:'TARTU UUS TEATER · 2025',
+    folder:'../images/portfoolio/Tartu-Uus-Teater/',
+    cover:0,
 
-      /* 06 SOOSTERI KOOLKOND */
+    processFolder:
+      '../images/portfoolio/Tartu-Uus-Teater/tooprotsess/',
 
-      {
-        id: 'theatre',
-        section: 'theatre',
-        title: 'SOOSTERI KOOLKOND',
-        kind: 'TARTU UUS TEATER · 2025',
+    processPhotos:[
+      'soosteri koolkond 1.jpeg',
+      'soosteri koolkond 2.jpeg',
+      'soosteri koolkond 3.jpeg'
+    ],
 
-        folder: '../images/portfoolio/Tartu-Uus-Teater/',
-        cover: 0,
+    photos:[
+      'tut-sooster-lbimng-22-okt-2025-_a747163_54874557441_o (1).jpg',
+      'tut-sooster-lbimng-22-okt-2025-_a747448_54874791988_o.jpg',
+      'tut-sooster-lbimng-22-okt-2025-_a747519_54874864690_o.jpg',
+      'tut-sooster-lbimng-22-okt-2025-_a747580_54874795124_o.jpg',
+      'tut-sooster-lbimng-22-okt-2025-_a747589_54873701982_o (1).jpg',
+      'tut-sooster-lbimng-24-okt-2025-_a747821_54878497638_o.jpg',
+      'tut-sooster-lbimng-24-okt-2025-_a747923_54878521249_o.jpg',
+      'tut-sooster-lbimng-24-okt-2025-_a748146_54878495048_o.jpg'
+    ],
 
-        /* MINU TÖÖ JA PROTSESSI FOTOD */
+    intro:
+      'Osalesin Tartu Uue Teatri lavastuse '+
+      '„Soosteri koolkond“ visuaalse maailma teostamises.',
 
-        processFolder:
-          '../images/portfoolio/Tartu-Uus-Teater/tooprotsess/',
+    body:[
+      'Lavakujunduse, kostüümide ja rekvisiitide teostus '+
+      'koostöös kunstnikuga.',
 
-        processPhotos: [
-          'soosteri koolkond 1.jpeg',
-          'soosteri koolkond 2.jpeg',
-          'soosteri koolkond 3.jpeg'
-        ],
+      'Minu iseseisvaks vastutusvaldkonnaks oli kõigi '+
+      'lavastuse paberrekvisiitide valmistamine.'
+    ],
 
-        /* LAVASTUSE FOTOD */
+    credits:[
+      ['Teater','Tartu Uus Teater'],
+      [
+        'Lavakujunduse, kostüümide ja rekvisiitide teostus',
+        'Koostöös kunstnikuga'
+      ],
+      ['Paberrekvisiidid','Kertu Moorits']
+    ]
+  }
+];
 
-        photos: [
-          'tut-sooster-lbimng-22-okt-2025-_a747163_54874557441_o (1).jpg',
-          'tut-sooster-lbimng-22-okt-2025-_a747448_54874791988_o.jpg',
-          'tut-sooster-lbimng-22-okt-2025-_a747519_54874864690_o.jpg',
-          'tut-sooster-lbimng-22-okt-2025-_a747580_54874795124_o.jpg',
-          'tut-sooster-lbimng-22-okt-2025-_a747589_54873701982_o (1).jpg',
-          'tut-sooster-lbimng-24-okt-2025-_a747821_54878497638_o.jpg',
-          'tut-sooster-lbimng-24-okt-2025-_a747923_54878521249_o.jpg',
-          'tut-sooster-lbimng-24-okt-2025-_a748146_54878495048_o.jpg'
-        ],
+/* ================================
+   ÜLDISED MUUTUJAD
+================================ */
 
-        intro:
-          'Osalesin Tartu Uue Teatri lavastuse ' +
-          '„Soosteri koolkond“ visuaalse maailma teostamises.',
+const projectMap = new Map(
+  projects.map(project => [project.id,project])
+);
 
-        body: [
-          'Lavakujunduse, kostüümide ja rekvisiitide teostus ' +
-          'koostöös kunstnikuga.',
+const modal = document.getElementById('pfModal');
+const closeButton = document.getElementById('pfClose');
 
-          'Minu iseseisvaks vastutusvaldkonnaks oli kõigi ' +
-          'lavastuse paberrekvisiitide valmistamine.'
-        ],
+const viewer = document.getElementById('pfViewer');
+const viewerImage = document.getElementById('pfViewerImage');
+const viewerClose = document.getElementById('pfViewerClose');
+const viewerStage = document.getElementById('pfViewerStage');
+const viewerCounter = document.getElementById('pfViewerCounter');
 
-        credits: [
-          ['Teater', 'Tartu Uus Teater'],
-          [
-            'Lavakujunduse, kostüümide ja rekvisiitide teostus',
-            'Koostöös kunstnikuga'
-          ],
-          ['Paberrekvisiidid', 'Kertu Moorits']
-        ]
-      }
+let previousFocus = null;
+let viewerFocus = null;
+let viewerPhotos = [];
+let viewerIndex = 0;
+
+let touchStartX = null;
+let touchStartY = null;
+
+function photoUrl(project,file) {
+  return project.folder + encodeURIComponent(file);
+}
+
+/* ================================
+   PROJEKTIKAARDID
+================================ */
+
+function createCard(project) {
+  const article = document.createElement('article');
+  article.className = 'pf-card';
+
+  const button = document.createElement('button');
+  button.className = 'pf-card-button';
+  button.type = 'button';
+  button.setAttribute(
+    'aria-label',
+    project.title + ' – ava fotogalerii'
+  );
+
+  const imageWrap = document.createElement('span');
+  imageWrap.className = 'pf-image';
+
+  const image = document.createElement('img');
+  image.src = photoUrl(
+    project,
+    project.photos[project.cover] || project.photos[0]
+  );
+  image.alt = project.title + ' – esindusfoto';
+  image.loading = project.section === 'styling'
+    ? 'eager'
+    : 'lazy';
+  image.decoding = 'async';
+
+  imageWrap.append(image);
+
+  const caption = document.createElement('span');
+  caption.className = 'pf-caption';
+
+  const title = document.createElement('strong');
+  title.textContent = project.title;
+
+  const kind = document.createElement('small');
+  kind.textContent = project.kind;
+
+  caption.append(title,kind);
+  button.append(imageWrap,caption);
+
+  button.addEventListener('click',() => {
+    openProject(project.id);
+  });
+
+  article.append(button);
+  return article;
+}
+
+projects.forEach(project => {
+  const target = document.getElementById(
+    'pf-' + project.section
+  );
+
+  if(target) {
+    target.append(createCard(project));
+  }
+});
+
+/* ================================
+   SUURE FOTO GALERII
+================================ */
+
+function showViewerImage() {
+  const item = viewerPhotos[viewerIndex];
+  if(!item) return;
+
+  viewerImage.src = item.src;
+  viewerImage.alt = item.alt;
+
+  viewerCounter.textContent =
+    (viewerIndex + 1) + ' / ' + viewerPhotos.length;
+}
+
+function openViewer(items,index,title) {
+  if(!items.length) return;
+
+  viewerFocus = document.activeElement;
+  viewerPhotos = items;
+  viewerIndex = index;
+
+  document.getElementById('pfViewerTitle').textContent =
+    title;
+
+  showViewerImage();
+
+  viewer.hidden = false;
+  document.body.classList.add('pf-locked');
+  viewerClose.focus();
+}
+
+function stepViewer(delta) {
+  if(!viewerPhotos.length) return;
+
+  viewerIndex =
+    (viewerIndex + delta + viewerPhotos.length)
+    % viewerPhotos.length;
+
+  showViewerImage();
+}
+
+function closeViewer() {
+  if(viewer.hidden) return;
+
+  viewer.hidden = true;
+  viewerImage.removeAttribute('src');
+
+  if(modal.hidden) {
+    document.body.classList.remove('pf-locked');
+  }
+
+  if(viewerFocus && viewerFocus.isConnected) {
+    viewerFocus.focus();
+  }
+}
+
+viewerClose.addEventListener('click',closeViewer);
+
+document.getElementById('pfViewerPrev')
+  .addEventListener('click',() => stepViewer(-1));
+
+document.getElementById('pfViewerNext')
+  .addEventListener('click',() => stepViewer(1));
+
+/* ================================
+   TELEFONI SWIPE
+================================ */
+
+viewerStage.addEventListener('touchstart',event => {
+  if(event.touches.length !== 1) return;
+
+  touchStartX = event.touches[0].clientX;
+  touchStartY = event.touches[0].clientY;
+},{passive:true});
+
+viewerStage.addEventListener('touchend',event => {
+  if(
+    touchStartX === null ||
+    !event.changedTouches.length
+  ) return;
+
+  const endX = event.changedTouches[0].clientX;
+  const endY = event.changedTouches[0].clientY;
+
+  const dx = endX - touchStartX;
+  const dy = endY - touchStartY;
+
+  if(
+    Math.abs(dx) > 45 &&
+    Math.abs(dx) > Math.abs(dy) * 1.2
+  ) {
+    if(dx < 0) {
+      stepViewer(1);
+    } else {
+      stepViewer(-1);
+    }
+  }
+
+  touchStartX = null;
+  touchStartY = null;
+},{passive:true});
+
+viewerStage.addEventListener('touchcancel',() => {
+  touchStartX = null;
+  touchStartY = null;
+});
+
+/* ================================
+   KLAVIATUURI NOOLED
+================================ */
+
+document.addEventListener('keydown',event => {
+  if(viewer.hidden) return;
+
+  if(event.key === 'Escape') {
+    event.preventDefault();
+    closeViewer();
+  }
+
+  if(event.key === 'ArrowLeft') {
+    event.preventDefault();
+    stepViewer(-1);
+  }
+
+  if(event.key === 'ArrowRight') {
+    event.preventDefault();
+    stepViewer(1);
+  }
+
+  if(event.key === 'Tab') {
+    const controls = [
+      viewerClose,
+      document.getElementById('pfViewerPrev'),
+      document.getElementById('pfViewerNext')
     ];
 
-    /* RENDERING */
-
-    const projectMap = new Map(
-      projects.map(project => [project.id, project])
+    const index = controls.indexOf(
+      document.activeElement
     );
 
-    const modal = document.getElementById('pfModal');
-    const closeButton = document.getElementById('pfClose');
+    if(index >= 0) {
+      event.preventDefault();
 
-    let previousFocus = null;
+      const next =
+        (index + (event.shiftKey ? 2 : 1)) % 3;
 
-    function photoUrl(project, file) {
-      return project.folder + encodeURIComponent(file);
+      controls[next].focus();
     }
+  }
+});
 
-    function createCard(project) {
-      const article = document.createElement('article');
-      article.className = 'pf-card';
+/* ================================
+   FOTODE KLIKITAVAKS MUUTMINE
+================================ */
 
-      const button = document.createElement('button');
-      button.className = 'pf-card-button';
-      button.type = 'button';
+function makePhotosClickable(
+  container,
+  project,
+  files,
+  process = false
+) {
+  const items = files.map((file,index) => ({
+    src:
+      (process ? project.processFolder : project.folder)
+      + encodeURIComponent(file),
 
-      button.setAttribute(
+    alt:
+      project.title + ' – foto ' + (index + 1)
+  }));
+
+  container.querySelectorAll('img')
+    .forEach((img,index) => {
+
+      const target = img.closest('figure') || img;
+
+      target.tabIndex = 0;
+      target.setAttribute('role','button');
+      target.setAttribute(
         'aria-label',
-        project.title + ' – ava fotogalerii'
+        'Suurenda fotot ' + (index + 1)
       );
 
-      const imageWrap = document.createElement('span');
-      imageWrap.className = 'pf-image';
+      const activate = () => {
+        openViewer(items,index,project.title);
+      };
 
-      const image = document.createElement('img');
+      target.addEventListener('click',activate);
 
-      image.src = photoUrl(
-        project,
-        project.photos[project.cover] || project.photos[0]
-      );
-
-      image.alt = project.title + ' – esindusfoto';
-
-      image.loading =
-        project.section === 'styling' ? 'eager' : 'lazy';
-
-      image.decoding = 'async';
-
-      imageWrap.append(image);
-
-      const caption = document.createElement('span');
-      caption.className = 'pf-caption';
-
-      const title = document.createElement('strong');
-      title.textContent = project.title;
-
-      const kind = document.createElement('small');
-      kind.textContent = project.kind;
-
-      caption.append(title, kind);
-      button.append(imageWrap, caption);
-
-      button.addEventListener('click', () => {
-        openProject(project.id);
-      });
-
-      article.append(button);
-
-      return article;
-    }
-
-    projects.forEach(project => {
-      const target = document.getElementById(
-        'pf-' + project.section
-      );
-
-      if (target) {
-        target.append(createCard(project));
-      }
-    });
-
-    /* OPEN PROJECT */
-
-    function openProject(id) {
-      const project = projectMap.get(id);
-
-      if (!project) return;
-
-      previousFocus = document.activeElement;
-
-      document.getElementById('pfModalTitle').textContent =
-        project.title;
-
-      document.getElementById('pfModalKind').textContent =
-        project.kind;
-
-      document.getElementById('pfIntro').textContent =
-        project.intro || '';
-
-      const quote = document.getElementById('pfQuote');
-
-      quote.hidden = !project.quote;
-      quote.textContent = project.quote || '';
-
-      const body = document.getElementById('pfBody');
-      const credits = document.getElementById('pfCredits');
-      const photos = document.getElementById('pfPhotos');
-
-      body.replaceChildren();
-      credits.replaceChildren();
-      photos.replaceChildren();
-
-      (project.body || []).forEach(text => {
-        const p = document.createElement('p');
-        p.textContent = text;
-        body.append(p);
-      });
-
-      (project.credits || []).forEach(([label, value]) => {
-        const row = document.createElement('div');
-        row.className = 'pf-credit';
-
-        const name = document.createElement('strong');
-        name.textContent = label;
-
-        const val = document.createElement('span');
-        val.textContent = value;
-
-        row.append(name, val);
-        credits.append(row);
-      });
-
-      credits.hidden = !(project.credits || []).length;
-
-      /* EEMALDA EELMISE PROJEKTI PROTSESSIFOTOD */
-
-      const previousProcess =
-        document.getElementById('pfProcess');
-
-      if (previousProcess) {
-        previousProcess.remove();
-      }
-
-      /* LAVASTUSE SUUR FOTOGALERII */
-
-      project.photos.forEach((file, index) => {
-        const figure = document.createElement('figure');
-        const img = document.createElement('img');
-
-        img.src = photoUrl(project, file);
-        img.alt = project.title + ' – foto ' + (index + 1);
-
-        img.loading = index < 2 ? 'eager' : 'lazy';
-        img.decoding = 'async';
-
-        figure.append(img);
-        photos.append(figure);
-      });
-
-      /* MINU TÖÖ JA PROTSESS – KÕIGE LÕPUS */
-
-      if (project.id === 'theatre' && project.processPhotos) {
-        const process = document.createElement('section');
-        process.className = 'pf-process';
-        process.id = 'pfProcess';
-
-        const heading = document.createElement('h3');
-        heading.textContent = 'MINU TÖÖ JA PROTSESS';
-
-        const grid = document.createElement('div');
-        grid.className = 'pf-process-grid';
-
-        project.processPhotos.forEach((file, index) => {
-          const img = document.createElement('img');
-
-          img.src =
-            project.processFolder + encodeURIComponent(file);
-
-          img.alt =
-            'Soosteri koolkond – minu töö ja protsess, foto ' +
-            (index + 1);
-
-          img.loading = 'lazy';
-          img.decoding = 'async';
-
-          grid.append(img);
-        });
-
-        process.append(heading, grid);
-
-        /* Lisa pärast suurt galeriid */
-        photos.after(process);
-      }
-
-      modal.hidden = false;
-      document.body.classList.add('pf-locked');
-
-      modal.scrollTop = 0;
-      closeButton.focus();
-    }
-
-    /* CLOSE PROJECT */
-
-    function closeProject() {
-      modal.hidden = true;
-
-      document.body.classList.remove('pf-locked');
-
-      document.getElementById('pfPhotos').replaceChildren();
-
-      if (
-        previousFocus &&
-        typeof previousFocus.focus === 'function'
-      ) {
-        previousFocus.focus();
-      }
-    }
-
-    closeButton.addEventListener('click', closeProject);
-
-    document.querySelectorAll('[data-open]').forEach(button => {
-      button.addEventListener('click', () => {
-        openProject(button.dataset.open);
+      target.addEventListener('keydown',event => {
+        if(
+          event.key === 'Enter' ||
+          event.key === ' '
+        ) {
+          event.preventDefault();
+          activate();
+        }
       });
     });
+}
 
-    document.addEventListener('keydown', event => {
-      if (modal.hidden) return;
+/* ================================
+   PROJEKTI AVAMINE
+================================ */
 
-      if (event.key === 'Escape') {
-        closeProject();
-        return;
-      }
+function openProject(id) {
+  const project = projectMap.get(id);
+  if(!project) return;
 
-      if (event.key !== 'Tab') return;
+  previousFocus = document.activeElement;
 
-      const focusable = Array.from(
-        modal.querySelectorAll(
-          'button:not([disabled]), a[href]'
-        )
-      ).filter(element => element.getClientRects().length);
+  document.getElementById('pfModalTitle').textContent =
+    project.title;
 
-      if (!focusable.length) return;
+  document.getElementById('pfModalKind').textContent =
+    project.kind;
 
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
+  document.getElementById('pfIntro').textContent =
+    project.intro || '';
 
-      if (
-        event.shiftKey &&
-        document.activeElement === first
-      ) {
-        event.preventDefault();
-        last.focus();
-      } else if (
-        !event.shiftKey &&
-        document.activeElement === last
-      ) {
-        event.preventDefault();
-        first.focus();
-      }
+  const quote = document.getElementById('pfQuote');
+  quote.hidden = !project.quote;
+  quote.textContent = project.quote || '';
+
+  const body = document.getElementById('pfBody');
+  const credits = document.getElementById('pfCredits');
+  const photos = document.getElementById('pfPhotos');
+
+  body.replaceChildren();
+  credits.replaceChildren();
+  photos.replaceChildren();
+
+  (project.body || []).forEach(text => {
+    const p = document.createElement('p');
+    p.textContent = text;
+    body.append(p);
+  });
+
+  (project.credits || []).forEach(([label,value]) => {
+    const row = document.createElement('div');
+    row.className = 'pf-credit';
+
+    const name = document.createElement('strong');
+    name.textContent = label;
+
+    const val = document.createElement('span');
+    val.textContent = value;
+
+    row.append(name,val);
+    credits.append(row);
+  });
+
+  credits.hidden = !(project.credits || []).length;
+
+  const previousProcess =
+    document.getElementById('pfProcess');
+
+  if(previousProcess) {
+    previousProcess.remove();
+  }
+
+  /* PROJEKTI FOTOD */
+
+  project.photos.forEach((file,index) => {
+    const figure = document.createElement('figure');
+    const img = document.createElement('img');
+
+    img.src = photoUrl(project,file);
+    img.alt = project.title + ' – foto ' + (index + 1);
+    img.loading = index < 2 ? 'eager' : 'lazy';
+    img.decoding = 'async';
+
+    figure.append(img);
+    photos.append(figure);
+  });
+
+  makePhotosClickable(
+    photos,
+    project,
+    project.photos
+  );
+
+  /* TEATRI TÖÖPROTSESSI FOTOD */
+
+  if(
+    project.id === 'theatre' &&
+    project.processPhotos
+  ) {
+    const process = document.createElement('section');
+    process.className = 'pf-process';
+    process.id = 'pfProcess';
+
+    const heading = document.createElement('h3');
+    heading.textContent = 'MINU TÖÖ JA PROTSESS';
+
+    const grid = document.createElement('div');
+    grid.className = 'pf-process-grid';
+
+    project.processPhotos.forEach((file,index) => {
+      const img = document.createElement('img');
+
+      img.src =
+        project.processFolder + encodeURIComponent(file);
+
+      img.alt =
+        'Soosteri koolkond – minu töö ja protsess, foto '
+        + (index + 1);
+
+      img.loading = 'lazy';
+      img.decoding = 'async';
+
+      grid.append(img);
     });
-  </script>
 
+    process.append(heading,grid);
+
+    makePhotosClickable(
+      grid,
+      project,
+      project.processPhotos,
+      true
+    );
+
+    /* TÖÖPROTSESS JÄÄB KÕIGE LÕPPU */
+    photos.after(process);
+  }
+
+  modal.hidden = false;
+  document.body.classList.add('pf-locked');
+
+  modal.scrollTop = 0;
+  closeButton.focus();
+}
+
+/* ================================
+   PROJEKTI SULGEMINE
+================================ */
+
+function closeProject() {
+  closeViewer();
+
+  modal.hidden = true;
+  document.body.classList.remove('pf-locked');
+
+  document.getElementById('pfPhotos')
+    .replaceChildren();
+
+  if(
+    previousFocus &&
+    typeof previousFocus.focus === 'function'
+  ) {
+    previousFocus.focus();
+  }
+}
+
+closeButton.addEventListener('click',closeProject);
+
+document.querySelectorAll('[data-open]')
+  .forEach(button => {
+    button.addEventListener('click',() => {
+      openProject(button.dataset.open);
+    });
+  });
+
+/* ================================
+   PROJEKTI KLAVIATUURIJUHTIMINE
+================================ */
+
+document.addEventListener('keydown',event => {
+  if(!viewer.hidden || modal.hidden) return;
+
+  if(event.key === 'Escape') {
+    closeProject();
+    return;
+  }
+
+  if(event.key !== 'Tab') return;
+
+  const focusable = Array.from(
+    modal.querySelectorAll(
+      'button:not([disabled]), a[href], [tabindex="0"]'
+    )
+  ).filter(element => element.getClientRects().length);
+
+  if(!focusable.length) return;
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if(
+    event.shiftKey &&
+    document.activeElement === first
+  ) {
+    event.preventDefault();
+    last.focus();
+  } else if(
+    !event.shiftKey &&
+    document.activeElement === last
+  ) {
+    event.preventDefault();
+    first.focus();
+  }
+});
+
+</script>
 </body>
 </html>
