@@ -1,446 +1,581 @@
 
 <!DOCTYPE html>
 <html lang="et">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Taskustilist – Peagi tulekul | MOORITS.</title>
-
-  <meta name="description" content="Taskustilist by Kertu Moorits. Praktilised stiilinõuanded, inspiratsioon ja digitaalsed stiilijuhendid naistele ning meestele. Peagi tulekul.">
-
+  <meta name="description" content="Taskustilist by Kertu Moorits. Praktilised stiilinõuanded ja digitaalsed stiilijuhendid naistele ning meestele. Peagi tulekul.">
   <link rel="canonical" href="https://moorits.com/stilist-taskus/">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="et_EE">
   <meta property="og:site_name" content="MOORITS.">
   <meta property="og:title" content="Taskustilist – Peagi tulekul | MOORITS.">
-  <meta property="og:description" content="Stiil ei pea olema keeruline. Praktilised stiilinõuanded ja digitaalsed stiilijuhendid peagi tulekul.">
+  <meta property="og:description" content="Stiil ei pea olema keeruline. Praktilised stiilinõuanded ja stiilijuhendid peagi tulekul.">
   <meta property="og:url" content="https://moorits.com/stilist-taskus/">
   <meta property="og:image" content="https://moorits.com/images/avaleht/kertu-moorits-stilist.jpg">
 
   <link rel="stylesheet" href="../css/style.css">
 
   <style>
-    /* Ainult Taskustilisti tulekulehe kujundus */
+    /* TASKUSTILIST – LEHE KOGU KUJUNDUS */
 
-    .pocket-coming {
-      padding: 100px var(--page) 115px;
-      background: var(--beige-light);
+    .pocket-page {
+      background: var(--cream, #f7f2eb);
+      color: var(--ink, #211b19);
+      overflow: hidden;
     }
 
-    .pocket-coming-top {
+    .pocket-page *,
+    .pocket-page *::before,
+    .pocket-page *::after {
+      box-sizing: border-box;
+    }
+
+    .pocket-page .label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+
+    .pocket-page .pocket-hero {
+      min-height: 90vh;
+      padding: 125px 5vw 35px;
+      background: var(--cream, #f7f2eb);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pocket-page .pocket-hero-top {
       display: flex;
       justify-content: space-between;
-      gap: 25px;
-      padding-bottom: 22px;
-      border-bottom: 1px solid var(--line);
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line, #d6cbc3);
     }
 
-    .pocket-coming-top span {
-      color: var(--wine);
+    .pocket-page .pocket-issue {
       font-size: 9px;
       font-weight: 600;
-      letter-spacing: 0.14em;
+      letter-spacing: .12em;
     }
 
-    .pocket-coming-grid {
+    .pocket-page .pocket-hero-main {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, .6fr);
+      gap: 6vw;
+      align-items: end;
+      padding: 75px 0;
+    }
+
+    .pocket-page .pocket-hero h1 {
+      margin: 0;
+      font-size: clamp(65px, 10vw, 155px);
+      font-weight: 700;
+      line-height: .85;
+      letter-spacing: -.075em;
+    }
+
+    .pocket-page .pocket-hero h1 span {
+      display: block;
+    }
+
+    .pocket-page .pocket-hero h1 span:last-child {
+      color: var(--wine, #54202b);
+    }
+
+    .pocket-page .pocket-hero-copy {
+      max-width: 360px;
+      padding-bottom: 10px;
+    }
+
+    .pocket-page .pocket-lead {
+      margin-bottom: 25px;
+      font-size: clamp(25px, 3vw, 42px);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -.035em;
+    }
+
+    .pocket-page .pocket-hero-copy > p:last-child {
+      font-size: 13px;
+      line-height: 1.85;
+      color: var(--muted, #756c67);
+    }
+
+    .pocket-page .pocket-hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line, #d6cbc3);
+    }
+
+    .pocket-page .pocket-hero-bottom span {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .12em;
+    }
+
+    /* PEAGI TULEKUL */
+
+    .pocket-page .pocket-coming {
+      padding: 100px 5vw 115px;
+      background: var(--beige-light, #eee6dc);
+    }
+
+    .pocket-page .pocket-coming-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line, #d6cbc3);
+    }
+
+    .pocket-page .pocket-coming-top > span {
+      color: var(--wine, #54202b);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .14em;
+    }
+
+    .pocket-page .pocket-coming-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
       gap: 10vw;
       align-items: end;
       padding: 90px 0 100px;
     }
 
-    .pocket-coming h2 {
-      max-width: 900px;
+    .pocket-page .pocket-coming h2 {
+      margin: 0;
       font-size: clamp(52px, 6.5vw, 100px);
       font-weight: 700;
-      line-height: 0.94;
-      letter-spacing: -0.065em;
+      line-height: .94;
+      letter-spacing: -.065em;
     }
 
-    .pocket-coming h2 span {
-      color: var(--wine);
+    .pocket-page .pocket-coming h2 span {
+      color: var(--wine, #54202b);
     }
 
-    .pocket-coming-copy {
+    .pocket-page .pocket-coming-copy {
       max-width: 460px;
     }
 
-    .pocket-coming-copy p {
-      color: var(--muted);
+    .pocket-page .pocket-coming-copy p {
+      color: var(--muted, #756c67);
       font-size: 13px;
       line-height: 1.85;
     }
 
-    .pocket-coming-copy .pocket-coming-lead {
+    .pocket-page .pocket-coming-copy .pocket-coming-lead {
       margin-bottom: 26px;
-      color: var(--ink);
+      color: var(--ink, #211b19);
       font-size: clamp(22px, 2.3vw, 33px);
       font-weight: 600;
       line-height: 1.2;
-      letter-spacing: -0.035em;
+      letter-spacing: -.035em;
     }
 
-    .pocket-coming-bottom {
+    .pocket-page .pocket-coming-bottom {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 20px;
       padding-top: 20px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid var(--line, #d6cbc3);
     }
 
-    .pocket-coming-bottom span {
-      color: var(--muted);
+    .pocket-page .pocket-coming-bottom span {
+      color: var(--muted, #756c67);
       font-size: 9px;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: .12em;
     }
 
+    /* STIILIJUHENDID */
+
+    .pocket-page .pocket-guides {
+      padding: 65px 5vw 100px;
+      background: var(--wine, #54202b);
+      color: var(--white, #fffdf9);
+    }
+
+    .pocket-page .pocket-guides-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(255,255,255,.22);
+    }
+
+    .pocket-page .pocket-guides-head > span {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .12em;
+    }
+
+    .pocket-page .pocket-guides-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10vw;
+      padding-top: 95px;
+    }
+
+    .pocket-page .pocket-guides-title h2 {
+      margin: 0;
+      font-size: clamp(55px, 6.5vw, 105px);
+      line-height: .95;
+      letter-spacing: -.065em;
+      font-weight: 700;
+      color: var(--white, #fffdf9);
+    }
+
+    .pocket-page .pocket-guides-title h2 span {
+      color: var(--beige, #e7dbcf);
+    }
+
+    .pocket-page .pocket-guides-copy {
+      max-width: 550px;
+    }
+
+    .pocket-page .pocket-guides-copy > p {
+      max-width: 480px;
+      margin-bottom: 28px;
+      font-size: 13px;
+      line-height: 1.85;
+      color: rgba(255,255,255,.72);
+    }
+
+    .pocket-page .pocket-guides-copy .pocket-guides-lead {
+      font-size: clamp(21px, 2.2vw, 32px);
+      line-height: 1.35;
+      font-weight: 500;
+      color: var(--white, #fffdf9);
+    }
+
+    .pocket-page .pocket-guide-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,.22);
+    }
+
+    .pocket-page .pocket-guide-row:first-of-type {
+      margin-top: 65px;
+    }
+
+    .pocket-page .pocket-guide-row > div {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .pocket-page .pocket-guide-small,
+    .pocket-page .pocket-guide-row > span {
+      font-size: 9px;
+      letter-spacing: .12em;
+      font-weight: 500;
+      color: rgba(255,255,255,.65);
+    }
+
+    .pocket-page .pocket-guide-row strong {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -.03em;
+      color: var(--white, #fffdf9);
+    }
+
+    /* VIIMANE SEKTSIOON */
+
+    .pocket-page .pocket-final {
+      padding: 95px 5vw 115px;
+      background: var(--cream, #f7f2eb);
+      color: var(--ink, #211b19);
+    }
+
+    .pocket-page .pocket-final-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, .6fr);
+      gap: 9vw;
+      align-items: end;
+      padding-top: 75px;
+    }
+
+    .pocket-page .pocket-final h2 {
+      margin: 0;
+      font-size: clamp(42px, 5.3vw, 85px);
+      line-height: 1.02;
+      letter-spacing: -.06em;
+      font-weight: 700;
+    }
+
+    .pocket-page .pocket-final h2 span {
+      display: block;
+      color: var(--wine, #54202b);
+    }
+
+    .pocket-page .pocket-final-grid > div > p {
+      margin-bottom: 35px;
+      font-size: 13px;
+      line-height: 1.85;
+      color: var(--muted, #756c67);
+    }
+
+    .pocket-page .pocket-final-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .pocket-page .pocket-final-links a {
+      color: var(--wine, #54202b);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+    }
+
+    /* MOBIIL */
+
     @media (max-width: 760px) {
-      .pocket-coming {
-        padding: 75px var(--page) 85px;
+      .pocket-page .pocket-hero {
+        min-height: auto;
+        padding: 115px 5vw 35px;
       }
 
-      .pocket-coming-grid {
+      .pocket-page .pocket-hero-main {
+        display: block;
+        padding: 75px 0;
+      }
+
+      .pocket-page .pocket-hero h1 {
+        font-size: clamp(55px, 13vw, 90px);
+      }
+
+      .pocket-page .pocket-hero-copy {
+        margin: 55px 0 0 auto;
+      }
+
+      .pocket-page .pocket-hero-bottom {
+        justify-content: flex-start;
+        gap: 15px 25px;
+      }
+
+      .pocket-page .pocket-coming {
+        padding: 75px 5vw 85px;
+      }
+
+      .pocket-page .pocket-coming-grid {
         display: block;
         padding: 65px 0 70px;
       }
 
-      .pocket-coming h2 {
+      .pocket-page .pocket-coming h2 {
         font-size: clamp(43px, 12vw, 61px);
       }
 
-      .pocket-coming-copy {
+      .pocket-page .pocket-coming-copy {
         max-width: 90%;
         margin: 55px 0 0 auto;
       }
 
-      .pocket-coming-copy .pocket-coming-lead {
+      .pocket-page .pocket-coming-copy .pocket-coming-lead {
         font-size: 24px;
       }
 
-      .pocket-coming-bottom {
-        flex-wrap: wrap;
-        gap: 15px 25px;
+      .pocket-page .pocket-guides {
+        padding: 50px 5vw 75px;
       }
 
-      .pocket-coming-bottom span {
-        font-size: 8px;
+      .pocket-page .pocket-guides-grid {
+        display: block;
+        padding-top: 65px;
+      }
+
+      .pocket-page .pocket-guides-title h2 {
+        font-size: clamp(50px, 12vw, 75px);
+        margin-bottom: 60px;
+      }
+
+      .pocket-page .pocket-guide-row:first-of-type {
+        margin-top: 45px;
+      }
+
+      .pocket-page .pocket-final {
+        padding: 75px 5vw 90px;
+      }
+
+      .pocket-page .pocket-final-grid {
+        display: block;
+        padding-top: 55px;
+      }
+
+      .pocket-page .pocket-final h2 {
+        font-size: clamp(40px, 10vw, 60px);
+        margin-bottom: 45px;
       }
     }
-    
-/* TASKUSTILIST HERO PARANDUS */
 
-.pocket-page .pocket-hero {
-  min-height: 90vh;
-  padding: 125px var(--page) 35px;
-  background: var(--cream);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+    @media (max-width: 380px) {
+      .pocket-page .pocket-hero h1 {
+        font-size: 13vw;
+      }
 
-.pocket-page .pocket-hero-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-}
-
-.pocket-page .pocket-hero-main {
-  display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  align-items: end;
-  gap: 6vw;
-  padding: 70px 0;
-}
-
-.pocket-page .pocket-hero h1 {
-  font-size: clamp(70px, 10vw, 155px);
-  line-height: 0.83;
-  letter-spacing: -0.075em;
-  font-weight: 700;
-}
-
-.pocket-page .pocket-hero h1 span {
-  display: block;
-}
-
-.pocket-page .pocket-hero h1 span:last-child {
-  color: var(--wine);
-}
-
-.pocket-page .pocket-hero-copy {
-  max-width: 360px;
-  padding-bottom: 10px;
-}
-
-.pocket-page .pocket-lead {
-  margin-bottom: 25px;
-  font-size: clamp(25px, 3vw, 42px);
-  font-weight: 600;
-  line-height: 1.1;
-}
-
-.pocket-page .pocket-hero-copy > p:last-child {
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--muted);
-}
-
-.pocket-page .pocket-hero-bottom {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-}
-
-.pocket-page .pocket-hero-bottom span,
-.pocket-page .pocket-issue {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-}
-
-@media (max-width: 760px) {
-  .pocket-page .pocket-hero {
-    min-height: auto;
-    padding: 115px var(--page) 35px;
-  }
-
-  .pocket-page .pocket-hero-main {
-    display: block;
-    padding: 75px 0;
-  }
-
-  .pocket-page .pocket-hero h1 {
-    font-size: clamp(55px, 13vw, 90px);
-  }
-
-  .pocket-page .pocket-hero-copy {
-    margin: 55px 0 0 auto;
-  }
-
-  .pocket-page .pocket-hero-bottom {
-    justify-content: flex-start;
-    gap: 15px 25px;
-  }
-}
-
+      .pocket-page .pocket-coming h2 {
+        font-size: 11vw;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <!-- HEADER -->
-
   <header class="header">
-
-    <a href="/" class="logo">
-      MOORITS.
-    </a>
+    <a href="/" class="logo">MOORITS.</a>
 
     <nav class="desktop-nav">
-
       <a href="/">AVALEHT</a>
 
       <div class="nav-dropdown">
-
         <button class="nav-dropdown-trigger" type="button">
           PERSONAALSTILISTIKA
         </button>
-
         <div class="nav-dropdown-menu">
           <a href="/meestele/">MEESTELE</a>
           <a href="/naistele/">NAISTELE</a>
         </div>
-
       </div>
 
       <a href="/brandidele/">BRÄNDIDELE</a>
       <a href="/portfoolio/">PORTFOOLIO</a>
       <a href="/stilist-taskus/" class="active">TASKUSTILIST</a>
-
     </nav>
 
     <button class="menu-button" id="menuButton" type="button">
       MENÜÜ
     </button>
-
   </header>
 
-
   <!-- MOBILE MENU -->
-
   <nav class="mobile-nav" id="mobileNav">
-
     <button class="mobile-close" id="mobileClose" type="button">
       SULGE
     </button>
 
     <div class="mobile-links">
-
       <a href="/">Avaleht</a>
-
-      <span class="mobile-nav-label">
-        PERSONAALSTILISTIKA
-      </span>
-
+      <span class="mobile-nav-label">PERSONAALSTILISTIKA</span>
       <a href="/meestele/">Meestele</a>
       <a href="/naistele/">Naistele</a>
       <a href="/brandidele/">Brändidele</a>
       <a href="/portfoolio/">Portfoolio</a>
       <a href="/stilist-taskus/">Taskustilist</a>
       <a href="/#kontakt">Kontakt</a>
-
     </div>
-
   </nav>
-
 
   <main class="pocket-page">
 
     <!-- HERO -->
-
     <section class="pocket-hero">
-
       <div class="pocket-hero-top">
-
-        <p class="label">
-          TASKUSTILIST
-        </p>
-
-        <span class="pocket-issue">
-          BY KERTU MOORITS
-        </span>
-
+        <p class="label">TASKUSTILIST</p>
+        <span class="pocket-issue">BY KERTU MOORITS</span>
       </div>
 
       <div class="pocket-hero-main">
-
         <h1>
           <span>STILIST</span>
           <span>TASKUS.</span>
         </h1>
 
         <div class="pocket-hero-copy">
-
           <p class="pocket-lead">
             Sinu stilist.<br>
             Alati taskus.
           </p>
-
           <p>
             Praktilised stiilinõuanded, inspiratsioon
             ja vastused küsimustele, mis tekivad
             garderoobi ees, poes või enne olulist sündmust.
           </p>
-
         </div>
-
       </div>
 
       <div class="pocket-hero-bottom">
-
         <span>STIIL</span>
         <span>GARDEROOB</span>
         <span>RIETUMINE</span>
         <span>TEADLIKUD VALIKUD</span>
-
       </div>
-
     </section>
 
-
     <!-- PEAGI TULEKUL -->
-
     <section class="pocket-coming">
-
       <div class="pocket-coming-top">
-
-        <p class="label">
-          TASKUSTILIST / 01
-        </p>
-
-        <span>
-          PEAGI TULEKUL
-        </span>
-
+        <p class="label">TASKUSTILIST / 01</p>
+        <span>PEAGI TULEKUL</span>
       </div>
 
       <div class="pocket-coming-grid">
-
         <h2>
           Stiil ei pea<br>
           olema <span>keeruline.</span>
         </h2>
 
         <div class="pocket-coming-copy">
-
           <p class="pocket-coming-lead">
             Vähem reegleid.<br>
             Rohkem enesekindlust.
           </p>
-
           <p>
             Taskustilistist leiad peagi praktilised
             stiilinõuanded, põhjalikumad artiklid ja
             inspiratsiooni, mis aitavad teha
             teadlikumaid valikuid oma garderoobis.
           </p>
-
         </div>
-
       </div>
 
       <div class="pocket-coming-bottom">
-
         <span>PERSONAALNE STIIL</span>
         <span>STIILINÕUANDED</span>
         <span>STIILIJUHENDID</span>
-
       </div>
-
     </section>
 
-
     <!-- DIGITAALSED STIILIJUHENDID -->
-
     <section class="pocket-guides">
-
       <div class="pocket-guides-head">
-
-        <p class="label light">
-          STIILIJUHENDID
-        </p>
-
-        <span>
-          TULEKUL
-        </span>
-
+        <p class="label light">STIILIJUHENDID</p>
+        <span>TULEKUL</span>
       </div>
 
       <div class="pocket-guides-grid">
-
         <div class="pocket-guides-title">
-
           <h2>
             Rohkem kui<br>
             üks hea<br>
             <span>riietus.</span>
           </h2>
-
         </div>
 
         <div class="pocket-guides-copy">
-
           <p class="pocket-guides-lead">
             Põhjalikumad digitaalsed stiilijuhendid,
             mis aitavad sul oma valikuid ise paremini teha.
@@ -453,58 +588,29 @@
           </p>
 
           <div class="pocket-guide-row">
-
             <div>
-              <span class="pocket-guide-small">
-                STILIST TASKUS
-              </span>
-
-              <strong>
-                MEESTELE
-              </strong>
+              <span class="pocket-guide-small">STILIST TASKUS</span>
+              <strong>MEESTELE</strong>
             </div>
-
-            <span>
-              TULEKUL
-            </span>
-
+            <span>TULEKUL</span>
           </div>
 
           <div class="pocket-guide-row">
-
             <div>
-              <span class="pocket-guide-small">
-                STILIST TASKUS
-              </span>
-
-              <strong>
-                NAISTELE
-              </strong>
+              <span class="pocket-guide-small">STILIST TASKUS</span>
+              <strong>NAISTELE</strong>
             </div>
-
-            <span>
-              TULEKUL
-            </span>
-
+            <span>TULEKUL</span>
           </div>
-
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- FINAL -->
-
+    <!-- VIIMANE SEKTSIOON -->
     <section class="pocket-final">
-
-      <p class="label">
-        MOORITS.
-      </p>
+      <p class="label">MOORITS.</p>
 
       <div class="pocket-final-grid">
-
         <h2>
           Hea stiil ei anna<br>
           sulle rohkem reegleid.
@@ -512,7 +618,6 @@
         </h2>
 
         <div>
-
           <p>
             Kui soovid juba praegu oma stiiliga
             teadlikumalt tegeleda, tutvu
@@ -520,57 +625,30 @@
           </p>
 
           <div class="pocket-final-links">
-
-            <a href="/naistele/" class="text-link">
-              NAISTELE
-            </a>
-
-            <a href="/meestele/" class="text-link">
-              MEESTELE
-            </a>
-
+            <a href="/naistele/" class="text-link">NAISTELE</a>
+            <a href="/meestele/" class="text-link">MEESTELE</a>
           </div>
-
         </div>
-
       </div>
-
     </section>
 
   </main>
 
-
   <!-- FOOTER -->
-
   <footer>
-
-    <span>
-      MOORITS.
-    </span>
+    <span>MOORITS.</span>
 
     <div>
-
-      <a
-        href="https://www.instagram.com/mooritzmoments"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://www.instagram.com/mooritzmoments"
+         target="_blank" rel="noopener noreferrer">
         INSTAGRAM
       </a>
-
-      <a href="/#kontakt">
-        KONTAKT
-      </a>
-
+      <a href="/#kontakt">KONTAKT</a>
     </div>
 
-    <span>
-      © 2026
-    </span>
-
+    <span>© 2026</span>
   </footer>
 
   <script src="../js/main.js"></script>
-
 </body>
 </html>
