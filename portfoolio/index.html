@@ -4,11 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Portfoolio | Kertu Moorits — MOORITS.</title>
   <meta name="description" content="Kertu Mooritsa stilistika portfoolio. Fotolavastused, moefotod, moeetendused ja teatriprojektid.">
   <link rel="canonical" href="https://moorits.com/portfoolio/">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -398,6 +396,35 @@
       color: #625a55;
     }
 
+    /* SOOSTERI KOOLKOND – MINU TÖÖ JA PROTSESS */
+
+    .pf-process {
+      margin: 42px 0 12px;
+    }
+
+    .pf-process h3 {
+      color: var(--pf-wine);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      margin: 0 0 20px;
+    }
+
+    .pf-process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .pf-process-grid img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    /* SUUR FOTOGALERII */
+
     .pf-photos {
       columns: 2;
       column-gap: 22px;
@@ -496,6 +523,10 @@
         gap: 1px;
       }
 
+      .pf-process-grid {
+        gap: 8px;
+      }
+
       .pf-cta {
         padding: 75px 5vw;
       }
@@ -565,7 +596,6 @@
 
     <section class="pf-hero">
       <p class="pf-kicker">MOORITS. / VALITUD TÖÖD</p>
-
       <h1>PORTFOOLIO.</h1>
 
       <p>
@@ -599,7 +629,6 @@
 
         <div class="pf-feature-text">
           <p class="pf-kicker">MOEETENDUS · DISAINERI ASSISTENT</p>
-
           <h3>ESTONIAN FASHION FESTIVAL</h3>
 
           <p>
@@ -633,7 +662,6 @@
 
         <div class="pf-feature-text">
           <p class="pf-kicker">TARTU UUS TEATER · 2025</p>
-
           <h3>SOOSTERI KOOLKOND</h3>
 
           <p>
@@ -690,16 +718,12 @@
 
     <div class="pf-modal-content">
       <p class="pf-kicker" id="pfModalKind"></p>
-
       <h2 id="pfModalTitle"></h2>
 
       <div class="pf-project-text">
         <p class="pf-project-quote" id="pfQuote" hidden></p>
-
         <p class="pf-project-intro" id="pfIntro"></p>
-
         <div class="pf-project-body" id="pfBody"></div>
-
         <div class="pf-credits" id="pfCredits"></div>
       </div>
 
@@ -716,9 +740,6 @@
       cover: 0 = esimene foto
       cover: 1 = teine foto
       cover: 2 = kolmas foto
-
-      Esindusfoto muutmiseks muuda vastava
-      projekti juures ainult cover väärtust.
     */
 
     const projects = [
@@ -919,11 +940,6 @@
         kind: 'MOEETENDUS · DISAINERI ASSISTENT',
 
         folder: '../images/portfoolio/moeshowd/Estonian-Fashion-Festival/',
-
-        /*
-          Esindusfoto on Alice Pärtelpoja
-          kollektsiooni fotode hulgast.
-        */
         cover: 8,
 
         photos: [
@@ -975,6 +991,19 @@
         folder: '../images/portfoolio/Tartu-Uus-Teater/',
         cover: 0,
 
+        /* MINU TÖÖ JA PROTSESSI FOTOD */
+
+        processFolder:
+          '../images/portfoolio/Tartu-Uus-Teater/tooprotsess/',
+
+        processPhotos: [
+          'soosteri koolkond 1.jpeg',
+          'soosteri koolkond 2.jpeg',
+          'soosteri koolkond 3.jpeg'
+        ],
+
+        /* LAVASTUSE FOTOD */
+
         photos: [
           'tut-sooster-lbimng-22-okt-2025-_a747163_54874557441_o (1).jpg',
           'tut-sooster-lbimng-22-okt-2025-_a747448_54874791988_o.jpg',
@@ -1007,7 +1036,6 @@
           ['Paberrekvisiidid', 'Kertu Moorits']
         ]
       }
-
     ];
 
     /* RENDERING */
@@ -1141,6 +1169,51 @@
 
       credits.hidden = !(project.credits || []).length;
 
+      /* MINU TÖÖ JA PROTSESS */
+
+      const previousProcess =
+        document.getElementById('pfProcess');
+
+      if (previousProcess) {
+        previousProcess.remove();
+      }
+
+      if (project.id === 'theatre' && project.processPhotos) {
+        const process = document.createElement('section');
+        process.className = 'pf-process';
+        process.id = 'pfProcess';
+
+        const heading = document.createElement('h3');
+        heading.textContent = 'MINU TÖÖ JA PROTSESS';
+
+        const grid = document.createElement('div');
+        grid.className = 'pf-process-grid';
+
+        project.processPhotos.forEach((file, index) => {
+          const img = document.createElement('img');
+
+          img.src =
+            project.processFolder + encodeURIComponent(file);
+
+          img.alt =
+            'Soosteri koolkond – minu töö ja protsess, foto ' +
+            (index + 1);
+
+          img.loading = 'lazy';
+          img.decoding = 'async';
+
+          grid.append(img);
+        });
+
+        process.append(heading, grid);
+
+        document
+          .querySelector('.pf-project-text')
+          .append(process);
+      }
+
+      /* SUUR FOTOGALERII */
+
       project.photos.forEach((file, index) => {
         const figure = document.createElement('figure');
         const img = document.createElement('img');
@@ -1223,7 +1296,6 @@
         first.focus();
       }
     });
-
   </script>
 
 </body>
