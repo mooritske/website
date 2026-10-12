@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="et">
 <head>
@@ -8,7 +9,7 @@
 
   <meta
     name="description"
-    content="Kertu Mooritsa stilisti portfoolio — stilistika, visuaalsed kontseptsioonid, fotolavastused, moeshow'd ja teatriprojektid."
+    content="Kertu Mooritsa stilisti portfoolio — stilistika, visuaalsed kontseptsioonid, fotolavastused, moeetendused ja teatriprojektid."
   >
 
   <link rel="canonical" href="https://moorits.com/portfoolio/">
@@ -57,7 +58,341 @@
   >
 
   <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    /* Portfoolio kujundus – ei muuda teisi lehti */
+
+    .portfolio-page .portfolio-new {
+      background: #f7f2eb;
+      color: #211b19;
+      min-height: 100vh;
+    }
+
+    .portfolio-page .portfolio-new * {
+      box-sizing: border-box;
+    }
+
+    .portfolio-new .pn-hero {
+      padding: 160px 5vw 80px;
+      border-bottom: 1px solid #d6cbc3;
+    }
+
+    .portfolio-new .pn-eyebrow {
+      font-size: 11px;
+      letter-spacing: .18em;
+      font-weight: 600;
+      color: #54202b;
+    }
+
+    .portfolio-new .pn-hero h1 {
+      font-size: clamp(56px, 11vw, 165px);
+      letter-spacing: -.075em;
+      line-height: 1;
+      margin: 24px 0 30px;
+      font-weight: 700;
+    }
+
+    .portfolio-new .pn-intro {
+      max-width: 620px;
+      font-size: clamp(15px, 1.5vw, 19px);
+      line-height: 1.65;
+      color: #756c67;
+    }
+
+    .portfolio-new .pn-section {
+      padding: 75px 5vw 105px;
+      border-bottom: 1px solid #d6cbc3;
+    }
+
+    .portfolio-new .pn-section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+      border-bottom: 1px solid #d6cbc3;
+      padding-bottom: 18px;
+      margin-bottom: 48px;
+    }
+
+    .portfolio-new .pn-section-head h2 {
+      font-size: clamp(32px, 5vw, 70px);
+      letter-spacing: -.06em;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .portfolio-new .pn-section-head span {
+      font-size: 11px;
+      letter-spacing: .16em;
+      color: #54202b;
+      font-weight: 600;
+    }
+
+    .portfolio-new .pn-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 55px 2.5vw;
+      align-items: start;
+    }
+
+    .portfolio-new .pn-card {
+      grid-column: span 6;
+      min-width: 0;
+    }
+
+    .portfolio-new .pn-card:nth-child(4n+2) {
+      grid-column: span 5;
+      margin-top: 65px;
+    }
+
+    .portfolio-new .pn-card:nth-child(4n+3) {
+      grid-column: span 5;
+      margin-left: 10%;
+      margin-top: 20px;
+    }
+
+    .portfolio-new .pn-card:nth-child(4n+4) {
+      grid-column: span 6;
+      margin-top: 75px;
+    }
+
+    .portfolio-new .pn-card button {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      text-align: left;
+      color: inherit;
+      width: 100%;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .portfolio-new .pn-cover {
+      display: block;
+      overflow: hidden;
+      background: #e7dbcf;
+      aspect-ratio: 4 / 5;
+    }
+
+    .portfolio-new .pn-card:nth-child(3n+2) .pn-cover {
+      aspect-ratio: 3 / 4;
+    }
+
+    .portfolio-new .pn-card:nth-child(3n+3) .pn-cover {
+      aspect-ratio: 5 / 4;
+    }
+
+    .portfolio-new .pn-cover img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .portfolio-new .pn-card button:hover img {
+      transform: scale(1.035);
+    }
+
+    .portfolio-new .pn-card-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      padding-top: 17px;
+    }
+
+    .portfolio-new .pn-card-meta strong {
+      font-size: clamp(13px, 1.3vw, 18px);
+      letter-spacing: -.025em;
+      font-weight: 600;
+    }
+
+    .portfolio-new .pn-card-meta span {
+      font-size: 10px;
+      letter-spacing: .1em;
+      color: #756c67;
+      text-align: right;
+    }
+
+    .portfolio-new .pn-contact {
+      background: #54202b;
+      color: #fffdf9;
+      padding: 90px 5vw 100px;
+    }
+
+    .portfolio-new .pn-contact h2 {
+      font-size: clamp(34px, 6vw, 85px);
+      line-height: 1.05;
+      letter-spacing: -.055em;
+      margin: 25px 0 35px;
+    }
+
+    .portfolio-new .pn-contact a {
+      color: #fffdf9;
+      font-size: 12px;
+      letter-spacing: .12em;
+    }
+
+    /* Avanev projektigalerii */
+
+    .pn-modal[hidden] {
+      display: none !important;
+    }
+
+    .pn-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: #f7f2eb;
+      color: #211b19;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .pn-modal-bar {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 5vw;
+      background: #f7f2eb;
+      border-bottom: 1px solid #d6cbc3;
+    }
+
+    .pn-modal-bar strong {
+      font-size: 12px;
+      letter-spacing: .1em;
+    }
+
+    .pn-modal-bar button {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      font: 600 11px Poppins, sans-serif;
+      letter-spacing: .12em;
+      color: #54202b;
+      padding: 8px 0;
+    }
+
+    .pn-modal-inner {
+      max-width: 1350px;
+      margin: auto;
+      padding: 55px 5vw 90px;
+    }
+
+    .pn-modal-inner h2 {
+      font-size: clamp(36px, 6vw, 85px);
+      letter-spacing: -.06em;
+      line-height: 1.1;
+      margin: 12px 0 18px;
+    }
+
+    .pn-modal-kind {
+      font-size: 11px;
+      letter-spacing: .12em;
+      color: #54202b;
+    }
+
+    .pn-modal-description {
+      max-width: 720px;
+      font-size: 14px;
+      line-height: 1.85;
+      color: #756c67;
+      white-space: pre-line;
+      margin-bottom: 45px;
+    }
+
+    .pn-modal-images {
+      columns: 2;
+      column-gap: 20px;
+    }
+
+    .pn-modal-images figure {
+      break-inside: avoid;
+      margin: 0 0 20px;
+    }
+
+    .pn-modal-images img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    body.pn-modal-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 760px) {
+      .portfolio-new .pn-hero {
+        padding: 120px 5vw 55px;
+      }
+
+      .portfolio-new .pn-hero h1 {
+        font-size: clamp(48px, 12vw, 75px);
+      }
+
+      .portfolio-new .pn-section {
+        padding: 55px 5vw 75px;
+      }
+
+      .portfolio-new .pn-section-head {
+        margin-bottom: 30px;
+      }
+
+      .portfolio-new .pn-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px 14px;
+      }
+
+      .portfolio-new .pn-card,
+      .portfolio-new .pn-card:nth-child(4n+2),
+      .portfolio-new .pn-card:nth-child(4n+3),
+      .portfolio-new .pn-card:nth-child(4n+4) {
+        grid-column: span 1;
+        margin: 0;
+      }
+
+      .portfolio-new .pn-card:nth-child(even) {
+        margin-top: 45px;
+      }
+
+      .portfolio-new .pn-cover,
+      .portfolio-new .pn-card:nth-child(3n+2) .pn-cover,
+      .portfolio-new .pn-card:nth-child(3n+3) .pn-cover {
+        aspect-ratio: 3 / 4;
+      }
+
+      .portfolio-new .pn-card-meta {
+        display: block;
+      }
+
+      .portfolio-new .pn-card-meta strong {
+        display: block;
+        font-size: 12px;
+      }
+
+      .portfolio-new .pn-card-meta span {
+        display: block;
+        text-align: left;
+        font-size: 9px;
+        margin-top: 4px;
+      }
+
+      .pn-modal-inner {
+        padding-top: 35px;
+      }
+
+      .pn-modal-images {
+        columns: 1;
+      }
+    }
+  </style>
 </head>
+
 <body class="portfolio-page">
 
   <!-- HEADER -->
@@ -80,13 +415,13 @@
 
       <a href="/brandidele/">BRÄNDIDELE</a>
       <a href="/portfoolio/" class="active">PORTFOOLIO</a>
+      <a href="/stilist-taskus/">TASKUSTILIST</a>
     </nav>
 
     <button class="menu-button" id="menuButton" type="button">
       MENÜÜ
     </button>
   </header>
-
 
   <!-- MOBILE MENU -->
   <nav class="mobile-nav" id="mobileNav">
@@ -103,285 +438,136 @@
       <a href="/naistele/">Naistele</a>
       <a href="/brandidele/">Brändidele</a>
       <a href="/portfoolio/">Portfoolio</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="/stilist-taskus/">Taskustilist</a>
+      <a href="/#kontakt">Kontakt</a>
     </div>
   </nav>
 
-
-  <main>
+  <main class="portfolio-new">
 
     <!-- HERO -->
-    <section class="portfolio-hero">
-      <div class="portfolio-hero-inner">
-
-        <p class="portfolio-kicker">VALITUD TÖÖD</p>
-
-        <h1>PORTFOOLIO</h1>
-
-        <div class="portfolio-hero-bottom">
-          <p>
-            Stilistika, visuaalsed kontseptsioonid,
-            fotolavastused ja produktsioonid.
-          </p>
-
-          <p class="portfolio-index">
-            KERTU MOORITS · STILIST
-          </p>
-        </div>
-
-      </div>
+    <section class="pn-hero">
+      <p class="pn-eyebrow">MOORITS. / VALITUD TÖÖD</p>
+      <h1>PORTFOOLIO.</h1>
+      <p class="pn-intro">
+        Valik stilistika-, moe- ja teatriprojektidest.
+        Iga töö taga on oma lugu, inimesed ja visuaalne maailm.
+      </p>
     </section>
 
-
-    <!-- =====================================================
-         FOTOLAVASTUSED
-    ====================================================== -->
-
-    <section class="portfolio-category">
-
-      <div class="portfolio-category-heading">
-        <span>01</span>
-        <h2>FOTOLAVASTUSED</h2>
+    <!-- STILISTIKA -->
+    <section class="pn-section" id="stilistika">
+      <div class="pn-section-head">
+        <h2>STILISTIKA</h2>
+        <span>01 / 03</span>
       </div>
 
-
-      <!-- SÕBRALT SÕBRALE -->
-      <article class="portfolio-project">
-
-        <div class="portfolio-project-heading">
-          <div>
-            <p class="portfolio-project-number">01 / 04</p>
-            <h3>SÕBRALT SÕBRALE</h3>
-          </div>
-
-          <p class="portfolio-project-type">
-            FOTOLAVASTUS
-          </p>
-        </div>
-
-        <div
-          class="portfolio-gallery portfolio-gallery-editorial"
-          id="gallery-sobraltsobrale"
-        ></div>
-
-        <div class="portfolio-project-info">
-          <p>
-            <strong>Fotograaf:</strong> Kertu Moorits<br>
-            <strong>Stilist:</strong> Kertu Moorits<br>
-            <strong>Jumestus &amp; soeng:</strong> Kertu Moorits<br>
-            <strong>Modell:</strong> Vitalia Hulak
-          </p>
-
-          <p>
-            Visuaalne fotolavastus, mille lähtekohaks oli
-            meeleolu, värv, vorm ja karakter.
-          </p>
-        </div>
-
-      </article>
-
-
-      <!-- N-20 -->
-      <article class="portfolio-project">
-
-        <div class="portfolio-project-heading">
-          <div>
-            <p class="portfolio-project-number">02 / 04</p>
-            <h3>N-20 STUUDIO</h3>
-          </div>
-
-          <p class="portfolio-project-type">
-            FOTOLAVASTUS
-          </p>
-        </div>
-
-        <div
-          class="portfolio-gallery portfolio-gallery-editorial reverse"
-          id="gallery-n20"
-        ></div>
-
-        <div class="portfolio-project-info">
-          <p>
-            <strong>Fotograaf:</strong> Helen-Mary Vartsun &amp; Kertu Moorits<br>
-            <strong>Stilist &amp; jumestaja:</strong> Kertu Moorits<br>
-            <strong>Riided &amp; aksessuaarid:</strong> N-20 Stuudio &amp; erakogu
-          </p>
-
-          <p>
-            Visuaalse suuna, rõivakombinatsioonide ja jumestuse
-            loomine ning fotosessiooni praktiline läbiviimine.
-          </p>
-        </div>
-
-      </article>
-
-
-      <!-- BACK HOME -->
-      <article class="portfolio-project">
-
-        <div class="portfolio-project-heading">
-          <div>
-            <p class="portfolio-project-number">03 / 04</p>
-            <h3>BACK HOME</h3>
-          </div>
-
-          <p class="portfolio-project-type">
-            EDITORIAL
-          </p>
-        </div>
-
-        <div
-          class="portfolio-gallery portfolio-gallery-four"
-          id="gallery-backhome"
-        ></div>
-
-        <div class="portfolio-project-info">
-          <p>
-            <strong>Tiim:</strong> Kertu Moorits, Anastassia Povstanskaja,
-            Geilin Raudsepp<br>
-            <strong>Jumestus:</strong> Kertu Moorits<br>
-            <strong>Soeng:</strong> Anastassia Povstanskaja
-          </p>
-
-          <p>
-            Lätis valminud ajakirjakaane kontseptsioon,
-            mille rõivad valiti ja hangiti taaskasutusest.
-          </p>
-        </div>
-
-      </article>
-
-
-      <!-- AJAKIRJAPROJEKT -->
-      <article class="portfolio-project">
-
-        <div class="portfolio-project-heading">
-          <div>
-            <p class="portfolio-project-number">04 / 04</p>
-            <h3>AJAKIRJAPROJEKT</h3>
-          </div>
-
-          <p class="portfolio-project-type">
-            EDITORIAL
-          </p>
-        </div>
-
-        <div
-          class="portfolio-gallery portfolio-gallery-editorial"
-          id="gallery-ajakirjaprojekt"
-        ></div>
-
-        <div class="portfolio-project-info">
-          <p>
-            <strong>Fotograaf:</strong> Ekvilibrist<br>
-            <strong>Stilist:</strong> Kertu Moorits<br>
-            <strong>Jumestaja &amp; soeng:</strong> Liisi Haas
-          </p>
-
-          <p>
-            Ajakirjaprojekti jaoks loodud stilistika ja visuaalne tervik.
-          </p>
-        </div>
-
-      </article>
-
+      <div class="pn-grid" id="pn-stilistika"></div>
     </section>
 
-
-    <!-- =====================================================
-         MOESHOW'D
-    ====================================================== -->
-
-    <section class="portfolio-category portfolio-category-dark">
-
-      <div class="portfolio-category-heading">
-        <span>02</span>
-        <h2>MOESHOW'D</h2>
+    <!-- MOEETENDUSED -->
+    <section class="pn-section" id="moeetendused">
+      <div class="pn-section-head">
+        <h2>MOEETENDUSED</h2>
+        <span>02 / 03</span>
       </div>
 
-      <article class="portfolio-project">
-
-        <div class="portfolio-project-heading">
-          <div>
-            <p class="portfolio-project-number">01 / 01</p>
-            <h3>ESTONIAN FASHION FESTIVAL</h3>
-          </div>
-
-          <p class="portfolio-project-type">
-            MOESHOW
-          </p>
-        </div>
-
-        <div
-          class="portfolio-gallery portfolio-fashion-grid"
-          id="gallery-eff"
-        ></div>
-
-      </article>
-
+      <div class="pn-grid" id="pn-moeetendused"></div>
     </section>
 
-
-    <!-- =====================================================
-         TEATER
-    ====================================================== -->
-
-    <section class="portfolio-category">
-
-      <div class="portfolio-category-heading">
-        <span>03</span>
+    <!-- TEATER -->
+    <section class="pn-section" id="teater">
+      <div class="pn-section-head">
         <h2>TEATER</h2>
+        <span>03 / 03</span>
       </div>
 
-      <article class="portfolio-project portfolio-project-last">
-
-        <div class="portfolio-project-heading">
-          <div>
-            <p class="portfolio-project-number">01 / 01</p>
-            <h3>TARTU UUS TEATER</h3>
-          </div>
-
-          <p class="portfolio-project-type">
-            TEATER
-          </p>
-        </div>
-
-        <div
-          class="portfolio-gallery portfolio-theatre-grid"
-          id="gallery-tartu-uus-teater"
-        ></div>
-
-      </article>
-
+      <div class="pn-grid" id="pn-teater"></div>
     </section>
 
-
-    <!-- CONTACT -->
-    <section class="portfolio-contact" id="kontakt">
-
-      <p class="portfolio-kicker">KOOSTÖÖ</p>
+    <!-- KONTAKT -->
+    <section class="pn-contact" id="kontakt">
+      <p class="pn-eyebrow" style="color:#e7dbcf">
+        KOOSTÖÖ
+      </p>
 
       <h2>
         SUL ON IDEE.<br>
         TEEME SELLE NÄHTAVAKS.
       </h2>
 
-      <a href="/brandidele/" class="portfolio-contact-link">
-        BRÄNDIDELE
+      <a href="/brandidele/">
+        TUTVU KOOSTÖÖVÕIMALUSTEGA →
       </a>
-
     </section>
 
   </main>
 
+  <!-- FOOTER -->
+  <footer>
+    <span>MOORITS.</span>
+
+    <div>
+      <a
+        href="https://www.instagram.com/mooritzmoments"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        INSTAGRAM
+      </a>
+
+      <a href="/#kontakt">KONTAKT</a>
+    </div>
+
+    <span>© 2026</span>
+  </footer>
+
+  <!-- PROJEKTI AVANEV VADE -->
+  <div
+    class="pn-modal"
+    id="pnModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="pnModalTitle"
+    hidden
+  >
+    <div class="pn-modal-bar">
+      <strong>MOORITS. / PORTFOOLIO</strong>
+
+      <button id="pnModalClose" type="button">
+        SULGE ✕
+      </button>
+    </div>
+
+    <div class="pn-modal-inner">
+      <p class="pn-modal-kind" id="pnModalKind"></p>
+
+      <h2 id="pnModalTitle"></h2>
+
+      <p
+        class="pn-modal-description"
+        id="pnModalDescription"
+      ></p>
+
+      <div
+        class="pn-modal-images"
+        id="pnModalImages"
+      ></div>
+    </div>
+  </div>
 
   <script src="../js/main.js"></script>
 
-  <!-- PORTFOLIO GALLERIES -->
   <script>
+    /*
+      OLEMASOLEVAD FOTOD
+
+      Kõik failinimed ja kaustad on säilitatud.
+      Uue foto lisamiseks lisa selle nimi
+      vastava projekti images-nimekirja.
+    */
 
     const portfolioGalleries = [
-
       {
         id: "gallery-sobraltsobrale",
         folder: "../images/portfoolio/fotolavastused/sõbraltsõbrale/",
@@ -396,7 +582,6 @@
           "Facetune_05-06-2025-18-50-25.jpeg"
         ]
       },
-
       {
         id: "gallery-n20",
         folder: "../images/portfoolio/fotolavastused/n-20/",
@@ -412,7 +597,6 @@
           "DSC07622.jpg"
         ]
       },
-
       {
         id: "gallery-backhome",
         folder: "../images/portfoolio/fotolavastused/backhome/",
@@ -423,7 +607,6 @@
           "_MG_2297 (2).jpg"
         ]
       },
-
       {
         id: "gallery-ajakirjaprojekt",
         folder: "../images/portfoolio/fotolavastused/ajakirjaprojekt/",
@@ -437,7 +620,6 @@
           "Ekvilibrist-9981 (2).jpg"
         ]
       },
-
       {
         id: "gallery-eff",
         folder: "../images/portfoolio/moeshowd/Estonian-Fashion-Festival/",
@@ -456,7 +638,6 @@
           "Alice-Partelpoeg-OF-SCARCITY-Foto-Khandie-Reed4.jpg"
         ]
       },
-
       {
         id: "gallery-tartu-uus-teater",
         folder: "../images/portfoolio/Tartu-Uus-Teater/",
@@ -471,37 +652,210 @@
           "tut-sooster-lbimng-24-okt-2025-_a748146_54878495048_o.jpg"
         ]
       }
-
     ];
 
+    /*
+      PROJEKTIDE INFO
 
-    portfolioGalleries.forEach((gallery) => {
+      section määrab, millises sektsioonis
+      projekt kuvatakse.
 
-      const container = document.getElementById(gallery.id);
+      Võimalikud väärtused:
+      stilistika
+      moeetendused
+      teater
+    */
 
-      if (!container) return;
+    const projectDetails = [
+      {
+        id: "gallery-sobraltsobrale",
+        section: "stilistika",
+        title: "SÕBRALT SÕBRALE",
+        kind: "FOTOLAVASTUS",
+        description:
+          "Fotograaf, stilist, jumestus ja soeng: Kertu Moorits\n" +
+          "Modell: Vitalia Hulak\n\n" +
+          "Visuaalne fotolavastus, mille lähtekohaks oli " +
+          "meeleolu, värv, vorm ja karakter."
+      },
+      {
+        id: "gallery-n20",
+        section: "stilistika",
+        title: "N-20 STUUDIO",
+        kind: "FOTOLAVASTUS",
+        description:
+          "Fotograafid: Helen-Mary Vartsun ja Kertu Moorits\n" +
+          "Stilist ja jumestaja: Kertu Moorits\n" +
+          "Riided ja aksessuaarid: N-20 Stuudio ja erakogu\n\n" +
+          "Visuaalse suuna, rõivakombinatsioonide ja jumestuse " +
+          "loomine ning fotosessiooni praktiline läbiviimine."
+      },
+      {
+        id: "gallery-backhome",
+        section: "stilistika",
+        title: "BACK HOME",
+        kind: "EDITORIAL",
+        description:
+          "Tiim: Kertu Moorits, Anastassia Povstanskaja, Geilin Raudsepp\n" +
+          "Jumestus: Kertu Moorits\n" +
+          "Soeng: Anastassia Povstanskaja\n\n" +
+          "Lätis valminud ajakirjakaane kontseptsioon, " +
+          "mille rõivad valiti ja hangiti taaskasutusest."
+      },
+      {
+        id: "gallery-ajakirjaprojekt",
+        section: "stilistika",
+        title: "AJAKIRJAPROJEKT",
+        kind: "EDITORIAL",
+        description:
+          "Fotograaf: Ekvilibrist\n" +
+          "Stilist: Kertu Moorits\n" +
+          "Jumestus ja soeng: Liisi Haas\n\n" +
+          "Ajakirjaprojekti jaoks loodud stilistika ja visuaalne tervik."
+      },
+      {
+        id: "gallery-eff",
+        section: "moeetendused",
+        title: "ESTONIAN FASHION FESTIVAL",
+        kind: "MOEETENDUS",
+        description: ""
+      },
+      {
+        id: "gallery-tartu-uus-teater",
+        section: "teater",
+        title: "TARTU UUS TEATER",
+        kind: "TEATER",
+        description: ""
+      }
+    ];
+
+    /* GALERII TÖÖLOOGIKA */
+
+    const folders = Object.fromEntries(
+      portfolioGalleries.map(gallery => [gallery.id, gallery])
+    );
+
+    const modal = document.getElementById("pnModal");
+    const modalTitle = document.getElementById("pnModalTitle");
+    const modalKind = document.getElementById("pnModalKind");
+    const modalDescription = document.getElementById("pnModalDescription");
+    const modalImages = document.getElementById("pnModalImages");
+    const modalClose = document.getElementById("pnModalClose");
+
+    let previousFocus = null;
+
+    function imgUrl(gallery, file) {
+      return gallery.folder + encodeURIComponent(file);
+    }
+
+    function closeProject() {
+      modal.hidden = true;
+      document.body.classList.remove("pn-modal-open");
+      modalImages.replaceChildren();
+
+      if (previousFocus) {
+        previousFocus.focus();
+      }
+    }
+
+    function openProject(project) {
+      const gallery = folders[project.id];
+
+      if (!gallery) return;
+
+      previousFocus = document.activeElement;
+
+      modalTitle.textContent = project.title;
+      modalKind.textContent = project.kind;
+      modalDescription.textContent = project.description;
+      modalDescription.hidden = !project.description;
+
+      modalImages.replaceChildren();
 
       gallery.images.forEach((file, index) => {
-
         const figure = document.createElement("figure");
-        figure.className = "portfolio-image";
-
         const image = document.createElement("img");
 
-        image.src = gallery.folder + encodeURIComponent(file)
-          .replace(/%2F/g, "/");
-
-        image.alt = "";
+        image.src = imgUrl(gallery, file);
+        image.alt = project.title + " – foto " + (index + 1);
         image.loading = index < 2 ? "eager" : "lazy";
         image.decoding = "async";
 
         figure.appendChild(image);
-        container.appendChild(figure);
-
+        modalImages.appendChild(figure);
       });
 
+      modal.hidden = false;
+      document.body.classList.add("pn-modal-open");
+      modal.scrollTop = 0;
+      modalClose.focus();
+    }
+
+    /* PROJEKTIKAARTIDE LOOMINE */
+
+    projectDetails.forEach(project => {
+      const gallery = folders[project.id];
+
+      if (!gallery || !gallery.images.length) return;
+
+      const grid = document.getElementById(
+        "pn-" + project.section
+      );
+
+      if (!grid) return;
+
+      const article = document.createElement("article");
+      article.className = "pn-card";
+
+      const button = document.createElement("button");
+      button.type = "button";
+
+      button.setAttribute(
+        "aria-label",
+        project.title + " – ava projekti galerii"
+      );
+
+      const cover = document.createElement("span");
+      cover.className = "pn-cover";
+
+      const image = document.createElement("img");
+      image.src = imgUrl(gallery, gallery.images[0]);
+      image.alt = project.title;
+      image.loading =
+        project.section === "stilistika" ? "eager" : "lazy";
+      image.decoding = "async";
+
+      cover.appendChild(image);
+
+      const meta = document.createElement("span");
+      meta.className = "pn-card-meta";
+
+      const title = document.createElement("strong");
+      title.textContent = project.title;
+
+      const kind = document.createElement("span");
+      kind.textContent = project.kind;
+
+      meta.append(title, kind);
+      button.append(cover, meta);
+
+      button.addEventListener("click", () => {
+        openProject(project);
+      });
+
+      article.appendChild(button);
+      grid.appendChild(article);
     });
 
+    /* PROJEKTIVAATE SULGEMINE */
+
+    modalClose.addEventListener("click", closeProject);
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && !modal.hidden) {
+        closeProject();
+      }
+    });
   </script>
 
 </body>
