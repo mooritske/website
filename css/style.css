@@ -8334,3 +8334,26 @@ a.service:hover {
   }
 
 }
+
+/* HEADER – mobiili ja kitsama akna parandus */
+@media (max-width: 760px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu-button {
+    display: block;
+    margin-left: auto;
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    color: var(--ink);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    cursor: pointer;
+  }
+}
