@@ -396,10 +396,12 @@
       color: #625a55;
     }
 
-    /* SOOSTERI KOOLKOND – MINU TÖÖ JA PROTSESS */
+    /* MINU TÖÖ JA PROTSESS – GALERII LÕPUS */
 
     .pf-process {
-      margin: 42px 0 12px;
+      margin: 70px 0 0;
+      padding-top: 28px;
+      border-top: 1px solid var(--pf-line);
     }
 
     .pf-process h3 {
@@ -414,6 +416,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
+      max-width: 780px;
     }
 
     .pf-process-grid img {
@@ -665,9 +668,8 @@
           <h3>SOOSTERI KOOLKOND</h3>
 
           <p>
-            Lavastuse lavakujunduse, kostüümide ja
-            rekvisiitide teostamine meeskonnas ning
-            kõigi paberrekvisiitide valmistamine.
+            Lavakujunduse, kostüümide ja rekvisiitide
+            teostus koostöös kunstnikuga.
           </p>
 
           <button
@@ -1020,8 +1022,8 @@
           '„Soosteri koolkond“ visuaalse maailma teostamises.',
 
         body: [
-          'Töötasin meeskonnas lavakujunduse, kostüümide ' +
-          'ja rekvisiitide teostamisega seotud ülesannete kallal.',
+          'Lavakujunduse, kostüümide ja rekvisiitide teostus ' +
+          'koostöös kunstnikuga.',
 
           'Minu iseseisvaks vastutusvaldkonnaks oli kõigi ' +
           'lavastuse paberrekvisiitide valmistamine.'
@@ -1031,7 +1033,7 @@
           ['Teater', 'Tartu Uus Teater'],
           [
             'Lavakujunduse, kostüümide ja rekvisiitide teostus',
-            'Meeskonnatöö'
+            'Koostöös kunstnikuga'
           ],
           ['Paberrekvisiidid', 'Kertu Moorits']
         ]
@@ -1169,7 +1171,7 @@
 
       credits.hidden = !(project.credits || []).length;
 
-      /* MINU TÖÖ JA PROTSESS */
+      /* EEMALDA EELMISE PROJEKTI PROTSESSIFOTOD */
 
       const previousProcess =
         document.getElementById('pfProcess');
@@ -1177,6 +1179,24 @@
       if (previousProcess) {
         previousProcess.remove();
       }
+
+      /* LAVASTUSE SUUR FOTOGALERII */
+
+      project.photos.forEach((file, index) => {
+        const figure = document.createElement('figure');
+        const img = document.createElement('img');
+
+        img.src = photoUrl(project, file);
+        img.alt = project.title + ' – foto ' + (index + 1);
+
+        img.loading = index < 2 ? 'eager' : 'lazy';
+        img.decoding = 'async';
+
+        figure.append(img);
+        photos.append(figure);
+      });
+
+      /* MINU TÖÖ JA PROTSESS – KÕIGE LÕPUS */
 
       if (project.id === 'theatre' && project.processPhotos) {
         const process = document.createElement('section');
@@ -1207,29 +1227,11 @@
 
         process.append(heading, grid);
 
-        document
-          .querySelector('.pf-project-text')
-          .append(process);
+        /* Lisa pärast suurt galeriid */
+        photos.after(process);
       }
 
-      /* SUUR FOTOGALERII */
-
-      project.photos.forEach((file, index) => {
-        const figure = document.createElement('figure');
-        const img = document.createElement('img');
-
-        img.src = photoUrl(project, file);
-        img.alt = project.title + ' – foto ' + (index + 1);
-
-        img.loading = index < 2 ? 'eager' : 'lazy';
-        img.decoding = 'async';
-
-        figure.append(img);
-        photos.append(figure);
-      });
-
       modal.hidden = false;
-
       document.body.classList.add('pf-locked');
 
       modal.scrollTop = 0;
