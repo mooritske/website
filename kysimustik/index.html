@@ -1,1 +1,141 @@
 
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOORITS. | Eelküsimustik</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #F6F1EA;
+      color: #211B19;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 32px 7%;
+    }
+
+    header {
+      padding-bottom: 24px;
+      border-bottom: 1px solid #DDD2C7;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+    }
+
+    main {
+      max-width: 720px;
+      width: 100%;
+      margin: auto;
+      padding: 90px 0;
+    }
+
+    .label {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      font-weight: 600;
+      color: #4B1824;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(55px, 8vw, 100px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      margin: 0 0 32px;
+    }
+
+    h1 em {
+      color: #4B1824;
+      font-weight: 400;
+    }
+
+    p {
+      max-width: 530px;
+      color: #746A65;
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 20px 32px;
+      background: #4B1824;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      transition: background 0.2s;
+    }
+
+    .button:hover { background: #351019; }
+
+    footer {
+      border-top: 1px solid #DDD2C7;
+      padding-top: 24px;
+      color: #746A65;
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 24px; }
+      main { padding: 80px 0; }
+      p { font-size: 15px; }
+      .button { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">MOORITS.</div>
+    </header>
+
+    <main>
+      <div class="label">ENNE MEIE KOHTUMIST</div>
+
+      <h1>
+        Sinu stiil.<br>
+        <em>Sinu moodi.</em>
+      </h1>
+
+      <p>
+        Hea stiil algab sinu tundmaõppimisest.
+        See eelküsimustik aitab mul mõista sinu
+        igapäevaelu, riietumisharjumusi ja soove,
+        et saaksin meie kohtumiseks paremini valmistuda.
+      </p>
+
+      <a class="button"
+         href="https://tally.so/r/Arr2be"
+         target="_blank"
+         rel="noopener noreferrer">
+        ALUSTA KÜSIMUSTIKKU ↗
+      </a>
+    </main>
+
+    <footer>
+      © MOORITS. — PERSONAALSTILISTIKA
+    </footer>
+  </div>
+</body>
+</html>
